@@ -17,7 +17,8 @@ const getApiBaseUrl = () => {
   return url;
 };
 
-export const API_BASE = getApiBaseUrl();
+export const API_BASE_URL = getApiBaseUrl();
+export const API_BASE = API_BASE_URL;
 
 export const safeFetch = async (url, options = {}) => {
   try {
@@ -60,17 +61,21 @@ const parseError = async (res, defaultMsg) => {
   } catch (e) {}
 
   if (detail) {
+    if (detail.toLowerCase() === 'not found') {
+      return `Endpoint not found on backend (HTTP 404 at ${res?.url || API_BASE}). Please check the API URL configuration.`;
+    }
     return detail;
   }
 
   const code = res?.status;
   if (code === 400) return defaultMsg || "Bad Request (HTTP 400): Please check the entered data.";
-  if (code === 401) return "Your session has expired or authentication failed (HTTP 401). Please log in again.";
+  if (code === 401) return "Invalid email or password, or session expired (HTTP 401).";
   if (code === 403) return "Access Denied (HTTP 403): You do not have permission for this request.";
-  if (code === 404) return defaultMsg || "Resource not found on server (HTTP 404).";
-  if (code === 422) return "Validation Error (HTTP 422): Submitted data did not match expected schema.";
+  if (code === 404) return `Endpoint not found on backend (HTTP 404 at ${res?.url || API_BASE}).`;
+  if (code === 409) return "An account with this email address already exists. Please sign in instead.";
+  if (code === 422) return "Validation Error (HTTP 422): Submitted data did not match expected format.";
   if (code === 429) return "Rate limit exceeded (HTTP 429). Please wait a moment before trying again.";
-  if (code >= 500) return `Backend Error (HTTP ${code}): The server encountered an issue. Please retry shortly.`;
+  if (code >= 500) return `Backend Server Error (HTTP ${code}): The server encountered an issue. Please retry shortly.`;
 
   return defaultMsg || `Request failed (HTTP ${code || 'Unknown'})`;
 };
