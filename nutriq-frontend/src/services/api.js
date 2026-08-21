@@ -5,7 +5,33 @@ import { reportGenerator } from './reportGenerator.js';
 import { getToday, getLocalDate, getLocalDateFromTimestamp, formatDate, parseDateParts, addDays } from '../utils/dateUtils.js';
 import { calculateCurrentStreak } from '../utils/streakUtils.js';
 
-const API_BASE = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_API_BASE_URL) || 'http://localhost:8000/api';
+const getApiBaseUrl = () => {
+  const envUrl = typeof import.meta !== 'undefined' ? import.meta.env?.VITE_API_BASE_URL : null;
+  let url = (envUrl && typeof envUrl === 'string') ? envUrl.trim() : 'http://localhost:8000/api';
+  // Strip trailing slashes
+  url = url.replace(/\/+$/, '');
+  // Normalize so that /api is always the suffix
+  if (!url.endsWith('/api')) {
+    url = `${url}/api`;
+  }
+  return url;
+};
+
+export const API_BASE = getApiBaseUrl();
+
+export const safeFetch = async (url, options = {}) => {
+  try {
+    return await fetch(url, options);
+  } catch (err) {
+    if (err.name === 'TypeError' && (err.message?.includes('fetch') || err.message?.includes('NetworkError') || err.message?.includes('Load failed'))) {
+      const error = new Error(`Cannot connect to NutriQ server at ${API_BASE}. If using Render, the backend may take 30-50s to wake up from idle. Please wait a moment and try again.`);
+      error.isNetworkError = true;
+      error.originalError = err;
+      throw error;
+    }
+    throw err;
+  }
+};
 
 const getAuthHeaders = () => {
   const token = localStorage.getItem('nutriq_token');
@@ -16,18 +42,37 @@ const getAuthHeaders = () => {
 };
 
 const parseError = async (res, defaultMsg) => {
+  let detail = null;
   try {
-    const err = await res.json();
-    if (typeof err.detail === 'string') return err.detail;
-    if (Array.isArray(err.detail)) return err.detail.map(d => d.msg || d.loc?.join('.')).join(', ');
-    if (err.message) return err.message;
+    const contentType = res?.headers?.get ? (res.headers.get('content-type') || '') : '';
+    if (contentType.includes('application/json')) {
+      const err = await res.json();
+      if (typeof err.detail === 'string') detail = err.detail;
+      else if (Array.isArray(err.detail)) detail = err.detail.map(d => d.msg || d.loc?.join('.')).join(', ');
+      else if (err.message) detail = err.message;
+      else if (err.error) detail = typeof err.error === 'string' ? err.error : JSON.stringify(err.error);
+    } else {
+      const text = await res.text();
+      if (text && text.length < 200 && !text.includes('<!DOCTYPE') && !text.includes('<html')) {
+        detail = text;
+      }
+    }
   } catch (e) {}
-  if (res?.status === 401) return "Your session has expired. Please log in again.";
-  if (res?.status === 404) return "Conversation not found. Starting a new chat.";
-  if (res?.status === 422) return "NutriQ AI received invalid request data.";
-  if (res?.status === 429) return "AI service is temporarily rate-limited. Please try again shortly.";
-  if (res?.status >= 500) return "NutriQ AI encountered a server error. Please retry.";
-  return defaultMsg || "Request failed";
+
+  if (detail) {
+    return detail;
+  }
+
+  const code = res?.status;
+  if (code === 400) return defaultMsg || "Bad Request (HTTP 400): Please check the entered data.";
+  if (code === 401) return "Your session has expired or authentication failed (HTTP 401). Please log in again.";
+  if (code === 403) return "Access Denied (HTTP 403): You do not have permission for this request.";
+  if (code === 404) return defaultMsg || "Resource not found on server (HTTP 404).";
+  if (code === 422) return "Validation Error (HTTP 422): Submitted data did not match expected schema.";
+  if (code === 429) return "Rate limit exceeded (HTTP 429). Please wait a moment before trying again.";
+  if (code >= 500) return `Backend Error (HTTP ${code}): The server encountered an issue. Please retry shortly.`;
+
+  return defaultMsg || `Request failed (HTTP ${code || 'Unknown'})`;
 };
 
 export const normalizeMeal = (m) => {
@@ -138,7 +183,7 @@ export const normalizeMeal = (m) => {
 export const api = {
   // Auth
   register: async (data) => {
-    const res = await fetch(`${API_BASE}/auth/register`, {
+    const res = await safeFetch(`${API_BASE}/auth/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
@@ -151,7 +196,7 @@ export const api = {
   },
 
   login: async (email, password) => {
-    const res = await fetch(`${API_BASE}/auth/login`, {
+    const res = await safeFetch(`${API_BASE}/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password })
@@ -169,7 +214,7 @@ export const api = {
 
   googleLogin: async ({ credential = null, accessToken = null, email = null, name = null, googleId = null } = {}) => {
     try {
-      const res = await fetch(`${API_BASE}/auth/google`, {
+      const res = await safeFetch(`${API_BASE}/auth/google`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -195,7 +240,7 @@ export const api = {
 
   logout: async () => {
     try {
-      await fetch(`${API_BASE}/auth/logout`, { method: 'POST', headers: getAuthHeaders() });
+      await safeFetch(`${API_BASE}/auth/logout`, { method: 'POST', headers: getAuthHeaders() });
     } catch (e) {}
     localStorage.removeItem('nutriq_token');
     localStorage.removeItem('nutriq_email');
@@ -204,7 +249,7 @@ export const api = {
   },
 
   forgotPassword: async (email) => {
-    const res = await fetch(`${API_BASE}/auth/forgot-password`, {
+    const res = await safeFetch(`${API_BASE}/auth/forgot-password`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: email.trim().toLowerCase() })
@@ -217,7 +262,7 @@ export const api = {
   },
 
   validateResetToken: async (token) => {
-    const res = await fetch(`${API_BASE}/auth/validate-reset-token?token=${encodeURIComponent(token)}`, {
+    const res = await safeFetch(`${API_BASE}/auth/validate-reset-token?token=${encodeURIComponent(token)}`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' }
     });
@@ -228,7 +273,7 @@ export const api = {
   },
 
   resetPassword: async (token, newPassword) => {
-    const res = await fetch(`${API_BASE}/auth/reset-password`, {
+    const res = await safeFetch(`${API_BASE}/auth/reset-password`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ token: token.trim(), new_password: newPassword })
@@ -243,7 +288,7 @@ export const api = {
   // Profile & Goals
   createProfile: async (data) => {
     try {
-      const res = await fetch(`${API_BASE}/profile`, {
+      const res = await safeFetch(`${API_BASE}/profile`, {
         method: 'POST',
         headers: getAuthHeaders(),
         body: JSON.stringify(data)
@@ -282,7 +327,7 @@ export const api = {
 
   getProfile: async () => {
     try {
-      const res = await fetch(`${API_BASE}/profile`, { headers: getAuthHeaders() });
+      const res = await safeFetch(`${API_BASE}/profile`, { headers: getAuthHeaders() });
       if (res.ok) {
         const data = await res.json();
         if (data) {
@@ -313,7 +358,7 @@ export const api = {
 
   updateProfile: async (data) => {
     try {
-      const res = await fetch(`${API_BASE}/profile`, {
+      const res = await safeFetch(`${API_BASE}/profile`, {
         method: 'PUT',
         headers: getAuthHeaders(),
         body: JSON.stringify(data)
@@ -352,7 +397,7 @@ export const api = {
 
   getGoal: async () => {
     try {
-      const res = await fetch(`${API_BASE}/goals`, { headers: getAuthHeaders() });
+      const res = await safeFetch(`${API_BASE}/goals`, { headers: getAuthHeaders() });
       if (res.ok) {
         const goals = await res.json();
         return Array.isArray(goals) && goals.length > 0 ? goals[0] : null;
@@ -364,7 +409,7 @@ export const api = {
   },
 
   createGoal: async (goalData) => {
-    const res = await fetch(`${API_BASE}/goals`, {
+    const res = await safeFetch(`${API_BASE}/goals`, {
       method: 'POST',
       headers: getAuthHeaders(),
       body: JSON.stringify(goalData)
@@ -382,7 +427,7 @@ export const api = {
 
   getGoalProgress: async () => {
     try {
-      const res = await fetch(`${API_BASE}/goals/progress`, { headers: getAuthHeaders() });
+      const res = await safeFetch(`${API_BASE}/goals/progress`, { headers: getAuthHeaders() });
       if (res.ok) return await res.json();
     } catch (e) {
       console.warn("Offline goal progress fallback:", e);
@@ -391,7 +436,7 @@ export const api = {
   },
 
   updateGoal: async (goalId, goalData) => {
-    const res = await fetch(`${API_BASE}/goals/${goalId}`, {
+    const res = await safeFetch(`${API_BASE}/goals/${goalId}`, {
       method: 'PUT',
       headers: getAuthHeaders(),
       body: JSON.stringify(goalData)
@@ -404,7 +449,7 @@ export const api = {
   },
 
   recordWeight: async (weightKg, recordedAt = null) => {
-    const res = await fetch(`${API_BASE}/weight`, {
+    const res = await safeFetch(`${API_BASE}/weight`, {
       method: 'POST',
       headers: getAuthHeaders(),
       body: JSON.stringify({
@@ -421,7 +466,7 @@ export const api = {
 
   getWeightHistory: async () => {
     try {
-      const res = await fetch(`${API_BASE}/weight/history`, { headers: getAuthHeaders() });
+      const res = await safeFetch(`${API_BASE}/weight/history`, { headers: getAuthHeaders() });
       if (res.ok) return await res.json();
     } catch (e) {
       console.warn("Could not fetch weight history:", e);
@@ -431,7 +476,7 @@ export const api = {
 
   getNutritionTargets: async () => {
     try {
-      const res = await fetch(`${API_BASE}/nutrition/targets`, { headers: getAuthHeaders() });
+      const res = await safeFetch(`${API_BASE}/nutrition/targets`, { headers: getAuthHeaders() });
       if (res.ok) return res.json();
     } catch (e) {
       console.warn("Offline targets calculation");
@@ -449,13 +494,13 @@ export const api = {
 
 
   getAllergies: async () => {
-    const res = await fetch(`${API_BASE}/allergies`, { headers: getAuthHeaders() });
+    const res = await safeFetch(`${API_BASE}/allergies`, { headers: getAuthHeaders() });
     if (!res.ok) return [];
     return res.json();
   },
 
   createAllergy: async (data) => {
-    const res = await fetch(`${API_BASE}/allergies`, {
+    const res = await safeFetch(`${API_BASE}/allergies`, {
       method: 'POST',
       headers: getAuthHeaders(),
       body: JSON.stringify(data)
@@ -468,7 +513,7 @@ export const api = {
   },
 
   deleteAllergy: async (allergyId) => {
-    const res = await fetch(`${API_BASE}/allergies/${allergyId}`, {
+    const res = await safeFetch(`${API_BASE}/allergies/${allergyId}`, {
       method: 'DELETE',
       headers: getAuthHeaders()
     });
@@ -485,7 +530,7 @@ export const api = {
       const params = new URLSearchParams();
       if (query) params.append('query', query);
       if (category) params.append('category', category);
-      const res = await fetch(`${API_BASE}/foods?${params.toString()}`, { headers: getAuthHeaders() });
+      const res = await safeFetch(`${API_BASE}/foods?${params.toString()}`, { headers: getAuthHeaders() });
       if (res.ok) {
         const data = await res.json();
         if (Array.isArray(data) && data.length > 0) {
@@ -530,7 +575,7 @@ export const api = {
   },
 
   getFoodByBarcode: async (barcode) => {
-    const res = await fetch(`${API_BASE}/foods/barcode/${barcode}`, { headers: getAuthHeaders() });
+    const res = await safeFetch(`${API_BASE}/foods/barcode/${barcode}`, { headers: getAuthHeaders() });
     if (!res.ok) {
       const msg = await parseError(res, "Food not found for this barcode");
       throw new Error(msg);
@@ -540,7 +585,7 @@ export const api = {
 
   getRecentFoods: async (limit = 20) => {
     try {
-      const res = await fetch(`${API_BASE}/foods/recent?limit=${limit}`, { headers: getAuthHeaders() });
+      const res = await safeFetch(`${API_BASE}/foods/recent?limit=${limit}`, { headers: getAuthHeaders() });
       if (res.ok) {
         const data = await res.json();
         return Array.isArray(data) ? data : [];
@@ -553,7 +598,7 @@ export const api = {
 
   getFavoriteFoods: async () => {
     try {
-      const res = await fetch(`${API_BASE}/foods/favorites`, { headers: getAuthHeaders() });
+      const res = await safeFetch(`${API_BASE}/foods/favorites`, { headers: getAuthHeaders() });
       if (res.ok) {
         const data = await res.json();
         return Array.isArray(data) ? data : [];
@@ -565,7 +610,7 @@ export const api = {
   },
 
   addFavoriteFood: async (foodId) => {
-    const res = await fetch(`${API_BASE}/foods/${foodId}/favorite`, {
+    const res = await safeFetch(`${API_BASE}/foods/${foodId}/favorite`, {
       method: 'POST',
       headers: getAuthHeaders()
     });
@@ -577,7 +622,7 @@ export const api = {
   },
 
   removeFavoriteFood: async (foodId) => {
-    const res = await fetch(`${API_BASE}/foods/${foodId}/favorite`, {
+    const res = await safeFetch(`${API_BASE}/foods/${foodId}/favorite`, {
       method: 'DELETE',
       headers: getAuthHeaders()
     });
@@ -599,7 +644,7 @@ export const api = {
   // Meals (Offline First with IndexedDB and Sync Status)
   getMeals: async () => {
     try {
-      const res = await fetch(`${API_BASE}/meals`, { headers: getAuthHeaders() });
+      const res = await safeFetch(`${API_BASE}/meals`, { headers: getAuthHeaders() });
       if (res.ok) {
         const data = await res.json();
         if (Array.isArray(data)) {
@@ -621,7 +666,7 @@ export const api = {
 
   getTodayMeals: async () => {
     try {
-      const res = await fetch(`${API_BASE}/meals/today`, { headers: getAuthHeaders() });
+      const res = await safeFetch(`${API_BASE}/meals/today`, { headers: getAuthHeaders() });
       if (res.ok) {
         const data = await res.json();
         if (Array.isArray(data)) {
@@ -648,7 +693,7 @@ export const api = {
     const targetDate = dateStr || getToday();
     try {
       const url = `${API_BASE}/meals/history?date=${encodeURIComponent(targetDate)}`;
-      const res = await fetch(url, { headers: getAuthHeaders() });
+      const res = await safeFetch(url, { headers: getAuthHeaders() });
       if (res.ok) {
         const data = await res.json();
         return {
@@ -701,7 +746,7 @@ export const api = {
 
   getMealHistoryRange: async (startDate, endDate) => {
     try {
-      const res = await fetch(`${API_BASE}/meals/history/range?start_date=${encodeURIComponent(startDate)}&end_date=${encodeURIComponent(endDate)}`, {
+      const res = await safeFetch(`${API_BASE}/meals/history/range?start_date=${encodeURIComponent(startDate)}&end_date=${encodeURIComponent(endDate)}`, {
         headers: getAuthHeaders()
       });
       if (res.ok) {
@@ -719,7 +764,7 @@ export const api = {
     let result = null;
 
     try {
-      const res = await fetch(`${API_BASE}/meals`, {
+      const res = await safeFetch(`${API_BASE}/meals`, {
         method: 'POST',
         headers: getAuthHeaders(),
         body: JSON.stringify(mealData)
@@ -752,7 +797,7 @@ export const api = {
 
   updateMeal: async (mealId, updateData) => {
     try {
-      const res = await fetch(`${API_BASE}/meals/${mealId}`, {
+      const res = await safeFetch(`${API_BASE}/meals/${mealId}`, {
         method: 'PUT',
         headers: getAuthHeaders(),
         body: JSON.stringify(updateData)
@@ -779,7 +824,7 @@ export const api = {
 
   deleteMeal: async (mealId) => {
     try {
-      await fetch(`${API_BASE}/meals/${mealId}`, { method: 'DELETE', headers: getAuthHeaders() });
+      await safeFetch(`${API_BASE}/meals/${mealId}`, { method: 'DELETE', headers: getAuthHeaders() });
     } catch (e) {
       await enqueueOfflineAction('meal', mealId, 'DELETE', { id: mealId });
     }
@@ -814,7 +859,7 @@ export const api = {
     };
 
     try {
-      const res = await fetch(`${API_BASE}/water`, {
+      const res = await safeFetch(`${API_BASE}/water`, {
         method: 'POST',
         headers: getAuthHeaders(),
         body: JSON.stringify(payload)
@@ -838,7 +883,7 @@ export const api = {
   getWaterLogs: async (dateStr = null) => {
     try {
       const url = dateStr ? `${API_BASE}/water?date=${dateStr}` : `${API_BASE}/water`;
-      const res = await fetch(url, { headers: getAuthHeaders() });
+      const res = await safeFetch(url, { headers: getAuthHeaders() });
       if (res.ok) {
         const data = await res.json();
         if (Array.isArray(data)) {
@@ -857,7 +902,7 @@ export const api = {
   getWaterSummary: async (dateStr = null) => {
     const targetDateStr = dateStr || new Date().toISOString().split('T')[0];
     try {
-      const res = await fetch(`${API_BASE}/water/today?date=${targetDateStr}`, { headers: getAuthHeaders() });
+      const res = await safeFetch(`${API_BASE}/water/today?date=${targetDateStr}`, { headers: getAuthHeaders() });
       if (res.ok) {
         return await res.json();
       }
@@ -889,7 +934,7 @@ export const api = {
 
   deleteWater: async (waterId) => {
     try {
-      const res = await fetch(`${API_BASE}/water/${waterId}`, {
+      const res = await safeFetch(`${API_BASE}/water/${waterId}`, {
         method: 'DELETE',
         headers: getAuthHeaders()
       });
@@ -917,7 +962,7 @@ export const api = {
     }));
 
     try {
-      const res = await fetch(`${API_BASE}/sync`, {
+      const res = await safeFetch(`${API_BASE}/sync`, {
         method: 'POST',
         headers: getAuthHeaders(),
         body: JSON.stringify({
@@ -938,7 +983,7 @@ export const api = {
   getActivities: async (dateStr = null) => {
     try {
       const url = dateStr ? `${API_BASE}/activities?date=${encodeURIComponent(dateStr)}` : `${API_BASE}/activities`;
-      const res = await fetch(url, { headers: getAuthHeaders() });
+      const res = await safeFetch(url, { headers: getAuthHeaders() });
       if (res.ok) {
         const data = await res.json();
         if (Array.isArray(data)) {
@@ -956,7 +1001,7 @@ export const api = {
 
   getTodayActivities: async () => {
     try {
-      const res = await fetch(`${API_BASE}/activity/today`, { headers: getAuthHeaders() });
+      const res = await safeFetch(`${API_BASE}/activity/today`, { headers: getAuthHeaders() });
       if (res.ok) {
         const data = await res.json();
         if (Array.isArray(data)) {
@@ -981,7 +1026,7 @@ export const api = {
     const targetDate = dateStr || getToday();
     try {
       const url = `${API_BASE}/activity/history?date=${encodeURIComponent(targetDate)}`;
-      const res = await fetch(url, { headers: getAuthHeaders() });
+      const res = await safeFetch(url, { headers: getAuthHeaders() });
       if (res.ok) {
         return await res.json();
       }
@@ -1053,7 +1098,7 @@ export const api = {
     };
 
     try {
-      const res = await fetch(`${API_BASE}/activities`, {
+      const res = await safeFetch(`${API_BASE}/activities`, {
         method: 'POST',
         headers: getAuthHeaders(),
         body: JSON.stringify(payload)
@@ -1082,7 +1127,7 @@ export const api = {
 
   updateActivity: async (activityId, data) => {
     try {
-      const res = await fetch(`${API_BASE}/activities/${activityId}`, {
+      const res = await safeFetch(`${API_BASE}/activities/${activityId}`, {
         method: 'PUT',
         headers: getAuthHeaders(),
         body: JSON.stringify(data)
@@ -1107,7 +1152,7 @@ export const api = {
 
   deleteActivity: async (activityId) => {
     try {
-      const res = await fetch(`${API_BASE}/activities/${activityId}`, {
+      const res = await safeFetch(`${API_BASE}/activities/${activityId}`, {
         method: 'DELETE',
         headers: getAuthHeaders()
       });
@@ -1129,7 +1174,7 @@ export const api = {
   logWeight: async (weightKg) => {
     const logId = 'wt_' + Date.now();
     try {
-      const res = await fetch(`${API_BASE}/weight`, {
+      const res = await safeFetch(`${API_BASE}/weight`, {
         method: 'POST',
         headers: getAuthHeaders(),
         body: JSON.stringify({ weight_kg: weightKg })
@@ -1146,7 +1191,7 @@ export const api = {
     const targetDateStr = dateStr || new Date().toISOString().split('T')[0];
     try {
       const url = `${API_BASE}/daily-summary?date=${targetDateStr}`;
-      const res = await fetch(url, { headers: getAuthHeaders() });
+      const res = await safeFetch(url, { headers: getAuthHeaders() });
       if (res.ok) {
         const data = await res.json();
         await db.daily_summaries.put({ date: targetDateStr, ...data, updated_at: new Date().toISOString() });
@@ -1171,7 +1216,7 @@ export const api = {
   getWeeklySummary: async (weekStartStr = null) => {
     try {
       const url = weekStartStr ? `${API_BASE}/weekly-summary?week_start=${weekStartStr}` : `${API_BASE}/weekly-summary`;
-      const res = await fetch(url, { headers: getAuthHeaders() });
+      const res = await safeFetch(url, { headers: getAuthHeaders() });
       if (res.ok) {
         const data = await res.json();
         await db.weekly_summaries.put({ week_start: data.week_start, ...data, updated_at: new Date().toISOString() });
@@ -1197,7 +1242,7 @@ export const api = {
     const targetDateStr = dateStr || new Date().toISOString().split('T')[0];
     try {
       const url = `${API_BASE}/nutrition/insights?date=${targetDateStr}`;
-      const res = await fetch(url, { headers: getAuthHeaders() });
+      const res = await safeFetch(url, { headers: getAuthHeaders() });
       if (res.ok) {
         return await res.json();
       }
@@ -1232,7 +1277,7 @@ export const api = {
       if (dateStr) params.append('date', targetDateStr);
       if (mealType) params.append('meal_type', mealType);
       const url = `${API_BASE}/nutrition/status?${params.toString()}`;
-      const res = await fetch(url, { headers: getAuthHeaders() });
+      const res = await safeFetch(url, { headers: getAuthHeaders() });
       if (res.ok) {
         return await res.json();
       }
@@ -1251,7 +1296,7 @@ export const api = {
       if (mealType) params.append('meal_type', mealType);
       params.append('limit', String(limit));
       const url = `${API_BASE}/recommendations?${params.toString()}`;
-      const res = await fetch(url, { headers: getAuthHeaders() });
+      const res = await safeFetch(url, { headers: getAuthHeaders() });
       if (res.ok) {
         return await res.json();
       }
@@ -1263,7 +1308,7 @@ export const api = {
 
   // AI Endpoints
   analyzeFoodText: async (text, mealType = 'breakfast') => {
-    const res = await fetch(`${API_BASE}/ai/analyze-food`, {
+    const res = await safeFetch(`${API_BASE}/ai/analyze-food`, {
       method: 'POST',
       headers: getAuthHeaders(),
       body: JSON.stringify({ text, meal_type: mealType })
@@ -1276,7 +1321,7 @@ export const api = {
   },
 
   getRecommendations: async () => {
-    const res = await fetch(`${API_BASE}/ai/recommend`, {
+    const res = await safeFetch(`${API_BASE}/ai/recommend`, {
       method: 'POST',
       headers: getAuthHeaders()
     });
@@ -1286,7 +1331,7 @@ export const api = {
 
   getActiveMealPlan: async () => {
     try {
-      const res = await fetch(`${API_BASE}/ai/meal-plan`, { headers: getAuthHeaders() });
+      const res = await safeFetch(`${API_BASE}/ai/meal-plan`, { headers: getAuthHeaders() });
       if (res.ok) return res.json();
     } catch (e) {
       console.warn("Unable to fetch active meal plan:", e);
@@ -1303,7 +1348,7 @@ export const api = {
       exclude_food_ids: options.excludeFoodIds || null,
       regeneration_id: options.regenerationId || (typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : 'regen_' + Date.now())
     };
-    const res = await fetch(`${API_BASE}/ai/meal-plan`, {
+    const res = await safeFetch(`${API_BASE}/ai/meal-plan`, {
       method: 'POST',
       headers: getAuthHeaders(),
       body: JSON.stringify(payload)
@@ -1316,7 +1361,7 @@ export const api = {
   },
 
   chatWithAssistant: async (messages) => {
-    const res = await fetch(`${API_BASE}/ai/chat`, {
+    const res = await safeFetch(`${API_BASE}/ai/chat`, {
       method: 'POST',
       headers: getAuthHeaders(),
       body: JSON.stringify({ messages, include_today_context: true })
@@ -1329,7 +1374,7 @@ export const api = {
   },
 
   analyzeFoodImage: async (imageBase64) => {
-    const res = await fetch(`${API_BASE}/ai/analyze-image`, {
+    const res = await safeFetch(`${API_BASE}/ai/analyze-image`, {
       method: 'POST',
       headers: getAuthHeaders(),
       body: JSON.stringify({ image_base64: imageBase64, meal_type: 'lunch' })
@@ -1344,7 +1389,7 @@ export const api = {
   // Reminder Settings & Actions
   getReminderSettings: async () => {
     try {
-      const res = await fetch(`${API_BASE}/reminders/settings`, { headers: getAuthHeaders() });
+      const res = await safeFetch(`${API_BASE}/reminders/settings`, { headers: getAuthHeaders() });
       if (res.ok) {
         const data = await res.json();
         await db.reminder_settings.put({ id: 'primary', ...data, updated_at: new Date().toISOString() });
@@ -1368,7 +1413,7 @@ export const api = {
 
   updateReminderSettings: async (settingsData) => {
     try {
-      const res = await fetch(`${API_BASE}/reminders/settings`, {
+      const res = await safeFetch(`${API_BASE}/reminders/settings`, {
         method: 'PUT',
         headers: getAuthHeaders(),
         body: JSON.stringify(settingsData)
@@ -1390,7 +1435,7 @@ export const api = {
       const url = currentTimeIso
         ? `${API_BASE}/reminders/pending?current_time=${encodeURIComponent(currentTimeIso)}`
         : `${API_BASE}/reminders/pending`;
-      const res = await fetch(url, { headers: getAuthHeaders() });
+      const res = await safeFetch(url, { headers: getAuthHeaders() });
       if (res.ok) return res.json();
     } catch (e) {
       console.warn("Offline reminder check");
@@ -1420,7 +1465,7 @@ export const api = {
 
   respondToReminder: async (mealType, action, dateStr = null) => {
     try {
-      const res = await fetch(`${API_BASE}/reminders/respond`, {
+      const res = await safeFetch(`${API_BASE}/reminders/respond`, {
         method: 'POST',
         headers: getAuthHeaders(),
         body: JSON.stringify({ meal_type: mealType, action, date: dateStr })
@@ -1436,7 +1481,7 @@ export const api = {
   getDailyAnalytics: async (dateStr = null) => {
     const url = dateStr ? `${API_BASE}/analytics/daily?date_str=${dateStr}` : `${API_BASE}/analytics/daily`;
     try {
-      const res = await fetch(url, { headers: getAuthHeaders() });
+      const res = await safeFetch(url, { headers: getAuthHeaders() });
       if (res.ok) return res.json();
     } catch (e) {
       console.warn("Offline daily analytics fallback");
@@ -1469,7 +1514,7 @@ export const api = {
       if (endDateStr) params.append('end_date', endDateStr);
 
       const url = `${API_BASE}/analytics?${params.toString()}`;
-      const res = await fetch(url, { headers: getAuthHeaders() });
+      const res = await safeFetch(url, { headers: getAuthHeaders() });
       if (res.ok) {
         return await res.json();
       }
@@ -1689,7 +1734,7 @@ export const api = {
 
   getWeeklyAnalytics: async () => {
     try {
-      const res = await fetch(`${API_BASE}/analytics/weekly`, { headers: getAuthHeaders() });
+      const res = await safeFetch(`${API_BASE}/analytics/weekly`, { headers: getAuthHeaders() });
       if (res.ok) return res.json();
     } catch (e) {
       console.warn("Offline weekly analytics fallback");
@@ -1723,7 +1768,7 @@ export const api = {
     localStorage.setItem('nutriq_device_id', deviceId);
 
     try {
-      const res = await fetch(`${API_BASE}/sync`, {
+      const res = await safeFetch(`${API_BASE}/sync`, {
         method: 'POST',
         headers: getAuthHeaders(),
         body: JSON.stringify({
@@ -1757,7 +1802,7 @@ export const api = {
   downloadDailyReport: async (dateStr, format, summaryData = null, profile = null) => {
     if (typeof navigator !== 'undefined' && navigator.onLine) {
       try {
-        const res = await fetch(`${API_BASE}/export/${format}`, { headers: getAuthHeaders() });
+        const res = await safeFetch(`${API_BASE}/export/${format}`, { headers: getAuthHeaders() });
         if (res.ok) {
           const blob = await res.blob();
           const filename = `NutriQ_Daily_Report_${dateStr}.${format}`;
@@ -1791,7 +1836,7 @@ export const api = {
 
   downloadExport: async (format) => {
     try {
-      const res = await fetch(`${API_BASE}/export/${format}`, {
+      const res = await safeFetch(`${API_BASE}/export/${format}`, {
         headers: getAuthHeaders()
       });
       if (res.ok) {
@@ -1831,7 +1876,7 @@ export const api = {
   },
 
   exportUserData: async () => {
-    const res = await fetch(`${API_BASE}/export/json`, { headers: getAuthHeaders() });
+    const res = await safeFetch(`${API_BASE}/export/json`, { headers: getAuthHeaders() });
     if (!res.ok) {
       const msg = await parseError(res, "Unable to export your data right now. Please try again.");
       throw new Error(msg);
@@ -1841,7 +1886,7 @@ export const api = {
 
   getConsents: async () => {
     try {
-      const res = await fetch(`${API_BASE}/privacy/consents`, { headers: getAuthHeaders() });
+      const res = await safeFetch(`${API_BASE}/privacy/consents`, { headers: getAuthHeaders() });
       if (res.ok) return res.json();
     } catch (e) {
       console.warn("Unable to fetch consent records:", e);
@@ -1850,7 +1895,7 @@ export const api = {
   },
 
   deleteAccount: async () => {
-    const res = await fetch(`${API_BASE}/privacy/account`, { method: 'DELETE', headers: getAuthHeaders() });
+    const res = await safeFetch(`${API_BASE}/privacy/account`, { method: 'DELETE', headers: getAuthHeaders() });
     if (!res.ok) {
       const msg = await parseError(res, "Failed to delete account");
       throw new Error(msg);
@@ -1869,7 +1914,7 @@ export const api = {
 
   getStreakStatus: async () => {
     try {
-      const res = await fetch(`${API_BASE}/streak`, { headers: getAuthHeaders() });
+      const res = await safeFetch(`${API_BASE}/streak`, { headers: getAuthHeaders() });
       if (res.ok) return res.json();
     } catch (e) {
       console.warn("Failed to fetch streak status:", e);
@@ -1908,7 +1953,7 @@ export const api = {
 
   checkStreakStatus: async () => {
     try {
-      const res = await fetch(`${API_BASE}/streak/check`, { method: 'POST', headers: getAuthHeaders() });
+      const res = await safeFetch(`${API_BASE}/streak/check`, { method: 'POST', headers: getAuthHeaders() });
       if (res.ok) return res.json();
     } catch (e) {
       console.warn("Failed to check streak status:", e);
@@ -1918,7 +1963,7 @@ export const api = {
 
   getStreakHistory: async () => {
     try {
-      const res = await fetch(`${API_BASE}/streak/history`, { headers: getAuthHeaders() });
+      const res = await safeFetch(`${API_BASE}/streak/history`, { headers: getAuthHeaders() });
       if (res.ok) return res.json();
     } catch (e) {
       console.warn("Failed to fetch streak history:", e);
@@ -1928,7 +1973,7 @@ export const api = {
 
   acknowledgeMilestone: async (milestone) => {
     try {
-      const res = await fetch(`${API_BASE}/streak/milestone-ack`, {
+      const res = await safeFetch(`${API_BASE}/streak/milestone-ack`, {
         method: 'POST',
         headers: getAuthHeaders(),
         body: JSON.stringify({ milestone })
@@ -1946,7 +1991,7 @@ export const api = {
   getConversations: async (searchQuery = '') => {
     try {
       const q = searchQuery ? `?q=${encodeURIComponent(searchQuery)}` : '';
-      const res = await fetch(`${API_BASE}/ai/conversations${q}`, { headers: getAuthHeaders() });
+      const res = await safeFetch(`${API_BASE}/ai/conversations${q}`, { headers: getAuthHeaders() });
       if (res.ok) return res.json();
     } catch (e) {
       console.warn("Failed to fetch conversations:", e);
@@ -1955,7 +2000,7 @@ export const api = {
   },
 
   getConversation: async (conversationId) => {
-    const res = await fetch(`${API_BASE}/ai/conversations/${conversationId}`, { headers: getAuthHeaders() });
+    const res = await safeFetch(`${API_BASE}/ai/conversations/${conversationId}`, { headers: getAuthHeaders() });
     if (!res.ok) {
       const msg = await parseError(res, "Failed to load conversation");
       throw new Error(msg);
@@ -1964,7 +2009,7 @@ export const api = {
   },
 
   createConversation: async (title = "New Conversation") => {
-    const res = await fetch(`${API_BASE}/ai/conversations`, {
+    const res = await safeFetch(`${API_BASE}/ai/conversations`, {
       method: 'POST',
       headers: getAuthHeaders(),
       body: JSON.stringify({ title })
@@ -1977,7 +2022,7 @@ export const api = {
   },
 
   renameConversation: async (conversationId, title) => {
-    const res = await fetch(`${API_BASE}/ai/conversations/${conversationId}`, {
+    const res = await safeFetch(`${API_BASE}/ai/conversations/${conversationId}`, {
       method: 'PATCH',
       headers: getAuthHeaders(),
       body: JSON.stringify({ title })
@@ -1990,7 +2035,7 @@ export const api = {
   },
 
   deleteConversation: async (conversationId) => {
-    const res = await fetch(`${API_BASE}/ai/conversations/${conversationId}`, {
+    const res = await safeFetch(`${API_BASE}/ai/conversations/${conversationId}`, {
       method: 'DELETE',
       headers: getAuthHeaders()
     });
@@ -2004,7 +2049,7 @@ export const api = {
   sendConversationMessage: async ({ conversationId, content, stream = true, onChunk, onDone, onError, signal }) => {
     try {
       if (!stream) {
-        const res = await fetch(`${API_BASE}/ai/conversations/${conversationId}/messages`, {
+        const res = await safeFetch(`${API_BASE}/ai/conversations/${conversationId}/messages`, {
           method: 'POST',
           headers: getAuthHeaders(),
           body: JSON.stringify({ content, stream: false }),
@@ -2020,7 +2065,7 @@ export const api = {
       }
 
       // SSE Streaming
-      const response = await fetch(`${API_BASE}/ai/conversations/${conversationId}/messages`, {
+      const response = await safeFetch(`${API_BASE}/ai/conversations/${conversationId}/messages`, {
         method: 'POST',
         headers: getAuthHeaders(),
         body: JSON.stringify({ content, stream: true }),
@@ -2079,7 +2124,7 @@ export const api = {
   },
 
   getCurrentChatSession: async () => {
-    const res = await fetch(`${API_BASE}/ai/chat/current`, { headers: getAuthHeaders() });
+    const res = await safeFetch(`${API_BASE}/ai/chat/current`, { headers: getAuthHeaders() });
     if (!res.ok) {
       const msg = await parseError(res, "Failed to load chat session");
       throw new Error(msg);
@@ -2105,7 +2150,7 @@ export const api = {
     }
     // Fallback to /ai/chat/message
     if (!stream) {
-      const res = await fetch(`${API_BASE}/ai/chat/message`, {
+      const res = await safeFetch(`${API_BASE}/ai/chat/message`, {
         method: 'POST',
         headers: getAuthHeaders(),
         body: JSON.stringify({ content, session_id: sessionId, stream: false }),
@@ -2118,7 +2163,7 @@ export const api = {
       return res.json();
     }
 
-    const response = await fetch(`${API_BASE}/ai/chat/message`, {
+    const response = await safeFetch(`${API_BASE}/ai/chat/message`, {
       method: 'POST',
       headers: getAuthHeaders(),
       body: JSON.stringify({ content, session_id: sessionId, stream: true }),
@@ -2178,7 +2223,7 @@ export const api = {
   },
 
   chatWithAssistant: async (messages) => {
-    const res = await fetch(`${API_BASE}/ai/chat`, {
+    const res = await safeFetch(`${API_BASE}/ai/chat`, {
       method: 'POST',
       headers: getAuthHeaders(),
       body: JSON.stringify({ messages })

@@ -1,0 +1,10 @@
+{
+  "buildCommand": "cd nutriq-frontend && npm install && npm run build",
+  "outputDirectory": "nutriq-frontend/dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

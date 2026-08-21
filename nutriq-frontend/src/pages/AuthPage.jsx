@@ -141,7 +141,8 @@ export const AuthPage = ({ mode = 'login' }) => {
         } else if (authError === 'unconfigured') {
           setError("Google sign-in is not configured on this server. Please sign in with email or configure GOOGLE_CLIENT_ID.");
         } else if (authError === 'origin_mismatch') {
-          setError("Google sign-in origin mismatch. Please ensure http://localhost:5173 is added to Authorized JavaScript Origins in Google Cloud Console.");
+          const currentOrigin = (typeof window !== 'undefined' && window.location?.origin) ? window.location.origin : 'https://nutriq-7m0d6bv7h-nutriq.vercel.app';
+          setError(`Google sign-in origin mismatch. Please ensure ${currentOrigin} is added to Authorized JavaScript Origins in Google Cloud Console.`);
         } else {
           setError("Google sign-in could not be completed. Please try again.");
         }

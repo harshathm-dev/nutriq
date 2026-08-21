@@ -79,7 +79,7 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-# CORS middleware for React PWA frontend
+# CORS middleware for React PWA frontend (Localhost & Vercel deployments)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -90,9 +90,12 @@ app.add_middleware(
         "http://localhost:5177",
         "http://127.0.0.1:5177",
         "http://localhost:3000",
-        "http://127.0.0.1:3000"
+        "http://127.0.0.1:3000",
+        "https://nutriq-7m0d6bv7h-nutriq.vercel.app",
+        "https://nutriq-gules.vercel.app",
+        "https://nutriq.vercel.app"
     ],
-    allow_origin_regex=r"^http://(localhost|127\.0\.0\.1)(:\d+)?$",
+    allow_origin_regex=r"^(https:\/\/[a-zA-Z0-9_-]+\.vercel\.app|https:\/\/.*\.vercel\.app|http:\/\/(localhost|127\.0\.0\.1)(:\d+)?)$",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
