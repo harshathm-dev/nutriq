@@ -1,0 +1,1015 @@
+food_id,Dish Name,Calories (kcal),Carbohydrates (g),Protein (g),Fats (g),Free Sugar (g),Fibre (g),Sodium (mg),Calcium (mg),Iron (mg),Vitamin C (mg),Folate (µg),source
+IND-0001,Hot tea (Garam Chai),16.14,2.58,0.39,0.53,2.58,0.0,3.12,14.2,0.02,0.5,1.8,Indian Food Nutrition dataset provided by user
+IND-0002,Instant coffee,23.16,3.65,0.64,0.75,3.62,0.0,4.92,20.87,0.06,1.51,5.6,Indian Food Nutrition dataset provided by user
+IND-0003,Espreso coffee,51.54,6.62,1.75,2.14,6.53,0.0,13.98,58.1,0.15,1.51,5.53,Indian Food Nutrition dataset provided by user
+IND-0004,Iced tea,10.34,2.7,0.03,0.01,2.7,0.0,0.23,1.18,0.02,5.95,1.28,Indian Food Nutrition dataset provided by user
+IND-0005,Raw mango drink (Aam panna),35.92,9.05,0.16,0.03,7.49,0.61,79.82,7.08,0.14,45.3,14.05,Indian Food Nutrition dataset provided by user
+IND-0006,Fruit Punch (with fresh juices),36.12,9.38,0.14,0.03,9.25,0.06,2.63,5.07,0.1,41.44,24.57,Indian Food Nutrition dataset provided by user
+IND-0007,Fruit Punch (with squashes),23.13,5.99,0.07,0.02,5.88,0.17,2.26,3.3,0.06,15.08,9.13,Indian Food Nutrition dataset provided by user
+IND-0008,Lemonade,20.8,5.48,0.03,0.01,5.47,0.02,28.52,1.84,0.05,5.27,2.11,Indian Food Nutrition dataset provided by user
+IND-0009,Lem-o-gin,21.52,5.55,0.08,0.03,5.38,0.13,28.13,2.2,0.09,5.68,2.92,Indian Food Nutrition dataset provided by user
+IND-0010,Cumin infused water (Jeere/Zeere ka pani),9.09,1.86,0.17,0.11,1.46,0.46,189.6,10.84,0.32,3.61,3.14,Indian Food Nutrition dataset provided by user
+IND-0011,Coco pine cooler,32.75,5.72,0.56,1.0,5.52,0.26,23.2,17.81,0.13,10.67,12.64,Indian Food Nutrition dataset provided by user
+IND-0012,Summer cooler,22.43,5.43,0.37,0.04,5.21,0.2,1.57,8.13,0.28,103.5,63.89,Indian Food Nutrition dataset provided by user
+IND-0013,Hot cocoa,90.1,9.23,3.36,4.56,9.01,0.0,24.2,113.66,0.31,3.62,13.79,Indian Food Nutrition dataset provided by user
+IND-0014,Cold coffee with ice cream,67.85,11.24,1.57,2.11,11.18,0.01,13.84,53.29,0.12,2.53,9.49,Indian Food Nutrition dataset provided by user
+IND-0015,Banana milkshake (Kele milkshake),65.31,9.15,1.84,2.37,7.96,0.26,13.61,62.64,0.13,6.84,19.83,Indian Food Nutrition dataset provided by user
+IND-0016,Mango milkshake (Aam milkshake),56.9,7.23,1.73,2.35,7.15,0.26,13.27,62.33,0.15,20.1,53.68,Indian Food Nutrition dataset provided by user
+IND-0017,Pineapple milkshake (Ananas milkshake),55.72,7.62,1.66,2.23,7.6,0.0,14.05,59.92,0.11,10.22,17.45,Indian Food Nutrition dataset provided by user
+IND-0018,Orange milkshake (Narangi milkshake),57.42,7.11,1.86,2.52,7.08,0.0,14.63,67.42,0.11,10.82,16.85,Indian Food Nutrition dataset provided by user
+IND-0019,Egg nog,97.14,8.15,4.78,5.11,8.06,0.02,40.65,102.13,0.43,4.82,41.91,Indian Food Nutrition dataset provided by user
+IND-0020,Sweet Lassi (Meethi lassi),35.66,6.51,1.29,0.68,6.51,0.0,18.31,45.65,0.03,1.0,18.0,Indian Food Nutrition dataset provided by user
+IND-0021,Lassi (salted),18.84,1.86,1.35,0.72,1.84,0.02,65.4,47.78,0.04,1.02,18.07,Indian Food Nutrition dataset provided by user
+IND-0022,Cheese and chilli sandwich,218.11,27.4,6.8,9.78,2.38,2.08,437.5,113.79,0.99,12.3,16.14,Indian Food Nutrition dataset provided by user
+IND-0023,Egg sandwich (Ande ka sandwich),285.96,29.16,8.69,15.8,1.86,1.88,461.67,110.13,1.44,0.0,14.92,Indian Food Nutrition dataset provided by user
+IND-0024,Cucumber sandwich (Kheere ka sandwich),188.6,25.77,4.8,8.0,1.64,2.45,362.64,87.84,1.02,1.53,12.96,Indian Food Nutrition dataset provided by user
+IND-0025,Cheese and pineapple sandwich (Cheese aur ananas ka sandwich),257.71,29.1,8.2,12.8,4.1,2.33,571.96,199.73,1.04,3.64,12.08,Indian Food Nutrition dataset provided by user
+IND-0026,Cheese and tomato sandwich (Cheese aur tamatar ke sandwich),243.32,26.92,7.92,12.27,2.85,1.97,549.71,191.2,1.0,3.16,12.18,Indian Food Nutrition dataset provided by user
+IND-0027,Chicken sandwich,253.27,25.38,13.12,11.75,1.6,1.64,389.67,89.56,1.19,0.0,11.1,Indian Food Nutrition dataset provided by user
+IND-0028,Peanut and tomato sandwich (Moongfali aur tamatar ka sandwich),291.43,28.54,9.53,16.14,2.82,4.03,364.99,94.03,1.58,3.16,22.04,Indian Food Nutrition dataset provided by user
+IND-0029,Rainbow sandwich,272.75,34.26,7.75,12.54,4.05,2.1,612.49,172.04,1.2,1.01,10.38,Indian Food Nutrition dataset provided by user
+IND-0030,Club sandwich,235.32,18.51,7.31,15.12,2.01,1.81,461.66,115.68,0.86,6.0,17.42,Indian Food Nutrition dataset provided by user
+IND-0031,Vegetarian club sandwich,198.33,19.68,5.45,11.33,2.08,2.06,305.36,122.44,0.77,6.0,17.53,Indian Food Nutrition dataset provided by user
+IND-0032,Pin wheel sandwich,311.52,14.0,8.77,24.93,1.45,0.93,374.39,67.75,1.36,0.0,9.04,Indian Food Nutrition dataset provided by user
+IND-0033,Carrot apple sandwich (Gajar aur seb ka sandwich),214.11,29.04,5.3,9.12,5.3,3.66,302.88,118.05,1.8,2.7,21.7,Indian Food Nutrition dataset provided by user
+IND-0034,Salami sandwich,255.59,21.54,8.7,15.51,2.0,1.97,662.75,73.54,1.11,1.25,12.65,Indian Food Nutrition dataset provided by user
+IND-0035,Vegetable and mayonnaise sandwich,244.26,23.2,4.47,15.4,2.35,2.35,342.7,79.53,0.91,12.9,17.05,Indian Food Nutrition dataset provided by user
+IND-0036,Egg and tomato sandwich (Ande aur tamatar ka sandwich),222.11,25.9,7.66,10.51,2.09,1.77,423.26,95.71,1.3,1.98,16.33,Indian Food Nutrition dataset provided by user
+IND-0037,Sweet open sandwich,244.25,39.24,4.99,8.15,12.23,2.36,205.27,85.18,1.15,1.65,13.05,Indian Food Nutrition dataset provided by user
+IND-0038,Mushroom and cheese sandwich (toasted),227.42,21.01,7.79,13.01,2.11,2.28,456.57,172.35,0.84,0.0,12.7,Indian Food Nutrition dataset provided by user
+IND-0039,Cheese and tomato sandwich (toasted) (Cheese aur tamatar ke sandwich (toasted)),224.58,21.42,6.82,12.95,2.67,1.78,457.94,169.22,0.82,6.32,14.48,Indian Food Nutrition dataset provided by user
+IND-0040,Pea potato sandwich (toasted) (Matar aloo ka sandwich),164.9,25.17,4.6,5.43,1.33,2.89,262.63,64.15,1.11,14.11,21.01,Indian Food Nutrition dataset provided by user
+IND-0041,Paneer pea sandwich (toasted) (Paneer matar ka sandwich),249.56,24.05,12.4,11.98,6.4,2.12,268.9,274.1,1.26,4.85,52.13,Indian Food Nutrition dataset provided by user
+IND-0042,Chicken sandwich (toasted),167.37,18.82,12.08,5.32,2.13,1.64,327.55,99.99,0.99,12.97,20.71,Indian Food Nutrition dataset provided by user
+IND-0043,Pea keema sandwich (toasted) (Matar aur keema ka sandwich),171.78,20.26,11.06,5.61,1.94,2.45,290.07,70.79,1.51,5.5,18.29,Indian Food Nutrition dataset provided by user
+IND-0044,Classic club sandwich,200.83,18.49,6.74,11.56,1.86,1.62,277.49,107.73,1.09,16.19,56.9,Indian Food Nutrition dataset provided by user
+IND-0045,Sesame toast,495.19,11.15,1.9,49.38,1.46,1.32,128.78,43.44,0.72,6.92,8.87,Indian Food Nutrition dataset provided by user
+IND-0046,Cracked wheat porridge (Meetha daliya),81.57,8.87,2.64,4.08,5.12,0.62,15.89,75.88,0.32,5.03,17.58,Indian Food Nutrition dataset provided by user
+IND-0047,Semolina porridge (Suji/Rava daliya),100.89,12.39,3.75,4.08,7.54,0.7,23.21,108.52,0.36,5.03,22.71,Indian Food Nutrition dataset provided by user
+IND-0048,Oatmeal Porridge,72.85,8.77,2.6,3.22,5.2,0.39,16.14,76.83,0.28,5.03,23.98,Indian Food Nutrition dataset provided by user
+IND-0049,Cornflakes with milk,117.33,14.95,3.59,5.12,9.97,0.78,26.55,106.47,0.42,4.82,43.87,Indian Food Nutrition dataset provided by user
+IND-0050,Rice flakes (Chiwda/Aval),112.44,15.57,3.62,3.99,7.28,0.37,22.4,103.15,0.62,4.82,19.41,Indian Food Nutrition dataset provided by user
+IND-0051,Wheat flakes,112.44,15.57,3.62,3.99,7.28,0.37,22.4,103.15,0.62,4.82,19.41,Indian Food Nutrition dataset provided by user
+IND-0052,Murmura (Puffed rice),113.32,15.67,3.62,4.04,7.31,0.28,22.52,103.79,0.63,4.82,16.87,Indian Food Nutrition dataset provided by user
+IND-0053,Puffed wheat (Murmure/Moori),113.32,15.67,3.62,4.04,7.31,0.28,22.52,103.79,0.63,4.82,16.87,Indian Food Nutrition dataset provided by user
+IND-0054,Boiled egg (Ubla anda),45.35,0.12,4.43,3.04,0.0,0.11,170.94,17.75,0.64,0.0,24.77,Indian Food Nutrition dataset provided by user
+IND-0055,Fried Egg,223.67,0.31,11.59,19.62,0.0,0.29,446.96,46.4,1.69,0.0,24.77,Indian Food Nutrition dataset provided by user
+IND-0056,Poached egg,123.87,0.37,11.98,8.19,0.05,0.3,1163.07,48.24,1.75,0.0,24.77,Indian Food Nutrition dataset provided by user
+IND-0057,Scrambled egg (Ande ki bhurji),155.97,1.35,10.29,12.21,1.08,0.24,374.66,64.59,1.42,0.3,25.82,Indian Food Nutrition dataset provided by user
+IND-0058,Baked egg,218.85,15.42,11.88,12.65,1.66,1.03,523.29,164.05,1.48,0.0,35.72,Indian Food Nutrition dataset provided by user
+IND-0059,Plain omelette/omlet,272.41,0.64,9.66,25.74,0.51,0.12,226.18,48.4,1.35,0.3,50.48,Indian Food Nutrition dataset provided by user
+IND-0060,Stuffed egg omelette/omlet,203.51,2.3,8.6,17.77,1.57,0.75,267.19,89.91,0.91,8.29,70.23,Indian Food Nutrition dataset provided by user
+IND-0061,Pancake,203.36,20.49,5.68,10.82,3.32,0.65,143.7,79.49,0.69,0.5,5.43,Indian Food Nutrition dataset provided by user
+IND-0062,Keema pancake,176.27,9.56,9.01,11.25,2.2,0.84,125.4,40.96,0.93,4.64,12.23,Indian Food Nutrition dataset provided by user
+IND-0063,Vegetable pancake,125.18,12.24,3.87,6.57,2.09,2.48,116.69,42.89,0.79,20.63,28.57,Indian Food Nutrition dataset provided by user
+IND-0064,Jam and fruit pancake,162.02,20.73,3.79,7.01,7.85,1.21,93.09,54.06,0.52,6.48,8.42,Indian Food Nutrition dataset provided by user
+IND-0065,Khoa and coconut pancake,271.98,27.32,6.98,15.29,16.47,1.65,101.0,157.22,1.12,0.73,19.12,Indian Food Nutrition dataset provided by user
+IND-0066,Brown stock,21.32,0.25,1.95,1.38,0.14,0.09,44.6,17.16,0.3,1.5,6.33,Indian Food Nutrition dataset provided by user
+IND-0067,Vegetable stock,17.6,0.96,0.3,1.38,0.44,0.38,49.75,5.08,0.12,7.58,13.92,Indian Food Nutrition dataset provided by user
+IND-0068,Chicken stock,29.88,0.37,3.69,1.51,0.2,0.1,58.58,3.57,0.18,0.84,10.19,Indian Food Nutrition dataset provided by user
+IND-0069,Clear tomato soup (Tamatar ka soup),80.07,3.45,4.79,12.22,1.44,1.96,5135.74,29.05,1.14,53.16,43.91,Indian Food Nutrition dataset provided by user
+IND-0070,Lentil soup,31.17,3.94,9.65,11.68,1.06,2.57,10418.84,40.57,2.26,17.9,34.92,Indian Food Nutrition dataset provided by user
+IND-0071,Chicken consomme (Clear chicken soup),47.94,1.19,11.47,12.02,0.54,1.57,8953.64,35.48,1.82,2.1,11.38,Indian Food Nutrition dataset provided by user
+IND-0072,Cream of tomato soup,97.81,3.93,4.61,13.12,1.81,1.38,4461.22,39.61,0.95,53.23,44.01,Indian Food Nutrition dataset provided by user
+IND-0073,Cream of green peas soup,127.84,6.75,7.13,14.78,1.61,2.95,4999.7,51.01,1.48,52.28,88.58,Indian Food Nutrition dataset provided by user
+IND-0074,Cream of spinach soup,100.54,3.45,5.21,13.31,1.13,1.74,4429.81,70.77,2.1,63.34,298.06,Indian Food Nutrition dataset provided by user
+IND-0075,Cream of mixed vegetable soup,59.65,4.93,6.84,9.05,2.1,2.14,5655.45,65.26,1.36,39.02,54.46,Indian Food Nutrition dataset provided by user
+IND-0076,Cream of mushroom soup,117.28,3.74,6.64,15.5,1.93,1.34,5276.06,70.56,1.81,5.79,30.72,Indian Food Nutrition dataset provided by user
+IND-0077,Chicken sweet corn soup,28.32,1.63,14.48,12.59,0.27,0.47,12205.33,91.5,3.83,2.02,13.45,Indian Food Nutrition dataset provided by user
+IND-0078,Minestrone soup,42.66,3.71,9.3,11.09,1.01,1.92,8875.06,53.55,1.82,19.43,23.24,Indian Food Nutrition dataset provided by user
+IND-0079,Egg drop soup,26.64,1.1,12.93,13.52,0.6,0.81,12418.84,100.14,3.93,8.51,28.19,Indian Food Nutrition dataset provided by user
+IND-0080,Chinese cabbage and meat ball soup,484.31,1.43,5.21,56.57,0.37,0.57,4249.41,41.07,1.52,16.72,20.33,Indian Food Nutrition dataset provided by user
+IND-0081,French onion soup,55.61,4.28,11.41,14.39,1.5,1.01,11202.89,106.22,3.52,5.35,24.85,Indian Food Nutrition dataset provided by user
+IND-0082,Hot and sour soup,31.51,1.78,3.12,1.31,0.66,0.6,163.26,10.68,0.43,24.59,39.83,Indian Food Nutrition dataset provided by user
+IND-0083,Talaumein soup,35.63,4.17,10.12,12.78,0.77,1.94,11088.14,42.33,2.23,12.62,48.58,Indian Food Nutrition dataset provided by user
+IND-0084,Cold cucumber soup (Thanda kheere ka soup),48.03,4.58,2.99,1.99,3.34,0.88,121.32,99.79,0.32,5.05,27.42,Indian Food Nutrition dataset provided by user
+IND-0085,Cold summer garden soup,49.19,2.65,8.57,14.08,0.46,1.86,9919.62,43.93,2.13,16.3,43.26,Indian Food Nutrition dataset provided by user
+IND-0086,Chapati/Roti,202.31,35.65,5.88,3.56,1.0,6.31,1.16,17.22,2.28,0.0,5.84,Indian Food Nutrition dataset provided by user
+IND-0087,Plain parantha/paratha,298.3,30.69,5.06,16.86,0.86,5.43,62.07,14.81,1.98,0.0,7.79,Indian Food Nutrition dataset provided by user
+IND-0088,Potato parantha/paratha (Aloo ka parantha/paratha),205.04,23.92,3.7,10.22,1.15,4.18,127.2,17.38,1.52,7.98,14.96,Indian Food Nutrition dataset provided by user
+IND-0089,Radish parantha/paratha (Mooli ka parantha/paratha),183.52,20.54,3.3,9.53,1.31,4.32,127.03,23.75,1.39,8.44,20.74,Indian Food Nutrition dataset provided by user
+IND-0090,Cauliflower parantha/paratha (Phoolgobhi ka parantha/paratha),178.07,18.84,3.73,9.47,1.15,4.68,190.03,22.0,1.59,17.61,26.32,Indian Food Nutrition dataset provided by user
+IND-0091,Dal parantha/paratha,268.24,30.03,6.78,13.05,1.43,6.46,156.13,23.89,2.45,1.8,29.02,Indian Food Nutrition dataset provided by user
+IND-0092,Sprouted moong parantha/paratha,228.59,24.31,4.29,12.43,1.47,4.49,153.94,20.33,1.94,2.0,12.52,Indian Food Nutrition dataset provided by user
+IND-0093,Pea parantha/paratha (Matar ka parantha/paratha),190.73,21.51,5.59,8.8,1.29,5.61,109.99,23.49,1.78,17.8,33.64,Indian Food Nutrition dataset provided by user
+IND-0094,Keema parantha/paratha,238.09,18.36,9.41,13.91,0.99,3.44,140.62,19.35,1.8,1.8,11.49,Indian Food Nutrition dataset provided by user
+IND-0095,Paneer parantha/paratha,262.97,24.33,7.98,14.62,3.77,4.0,142.52,127.65,1.7,1.69,29.0,Indian Food Nutrition dataset provided by user
+IND-0096,Besan and spinach parantha/paratha (Besan aur palak ka parantha/paratha),216.49,21.39,5.54,12.09,1.31,4.39,177.19,33.07,1.85,6.65,50.53,Indian Food Nutrition dataset provided by user
+IND-0097,Poori,737.63,8.22,1.35,77.61,0.23,1.46,31.73,3.98,0.6,0.0,4.68,Indian Food Nutrition dataset provided by user
+IND-0098,Spinach poori (Palak poori),684.25,7.76,1.42,71.86,0.24,1.55,35.47,10.02,0.79,3.03,18.9,Indian Food Nutrition dataset provided by user
+IND-0099,Methi poori,710.02,7.98,1.45,74.6,0.26,1.61,35.37,14.61,0.81,2.91,8.47,Indian Food Nutrition dataset provided by user
+IND-0100,Dal stuffed poori,785.16,10.14,2.08,81.69,0.29,1.96,128.18,6.88,0.83,0.42,7.65,Indian Food Nutrition dataset provided by user
+IND-0101,Potato stuffed poori (Aloo ki poori),776.74,9.4,1.52,81.35,0.26,1.64,69.86,5.57,0.7,1.39,5.63,Indian Food Nutrition dataset provided by user
+IND-0102,Tandoori parantha/paratha,295.37,30.74,5.08,16.51,0.86,5.44,1.14,14.98,1.96,0.0,7.79,Indian Food Nutrition dataset provided by user
+IND-0103,Boiled rice (Uble chawal),117.19,25.72,2.6,0.18,0.22,1.25,1.05,2.7,0.24,0.0,9.75,Indian Food Nutrition dataset provided by user
+IND-0104,Plain pulao,140.21,21.82,2.34,4.62,1.15,1.69,193.76,12.76,0.41,3.42,22.63,Indian Food Nutrition dataset provided by user
+IND-0105,Mixed vegetable pulao,113.05,17.49,2.72,3.33,1.35,2.67,187.92,19.61,0.6,26.15,80.63,Indian Food Nutrition dataset provided by user
+IND-0106,Mushroom pulao,124.29,19.02,2.52,4.03,1.0,1.88,222.36,13.54,0.39,3.42,26.77,Indian Food Nutrition dataset provided by user
+IND-0107,Sprouted moong pulao,112.97,17.49,2.19,3.61,1.43,1.78,153.16,16.26,0.65,7.53,43.15,Indian Food Nutrition dataset provided by user
+IND-0108,Paneer pulao,581.91,8.76,1.98,59.81,1.11,0.62,72.28,33.09,0.26,3.42,69.28,Indian Food Nutrition dataset provided by user
+IND-0109,Peanut pulao,193.28,21.18,5.32,9.51,1.6,2.9,168.4,18.52,0.83,3.42,68.06,Indian Food Nutrition dataset provided by user
+IND-0110,Navratan pulao,261.71,36.98,6.2,9.45,2.52,3.82,334.26,59.61,1.1,12.89,46.97,Indian Food Nutrition dataset provided by user
+IND-0111,Green chickpeas pulao (Choliya pulao/Hare chane ka pulao),173.43,27.57,4.88,4.82,2.48,3.15,170.05,18.94,0.95,5.43,301.13,Indian Food Nutrition dataset provided by user
+IND-0112,Mutton biryani/biriyani,190.76,22.5,7.38,7.72,2.39,2.42,262.64,68.58,1.29,10.28,30.07,Indian Food Nutrition dataset provided by user
+IND-0113,Vegetable biryani/biriyani,174.61,18.56,3.16,9.51,2.14,3.31,183.79,33.52,0.86,39.35,77.54,Indian Food Nutrition dataset provided by user
+IND-0114,"Lemon rice (Pulihora, Elumichai sadam, Chitranna)",176.3,21.62,4.26,7.88,0.78,2.52,187.11,12.7,0.77,10.2,38.01,Indian Food Nutrition dataset provided by user
+IND-0115,Sweet rice (Meethe chawal),215.41,42.59,2.1,4.57,24.8,1.13,3.2,11.38,0.34,0.21,10.65,Indian Food Nutrition dataset provided by user
+IND-0116,Curd rice (Dahi bhaat/Dahi chawal/ Perugu annam/Daddojanam/Thayir saadam),195.74,32.93,5.75,4.32,3.91,2.13,213.29,101.52,0.59,5.1,28.24,Indian Food Nutrition dataset provided by user
+IND-0117,Tamarind rice (Chintapandu pulihora/Puliyodharai/Puli sadam/Huli anna),373.04,65.08,7.45,8.53,11.65,5.12,162.41,50.94,2.89,0.84,23.02,Indian Food Nutrition dataset provided by user
+IND-0118,Spanish rice,164.24,31.1,4.19,2.23,1.26,2.78,96.61,18.93,0.92,48.66,54.48,Indian Food Nutrition dataset provided by user
+IND-0119,Chinese fried rice,120.58,13.4,4.05,5.43,1.47,2.31,248.36,34.7,0.99,67.39,136.83,Indian Food Nutrition dataset provided by user
+IND-0120,Macroni cheese pie,170.63,21.1,5.85,7.48,3.4,0.4,200.51,122.01,0.54,14.65,28.19,Indian Food Nutrition dataset provided by user
+IND-0121,Vegetable chowmein,129.71,15.44,3.07,6.36,1.97,1.86,258.47,28.33,0.99,85.39,99.36,Indian Food Nutrition dataset provided by user
+IND-0122,Chicken chowmein,151.33,13.3,6.33,8.23,1.63,1.64,288.15,26.1,0.89,84.96,102.27,Indian Food Nutrition dataset provided by user
+IND-0123,Cheese noodle ring,133.67,13.96,6.22,6.12,2.84,1.27,241.96,99.3,0.79,24.19,94.77,Indian Food Nutrition dataset provided by user
+IND-0124,Spaghetti and cheese balls in tomato sauce,508.32,7.82,2.41,52.08,1.83,0.59,104.14,40.59,0.32,57.67,115.96,Indian Food Nutrition dataset provided by user
+IND-0125,Penne platter,177.4,20.87,5.04,8.71,4.5,1.09,283.37,67.67,0.9,16.35,60.2,Indian Food Nutrition dataset provided by user
+IND-0126,Pasta hot pot,125.17,11.6,5.84,6.47,5.99,0.8,231.17,55.28,0.82,58.74,111.3,Indian Food Nutrition dataset provided by user
+IND-0127,Chicken lasagne,187.49,13.9,10.45,10.36,2.74,0.11,238.55,119.98,0.64,4.23,61.02,Indian Food Nutrition dataset provided by user
+IND-0128,Fettuccine with spinach sauce,129.21,12.19,3.1,7.83,1.18,0.77,153.59,53.67,1.28,38.37,170.92,Indian Food Nutrition dataset provided by user
+IND-0129,Naan,286.45,51.75,8.05,4.99,5.59,1.91,326.11,88.01,1.29,0.23,7.56,Indian Food Nutrition dataset provided by user
+IND-0130,Bhatura,793.2,10.73,1.63,82.56,0.69,0.38,28.3,12.12,0.33,0.05,4.15,Indian Food Nutrition dataset provided by user
+IND-0131,Idli,137.54,28.18,4.64,0.33,0.28,2.31,100.83,8.0,0.68,0.0,2.95,Indian Food Nutrition dataset provided by user
+IND-0132,Masala dosa,164.58,19.57,3.29,7.84,1.33,2.52,191.28,15.58,0.79,14.14,35.76,Indian Food Nutrition dataset provided by user
+IND-0133,Semolina dosa (Suji/Rava dosa),227.05,32.84,7.3,7.12,4.37,4.04,202.36,116.04,1.39,2.28,15.86,Indian Food Nutrition dataset provided by user
+IND-0134,Onion tomato uttapam,462.02,11.32,1.91,45.3,0.8,1.26,143.53,5.82,0.36,4.78,11.68,Indian Food Nutrition dataset provided by user
+IND-0135,Paneer kaathi roll,285.94,20.1,6.92,19.55,3.29,2.4,221.03,101.66,1.42,18.67,54.04,Indian Food Nutrition dataset provided by user
+IND-0136,Makki ki roti,263.97,24.19,3.49,16.85,0.7,5.19,236.22,14.76,1.11,1.99,10.72,Indian Food Nutrition dataset provided by user
+IND-0137,Washed moong dal (Dhuli moong ki dal),50.0,5.91,2.68,1.68,0.12,1.17,150.64,8.48,0.64,0.04,27.98,Indian Food Nutrition dataset provided by user
+IND-0138,Washed urad dal (Dhuli urad ki dal),61.32,5.84,2.51,2.98,0.32,1.53,142.21,10.24,0.72,0.99,30.4,Indian Food Nutrition dataset provided by user
+IND-0139,Split bengal gram with bottle gourd (Channa dal with ghiya/lauki),73.25,7.1,2.79,3.6,1.05,2.72,149.47,14.33,0.99,15.2,90.42,Indian Food Nutrition dataset provided by user
+IND-0140,Dry washed urad,124.71,15.66,6.85,3.5,0.73,4.06,295.79,27.08,1.89,1.46,40.3,Indian Food Nutrition dataset provided by user
+IND-0141,Mixed dal,61.93,5.79,2.51,3.1,0.34,1.62,141.36,11.0,0.78,1.1,40.35,Indian Food Nutrition dataset provided by user
+IND-0142,Whole moong (Moong ki dal),53.7,5.22,2.25,2.56,0.59,2.02,123.86,13.58,0.68,11.04,55.37,Indian Food Nutrition dataset provided by user
+IND-0143,Whole masoor (Masoor ki dal),54.05,5.37,2.28,2.52,0.67,1.98,123.72,12.2,0.95,11.04,48.17,Indian Food Nutrition dataset provided by user
+IND-0144,Whole moth (Moth ki dal),55.0,5.74,2.01,2.62,0.66,1.85,125.08,18.98,0.95,11.04,116.57,Indian Food Nutrition dataset provided by user
+IND-0145,Whole urad (Urad ki dal),53.8,5.05,2.21,2.62,0.57,2.32,126.12,13.07,0.78,10.28,51.6,Indian Food Nutrition dataset provided by user
+IND-0146,Moti mahal dal (Urad rajmah mix dal),103.13,8.74,3.93,5.66,1.7,3.38,157.61,38.13,1.05,15.45,93.14,Indian Food Nutrition dataset provided by user
+IND-0147,Black channa curry/Bengal gram curry (Kale chane ki curry),140.68,14.11,5.67,6.61,2.36,7.99,358.63,53.87,2.43,15.13,87.38,Indian Food Nutrition dataset provided by user
+IND-0148,Chickpeas curry (Safed channa curry),163.43,19.98,6.1,6.84,4.78,4.73,357.99,30.61,1.82,16.33,184.58,Indian Food Nutrition dataset provided by user
+IND-0149,Lobia curry,148.99,17.88,6.06,5.62,2.51,4.57,355.41,36.8,2.21,15.13,86.78,Indian Food Nutrition dataset provided by user
+IND-0150,Soyabean curry,163.28,6.76,10.43,10.19,2.66,7.34,352.69,65.13,2.79,15.13,103.88,Indian Food Nutrition dataset provided by user
+IND-0151,Kidney bean curry (Rajmah curry),143.73,16.38,5.95,5.77,2.49,5.83,354.6,47.87,2.27,16.33,112.28,Indian Food Nutrition dataset provided by user
+IND-0152,Sambar,96.92,10.57,3.35,4.38,3.31,3.52,159.54,30.24,1.24,20.35,68.19,Indian Food Nutrition dataset provided by user
+IND-0153,Besan kadhi with pakodies,403.35,3.56,1.64,42.59,0.88,0.81,60.8,24.53,0.38,4.17,77.03,Indian Food Nutrition dataset provided by user
+IND-0154,Khatta channa,202.57,21.14,6.3,10.56,4.75,5.26,513.32,40.77,1.94,20.89,244.23,Indian Food Nutrition dataset provided by user
+IND-0155,Sprouted moong dal chat,32.47,6.01,1.35,0.32,1.57,1.35,87.07,16.54,0.88,38.78,43.12,Indian Food Nutrition dataset provided by user
+IND-0156,Potato cauliflower (Aloo gobhi),106.18,5.99,1.9,8.13,0.44,3.02,254.76,22.87,1.07,61.11,55.94,Indian Food Nutrition dataset provided by user
+IND-0157,Potato capsicum (Shimla mirch aloo),125.53,8.72,1.41,9.33,0.54,2.02,277.92,16.45,0.86,81.26,39.8,Indian Food Nutrition dataset provided by user
+IND-0158,Cabbage and peas (Pattagobhi aur matar),63.88,6.24,3.24,2.64,0.97,3.99,253.73,45.5,1.1,54.84,75.95,Indian Food Nutrition dataset provided by user
+IND-0159,Carrot and fenugreek leaves (Gajar methi),61.92,4.17,2.1,3.81,2.11,4.43,262.91,128.83,2.72,51.83,81.67,Indian Food Nutrition dataset provided by user
+IND-0160,Potato fenugreek (Aloo methi),135.15,8.47,2.25,10.04,0.54,2.93,221.93,107.8,2.53,68.76,73.14,Indian Food Nutrition dataset provided by user
+IND-0161,Brinjal bhartha (Baingan ka bhartha),65.12,4.4,1.38,4.48,1.82,3.27,132.15,17.85,0.48,24.05,92.42,Indian Food Nutrition dataset provided by user
+IND-0162,Dry potato (Sookhe aloo),103.15,14.38,1.62,4.18,0.33,1.88,199.99,17.2,0.83,23.23,15.7,Indian Food Nutrition dataset provided by user
+IND-0163,Beans with coconut (Nariyal aur sem/phali; Beans thoran),131.63,4.39,2.62,11.39,2.06,5.59,271.65,51.92,1.34,6.03,75.87,Indian Food Nutrition dataset provided by user
+IND-0164,Cauliflower with coconut (Nariyal ke saath phoolgobhi),132.11,3.99,2.64,11.56,1.71,5.27,286.06,35.37,1.33,51.79,59.84,Indian Food Nutrition dataset provided by user
+IND-0165,Carrot and cabbage with coconut (Nariyal ke saath pattagobhi aur gajar),106.61,4.99,1.82,8.62,2.36,4.52,219.6,48.63,0.84,41.01,72.27,Indian Food Nutrition dataset provided by user
+IND-0166,Raw turnip with coconut,132.15,5.78,1.8,11.47,4.4,2.79,275.55,50.65,0.82,21.65,27.89,Indian Food Nutrition dataset provided by user
+IND-0167,Raw papaya with coconut (Papaya thoran),132.75,5.58,1.54,11.42,3.82,4.31,270.56,33.74,0.82,25.38,43.68,Indian Food Nutrition dataset provided by user
+IND-0168,Stuffed okra (Bharwa bhindi),94.34,3.85,2.08,7.66,0.48,4.15,210.03,86.89,1.18,22.65,63.97,Indian Food Nutrition dataset provided by user
+IND-0169,Stuffed round gourd (Bharwa tinde),72.8,4.02,1.1,5.75,1.96,2.1,180.15,20.21,0.59,37.36,71.07,Indian Food Nutrition dataset provided by user
+IND-0170,Stuffed capsicum (Bharwa shimla mirch),90.94,8.26,1.34,5.7,1.21,2.01,173.94,15.17,0.61,74.25,38.35,Indian Food Nutrition dataset provided by user
+IND-0171,Stuffed brinjal (Bharwa baingan),93.0,3.96,1.53,7.73,0.92,4.09,212.88,24.37,0.75,1.13,17.11,Indian Food Nutrition dataset provided by user
+IND-0172,Stuffed tomatoes (Bharwa tamatar),93.35,6.19,3.28,6.06,2.68,2.2,165.85,59.16,0.62,28.23,37.42,Indian Food Nutrition dataset provided by user
+IND-0173,Pea potato curry (Aloo matar),100.92,9.74,3.48,5.13,1.86,3.61,154.83,21.1,1.02,70.01,88.11,Indian Food Nutrition dataset provided by user
+IND-0174,Pea paneer curry (Matar paneer),134.83,9.29,6.61,7.75,3.89,3.3,157.34,105.2,1.08,58.44,127.01,Indian Food Nutrition dataset provided by user
+IND-0175,Pea mushroom curry (Matar mushroom),93.3,7.41,3.87,5.16,1.82,3.86,155.48,22.7,0.97,58.44,84.49,Indian Food Nutrition dataset provided by user
+IND-0176,Pea curry (Matar ki sabzi),102.99,9.2,4.51,5.11,1.98,4.44,154.75,24.48,1.2,77.64,107.74,Indian Food Nutrition dataset provided by user
+IND-0177,Pea vadi curry,101.95,8.9,4.64,5.08,1.92,4.28,149.51,23.62,1.2,77.64,109.24,Indian Food Nutrition dataset provided by user
+IND-0178,Paneer curry,176.52,8.4,7.8,12.38,6.29,1.4,216.09,189.06,0.81,20.04,95.56,Indian Food Nutrition dataset provided by user
+IND-0179,Lotus stem curry (Kamal kakdi curry),110.34,9.24,1.53,7.25,2.09,3.14,217.05,26.59,1.71,40.01,45.45,Indian Food Nutrition dataset provided by user
+IND-0180,Gravy for kofta,125.59,6.31,1.75,10.35,3.73,1.96,312.86,39.65,0.75,17.05,27.6,Indian Food Nutrition dataset provided by user
+IND-0181,Pea kofta curry (Matar kofta curry),595.66,4.17,2.01,63.39,0.88,1.7,83.07,13.84,0.56,74.66,129.13,Indian Food Nutrition dataset provided by user
+IND-0182,Spinach kofta curry (Palak kofta curry),571.78,3.56,1.09,61.49,0.82,0.92,104.51,29.31,0.83,64.05,250.89,Indian Food Nutrition dataset provided by user
+IND-0183,Paneer kofta curry,670.91,3.27,2.39,72.06,1.98,0.4,121.72,59.49,0.34,17.06,97.75,Indian Food Nutrition dataset provided by user
+IND-0184,Lotus stem kofta curry (Kamal kakdi kofta curry),633.56,5.01,0.96,67.76,0.88,1.01,108.61,19.31,0.65,38.6,57.76,Indian Food Nutrition dataset provided by user
+IND-0185,Raw banana kofta curry (Kela kofta curry),627.27,3.4,0.62,67.98,2.3,0.59,88.4,9.23,0.28,23.63,46.68,Indian Food Nutrition dataset provided by user
+IND-0186,Cauliflower kofta curry (Phoolgobhi kofta curry),641.1,2.62,1.04,69.62,0.83,1.0,93.65,12.26,0.4,53.98,89.51,Indian Food Nutrition dataset provided by user
+IND-0187,Cabbage kofta curry (Pattagobhi kofta curry),639.81,2.87,0.98,69.4,0.89,0.9,92.85,15.46,0.34,43.56,90.4,Indian Food Nutrition dataset provided by user
+IND-0188,Ghiya/Lauki Kofta Curry,638.71,2.71,0.89,69.4,0.82,0.83,91.43,11.64,0.33,21.87,87.12,Indian Food Nutrition dataset provided by user
+IND-0189,Spinach paneer kofta curry (Palak paneer kofta curry),606.03,2.94,1.43,65.41,1.16,0.75,99.37,37.71,0.68,47.34,197.93,Indian Food Nutrition dataset provided by user
+IND-0190,Vegetarian egg kofta curry,627.41,4.26,1.33,67.24,1.19,0.64,95.89,28.39,0.39,35.58,67.83,Indian Food Nutrition dataset provided by user
+IND-0191,Baked vegetables,88.99,8.44,3.67,4.44,2.56,2.34,124.7,80.2,0.62,47.05,77.19,Indian Food Nutrition dataset provided by user
+IND-0192,Cauliflower musallam (Phoolgobhi musallam),58.83,4.48,1.89,3.55,1.71,3.06,123.36,24.61,0.83,71.44,76.8,Indian Food Nutrition dataset provided by user
+IND-0193,Baked vegetables with spinach,77.79,6.93,3.22,4.03,2.09,2.33,122.85,78.63,1.16,78.95,223.29,Indian Food Nutrition dataset provided by user
+IND-0194,Baked potato with skin,135.77,11.11,3.43,8.5,1.66,1.2,354.5,90.06,0.5,11.88,9.99,Indian Food Nutrition dataset provided by user
+IND-0195,Shepherd's pie (vegetarian),135.63,12.03,5.04,7.3,2.78,2.23,118.2,85.59,0.76,51.68,90.43,Indian Food Nutrition dataset provided by user
+IND-0196,Baked brinjal in tomato sauce,38.63,4.13,1.58,1.62,2.2,2.34,79.66,26.24,0.32,68.38,103.99,Indian Food Nutrition dataset provided by user
+IND-0197,Dum aloo,682.33,3.33,0.7,74.01,0.71,0.68,183.85,16.49,0.36,29.39,34.41,Indian Food Nutrition dataset provided by user
+IND-0198,Spinach paneer (Palak paneer),77.68,4.43,4.03,4.76,2.55,1.91,166.87,113.25,1.85,60.21,267.05,Indian Food Nutrition dataset provided by user
+IND-0199,Methi chaman,475.62,2.78,1.54,50.91,1.79,0.53,54.94,60.57,0.63,63.26,141.85,Indian Food Nutrition dataset provided by user
+IND-0200,Sarson ka saag,87.84,5.33,3.0,5.86,0.75,3.69,165.45,134.41,2.43,59.58,128.42,Indian Food Nutrition dataset provided by user
+IND-0201,Jackfruit sabzi (Kathal ki sabzi),625.4,3.4,0.69,67.6,2.59,1.02,58.95,9.85,0.27,14.11,32.14,Indian Food Nutrition dataset provided by user
+IND-0202,Avial,124.56,8.47,2.46,8.94,3.83,5.44,81.5,31.9,1.01,94.64,108.12,Indian Food Nutrition dataset provided by user
+IND-0203,Al yakhani,147.54,4.65,2.86,13.14,3.56,1.27,206.24,103.88,0.46,5.41,60.75,Indian Food Nutrition dataset provided by user
+IND-0204,Shahi paneer,156.5,6.64,5.06,12.34,5.01,1.4,215.35,125.38,0.62,30.83,78.58,Indian Food Nutrition dataset provided by user
+IND-0205,Paneer in butter sauce,145.61,9.7,6.99,8.81,7.49,1.5,151.45,170.59,0.85,18.02,64.79,Indian Food Nutrition dataset provided by user
+IND-0206,Methi malai paneer,194.98,8.15,7.34,14.76,6.0,1.47,221.16,183.96,0.77,13.6,73.86,Indian Food Nutrition dataset provided by user
+IND-0207,Chilli paneer,777.51,3.31,2.1,84.01,1.5,0.5,89.04,42.9,0.36,4.87,28.7,Indian Food Nutrition dataset provided by user
+IND-0208,Paneer makhana korma,775.82,4.63,3.24,82.76,1.84,0.21,77.01,72.89,0.55,0.64,94.26,Indian Food Nutrition dataset provided by user
+IND-0209,Kadhai Paneer,107.99,7.34,4.33,6.81,5.54,2.07,144.33,91.53,0.65,85.83,117.12,Indian Food Nutrition dataset provided by user
+IND-0210,Roghan josh,139.59,4.93,9.56,9.02,2.66,2.08,204.31,112.33,1.77,12.41,36.34,Indian Food Nutrition dataset provided by user
+IND-0211,Spinach mutton (Palak mutton),80.32,3.45,5.74,4.71,1.42,2.23,121.1,96.88,2.38,88.11,391.34,Indian Food Nutrition dataset provided by user
+IND-0212,Pea keema curry (Matar keema ki sabzi),133.0,6.24,8.43,8.14,1.82,2.96,148.38,35.6,1.35,55.62,85.14,Indian Food Nutrition dataset provided by user
+IND-0213,Keema kofta curry,154.45,5.64,9.77,10.39,2.14,1.51,311.51,49.89,1.25,2.43,6.6,Indian Food Nutrition dataset provided by user
+IND-0214,Kashmiri mutton koftas (Gushtaba),97.42,3.04,6.33,6.77,2.13,0.62,130.11,52.53,0.85,3.22,22.46,Indian Food Nutrition dataset provided by user
+IND-0215,Mutton yakhni,104.13,0.84,8.27,7.7,0.13,0.67,101.02,88.61,1.66,0.09,6.51,Indian Food Nutrition dataset provided by user
+IND-0216,Chicken yakhni,99.0,0.78,10.66,6.1,0.12,0.62,97.38,28.24,0.93,0.09,13.24,Indian Food Nutrition dataset provided by user
+IND-0217,Mutton do piaza,183.3,4.14,9.39,14.41,2.9,1.93,118.62,118.61,1.63,7.42,67.3,Indian Food Nutrition dataset provided by user
+IND-0218,Mutton chops,663.64,1.48,4.03,71.31,0.42,0.17,51.03,36.18,0.64,3.75,16.68,Indian Food Nutrition dataset provided by user
+IND-0219,Shammi kebab,685.69,3.54,4.52,72.61,0.31,1.05,54.27,13.11,0.75,1.64,20.55,Indian Food Nutrition dataset provided by user
+IND-0220,Scotch egg,676.89,1.91,4.05,72.62,0.3,0.36,90.67,15.03,0.6,2.59,30.63,Indian Food Nutrition dataset provided by user
+IND-0221,Shepherd's pie (with minced meat),142.78,8.06,7.45,8.88,1.7,1.05,197.25,21.3,0.84,19.35,21.04,Indian Food Nutrition dataset provided by user
+IND-0222,Chicken curry,129.22,3.38,11.79,7.57,1.79,1.41,108.0,27.29,0.87,16.79,38.7,Indian Food Nutrition dataset provided by user
+IND-0223,Tandoori chicken,145.2,2.34,16.26,7.93,1.58,0.5,158.0,44.33,0.9,39.53,182.73,Indian Food Nutrition dataset provided by user
+IND-0224,Butter chicken,137.0,3.74,10.92,8.7,2.37,1.32,26.21,25.28,0.92,32.65,40.85,Indian Food Nutrition dataset provided by user
+IND-0225,Chicken kebab,729.41,1.11,3.71,78.89,0.24,0.21,69.76,3.46,0.28,0.41,3.83,Indian Food Nutrition dataset provided by user
+IND-0226,Chilli chicken,198.83,2.86,9.57,16.56,0.93,0.99,223.75,12.97,0.66,55.19,51.55,Indian Food Nutrition dataset provided by user
+IND-0227,Fried chicken with tomato sauce (Fried chicken tamatar ki chutney kay saath),125.03,2.51,11.48,7.61,1.16,1.13,107.56,16.09,0.64,10.78,17.41,Indian Food Nutrition dataset provided by user
+IND-0228,Fish curry (Machli curry),111.13,3.77,8.76,6.69,2.02,1.89,184.71,52.06,1.09,22.48,40.45,Indian Food Nutrition dataset provided by user
+IND-0229,Fried fish (Indian style) (Tali hui machli),658.54,5.4,4.35,68.88,0.4,0.61,156.94,11.11,0.56,7.22,35.19,Indian Food Nutrition dataset provided by user
+IND-0230,Fried fish and Chips (English Style) (Tali hui machli aur chips),651.75,2.77,3.36,69.69,0.17,0.29,72.73,6.56,0.26,22.16,31.65,Indian Food Nutrition dataset provided by user
+IND-0231,Tomato fish,489.79,3.18,2.39,51.91,1.35,0.72,91.47,6.46,0.24,75.09,76.88,Indian Food Nutrition dataset provided by user
+IND-0232,Baked fish with cheese sauce,113.96,4.06,8.64,7.02,3.22,0.08,209.48,115.64,0.26,9.97,29.36,Indian Food Nutrition dataset provided by user
+IND-0233,Fish tikka,117.33,3.91,16.0,4.15,1.18,1.18,503.44,31.98,1.41,0.9,4.62,Indian Food Nutrition dataset provided by user
+IND-0234,Tandoori fish,95.98,2.37,11.19,4.64,1.6,0.58,123.94,37.27,0.46,19.66,27.55,Indian Food Nutrition dataset provided by user
+IND-0235,"Paneer, apple and pineapple salad",95.08,8.35,3.88,5.07,6.36,1.65,176.63,103.05,0.84,25.3,67.13,Indian Food Nutrition dataset provided by user
+IND-0236,Russian salad,114.83,6.5,4.26,7.84,1.66,2.57,101.09,34.92,1.23,49.56,104.32,Indian Food Nutrition dataset provided by user
+IND-0237,Pasta salad,190.36,12.7,4.15,13.92,2.6,0.96,152.31,66.74,0.81,38.78,56.54,Indian Food Nutrition dataset provided by user
+IND-0238,Deviled egg,98.56,2.23,4.97,7.72,0.82,1.15,117.29,36.84,1.51,18.42,48.39,Indian Food Nutrition dataset provided by user
+IND-0239,Hawain salad,175.23,14.35,4.27,11.37,5.24,3.93,64.92,61.03,1.12,51.75,123.62,Indian Food Nutrition dataset provided by user
+IND-0240,Mixed pulse and vegetable salad,83.12,13.96,4.74,0.84,1.36,2.96,127.78,51.63,2.13,23.82,105.59,Indian Food Nutrition dataset provided by user
+IND-0241,Sprouted moong salad,37.81,5.48,2.29,0.74,2.13,0.95,116.38,54.56,1.45,27.84,49.76,Indian Food Nutrition dataset provided by user
+IND-0242,Tossed salad,62.96,4.95,1.02,4.22,1.56,2.15,77.5,32.37,0.86,85.7,99.67,Indian Food Nutrition dataset provided by user
+IND-0243,Mixed vegetable salad with curd sauce,60.28,7.03,4.23,1.5,2.16,3.79,116.66,65.51,1.35,37.73,86.34,Indian Food Nutrition dataset provided by user
+IND-0244,Potato salad (Aloo ka salaad),89.91,11.19,1.4,4.4,3.94,1.32,125.01,25.61,0.99,58.78,52.72,Indian Food Nutrition dataset provided by user
+IND-0245,Waldroff salad,141.75,11.02,1.47,10.05,8.23,1.87,13.42,29.29,1.07,21.43,40.62,Indian Food Nutrition dataset provided by user
+IND-0246,Coleslaw,76.71,5.59,1.24,5.32,3.62,2.34,29.87,37.0,0.63,22.99,41.98,Indian Food Nutrition dataset provided by user
+IND-0247,Fruit salad (Phalon ka salaad),78.14,15.96,0.91,1.22,9.78,1.58,7.11,25.93,0.81,52.45,45.4,Indian Food Nutrition dataset provided by user
+IND-0248,Tomato onion raita (Tamatar aur pyaaz ka raita),59.0,7.08,3.74,1.84,5.98,0.97,165.21,120.62,0.26,15.04,34.77,Indian Food Nutrition dataset provided by user
+IND-0249,Peanut raita (Mungfali ka raita),150.39,9.3,8.59,8.98,7.11,1.89,235.83,174.6,0.74,2.59,36.67,Indian Food Nutrition dataset provided by user
+IND-0250,Sprouted moong raita,60.89,6.13,4.62,2.19,5.59,0.16,189.2,139.44,0.86,3.59,27.0,Indian Food Nutrition dataset provided by user
+IND-0251,Bottle gourd raita (Ghiya/Lauki ka raita),56.31,5.76,3.98,2.07,5.25,0.85,188.37,138.26,0.23,4.76,39.49,Indian Food Nutrition dataset provided by user
+IND-0252,Cucumber raita (Kheere ka raita),59.13,6.35,4.04,2.08,5.22,0.86,189.96,138.58,0.29,5.65,26.92,Indian Food Nutrition dataset provided by user
+IND-0253,Carrot and spinach raita (Gajar aur palak ka raita),56.83,5.83,4.0,1.99,4.93,1.39,180.79,142.57,1.04,19.29,95.51,Indian Food Nutrition dataset provided by user
+IND-0254,Mint raita (Pudinay ka raita),77.59,7.65,5.64,2.96,7.48,0.34,274.38,198.22,0.37,2.94,20.62,Indian Food Nutrition dataset provided by user
+IND-0255,Potato raita (Aloo ka raita),75.38,10.24,4.22,2.04,5.08,0.75,183.37,132.31,0.34,15.33,27.03,Indian Food Nutrition dataset provided by user
+IND-0256,Boondi raita,687.72,3.96,2.19,73.83,1.88,0.46,99.18,49.0,0.24,0.77,37.83,Indian Food Nutrition dataset provided by user
+IND-0257,Sweet raita (Meetha raita),99.24,17.93,3.24,1.78,15.36,1.02,42.98,108.91,0.21,5.2,24.9,Indian Food Nutrition dataset provided by user
+IND-0258,Dahi vadas/Dahi bhalla,667.73,5.49,2.96,70.4,1.78,0.97,79.0,49.03,0.49,0.57,18.3,Indian Food Nutrition dataset provided by user
+IND-0259,Gunjia,667.34,5.68,2.98,70.28,2.05,1.13,77.9,48.16,0.5,0.51,19.06,Indian Food Nutrition dataset provided by user
+IND-0260,Saunth/Sonth chutney with tamarind/imli,141.53,33.55,1.01,0.15,31.31,0.93,244.38,54.74,2.71,0.09,0.99,Indian Food Nutrition dataset provided by user
+IND-0261,Rice kheer (Chawal ki kheer),75.03,10.05,2.3,2.97,8.02,0.17,16.24,75.57,0.17,5.06,19.54,Indian Food Nutrition dataset provided by user
+IND-0262,Makhana kheer,107.85,12.88,3.31,5.0,11.54,0.11,23.4,111.64,0.28,5.06,23.77,Indian Food Nutrition dataset provided by user
+IND-0263,Vermicelli kheer (Semiya/Seviyan ki kheer),120.07,15.87,3.35,5.0,12.79,0.5,22.52,104.8,0.3,4.06,16.29,Indian Food Nutrition dataset provided by user
+IND-0264,Semolina kheer (Suji/Rava kheer),113.21,15.88,3.43,4.2,12.88,0.51,22.66,105.99,0.34,4.06,17.54,Indian Food Nutrition dataset provided by user
+IND-0265,Paneer kheer,105.31,10.03,4.53,5.37,9.87,0.07,23.81,144.66,0.26,5.06,41.81,Indian Food Nutrition dataset provided by user
+IND-0266,Cabbage kheer (Pattagobhi ki kheer),83.51,9.73,2.87,3.8,9.28,0.51,22.67,102.74,0.24,17.36,33.51,Indian Food Nutrition dataset provided by user
+IND-0267,Carrot kheer (Gajar ki kheer),85.35,10.09,2.81,3.85,9.63,0.73,28.54,100.12,0.28,6.54,24.59,Indian Food Nutrition dataset provided by user
+IND-0268,Cauliflower kheer (Phoolgobhi ki kheer),81.95,8.78,3.04,3.95,8.49,0.55,25.19,101.75,0.3,23.92,36.87,Indian Food Nutrition dataset provided by user
+IND-0269,Moong dal kheer,77.16,9.89,2.95,2.97,7.92,0.4,16.34,75.66,0.28,5.06,32.3,Indian Food Nutrition dataset provided by user
+IND-0270,Phirni,116.12,16.11,3.49,4.34,10.79,0.36,22.47,104.57,0.23,5.04,20.33,Indian Food Nutrition dataset provided by user
+IND-0271,Semolina halwa (Suji ka halwa),225.65,24.67,2.16,13.38,13.98,1.86,1.28,11.77,0.65,0.05,7.96,Indian Food Nutrition dataset provided by user
+IND-0272,Shahi suji halwa,382.34,44.44,3.48,21.73,27.21,2.96,2.18,18.64,0.98,0.02,7.46,Indian Food Nutrition dataset provided by user
+IND-0273,Carrot halwa (Gajar ka halwa),172.64,18.53,3.11,9.73,16.85,2.65,39.96,106.94,0.76,6.53,44.8,Indian Food Nutrition dataset provided by user
+IND-0274,Egg halwa (Ande ka halwa),299.74,39.59,7.85,13.41,37.85,0.49,83.04,35.77,1.45,0.0,24.67,Indian Food Nutrition dataset provided by user
+IND-0275,Potato halwa (Aloo ka halwa),151.66,29.18,1.53,3.48,17.42,1.64,4.23,14.15,0.63,28.98,20.72,Indian Food Nutrition dataset provided by user
+IND-0276,Pumpkin halwa (Kaddu ka halwa),190.27,27.6,1.33,8.81,26.64,2.97,8.09,24.34,0.63,8.08,27.9,Indian Food Nutrition dataset provided by user
+IND-0277,Moong dal halwa,349.8,40.23,8.35,17.68,25.59,2.65,11.19,110.4,1.51,0.03,34.53,Indian Food Nutrition dataset provided by user
+IND-0278,Caramel custard (steamed),121.58,15.02,4.97,4.87,14.98,0.0,43.57,88.12,0.51,3.02,35.21,Indian Food Nutrition dataset provided by user
+IND-0279,Baked custard,106.53,9.45,5.41,5.3,9.42,0.0,47.13,95.32,0.54,3.02,35.21,Indian Food Nutrition dataset provided by user
+IND-0280,Soft Custard (stirred),109.18,11.19,5.01,5.07,11.15,0.0,122.17,95.82,0.49,3.62,37.31,Indian Food Nutrition dataset provided by user
+IND-0281,Chocolate ice cream,177.7,15.41,4.47,11.25,15.33,0.0,36.79,84.24,0.47,4.06,43.75,Indian Food Nutrition dataset provided by user
+IND-0282,Mango ice cream,125.69,11.14,3.4,7.62,11.01,0.52,29.13,67.17,0.39,44.98,142.26,Indian Food Nutrition dataset provided by user
+IND-0283,Fruit Ice cream (Phalon ka Ice cream),171.46,16.05,4.37,10.38,14.03,0.33,38.78,93.35,0.36,4.02,15.6,Indian Food Nutrition dataset provided by user
+IND-0284,Caramel ice cream,173.52,14.81,4.31,11.15,14.52,0.08,33.47,87.32,0.35,3.27,25.96,Indian Food Nutrition dataset provided by user
+IND-0285,Lemon souffle,168.51,13.43,6.95,10.02,11.67,0.0,50.73,59.81,0.56,12.9,32.11,Indian Food Nutrition dataset provided by user
+IND-0286,Orange souffle,168.28,14.2,6.8,9.73,12.31,0.22,49.22,59.04,0.65,19.16,37.93,Indian Food Nutrition dataset provided by user
+IND-0287,Vanilla souffle,187.85,14.78,7.71,11.19,12.86,0.0,56.73,70.6,0.58,1.3,30.71,Indian Food Nutrition dataset provided by user
+IND-0288,Chocolate souffle,189.32,14.74,7.88,11.36,12.69,0.0,56.07,71.55,0.71,1.3,31.85,Indian Food Nutrition dataset provided by user
+IND-0289,Pineapple souffle,196.14,15.52,8.06,11.72,13.45,0.0,59.17,67.23,0.61,1.0,29.66,Indian Food Nutrition dataset provided by user
+IND-0290,Apple mousse,106.92,12.77,4.21,4.27,10.56,1.6,28.79,33.76,0.48,14.48,35.22,Indian Food Nutrition dataset provided by user
+IND-0291,Rich chocolate mousse,188.26,10.84,7.96,12.19,10.3,0.0,51.71,54.59,0.97,0.7,31.64,Indian Food Nutrition dataset provided by user
+IND-0292,Mango mousse,124.98,9.14,3.21,8.47,8.89,0.88,19.62,51.38,0.35,42.76,110.68,Indian Food Nutrition dataset provided by user
+IND-0293,Orange and pineapple cream,101.18,11.96,1.44,5.43,11.37,1.03,10.17,35.0,0.41,19.89,10.56,Indian Food Nutrition dataset provided by user
+IND-0294,Charlotte rousse,188.29,34.08,3.95,4.78,20.48,1.01,56.45,34.95,0.53,25.28,28.72,Indian Food Nutrition dataset provided by user
+IND-0295,Triffle pudding,116.97,18.24,2.93,3.93,13.89,0.12,26.95,48.72,0.47,19.31,28.71,Indian Food Nutrition dataset provided by user
+IND-0296,Snow flakes pudding,95.21,8.07,4.67,4.97,8.01,0.03,39.6,101.33,0.42,5.47,42.48,Indian Food Nutrition dataset provided by user
+IND-0297,Kulfi,98.43,11.3,3.21,4.7,10.39,0.12,23.97,111.86,0.2,5.04,18.69,Indian Food Nutrition dataset provided by user
+IND-0298,Steamed orange pudding,278.03,41.53,2.34,12.04,26.53,0.58,79.1,21.15,0.55,21.74,15.92,Indian Food Nutrition dataset provided by user
+IND-0299,Meringue and rice pudding,112.93,14.6,4.84,4.05,10.87,0.17,44.16,85.43,0.37,3.02,24.69,Indian Food Nutrition dataset provided by user
+IND-0300,Cheese pudding,285.01,19.27,11.29,18.37,18.63,0.05,37.83,226.11,0.87,0.3,60.43,Indian Food Nutrition dataset provided by user
+IND-0301,Chocolate pudding,211.96,29.59,3.55,9.48,20.68,0.53,171.36,64.56,0.6,0.75,18.08,Indian Food Nutrition dataset provided by user
+IND-0302,Bread and butter pudding,167.94,19.63,5.59,7.88,11.84,0.98,96.3,105.54,0.9,1.58,21.41,Indian Food Nutrition dataset provided by user
+IND-0303,Queen of pudding,132.92,16.35,5.51,5.38,11.77,0.27,85.59,78.26,0.53,8.11,46.64,Indian Food Nutrition dataset provided by user
+IND-0304,Pineapple upside down pudding,257.73,35.73,3.15,11.91,22.16,0.8,74.52,26.05,0.68,9.66,15.44,Indian Food Nutrition dataset provided by user
+IND-0305,Date and nut pie,322.42,46.86,3.93,13.31,31.18,4.13,3.87,34.69,1.54,6.39,32.22,Indian Food Nutrition dataset provided by user
+IND-0306,Stewed apple with custard,92.87,18.36,1.27,1.82,15.46,1.01,16.66,49.24,0.18,5.6,10.2,Indian Food Nutrition dataset provided by user
+IND-0307,Apple snowballs,101.51,24.58,0.86,0.31,19.4,1.25,12.8,9.43,0.18,4.46,4.64,Indian Food Nutrition dataset provided by user
+IND-0308,Hot orange souffle,179.97,18.77,6.87,8.95,14.93,0.29,58.8,53.81,1.03,7.01,30.66,Indian Food Nutrition dataset provided by user
+IND-0309,Hot chocolate souffle,226.09,26.21,6.7,11.1,22.88,0.12,54.11,60.19,1.08,0.9,30.6,Indian Food Nutrition dataset provided by user
+IND-0310,Hot vanilla souffle,192.93,21.77,6.87,9.07,18.17,0.13,59.59,63.2,0.93,0.9,28.8,Indian Food Nutrition dataset provided by user
+IND-0311,Plain burfi (Burfi),408.32,30.88,9.82,27.96,30.43,0.17,31.65,355.78,1.5,0.05,23.94,Indian Food Nutrition dataset provided by user
+IND-0312,Coconut burfi (Nariyal ki burfi),467.64,32.15,8.81,34.63,31.5,3.5,27.63,272.81,1.82,0.0,26.6,Indian Food Nutrition dataset provided by user
+IND-0313,Bottle gourd burfi (Ghiya/Lauki burfi),275.96,24.51,5.86,17.68,23.92,0.73,18.15,215.85,0.93,1.08,34.06,Indian Food Nutrition dataset provided by user
+IND-0314,Chocolate burfi,339.33,33.15,13.0,17.86,32.38,0.0,39.32,466.48,2.12,0.0,23.85,Indian Food Nutrition dataset provided by user
+IND-0315,Cashewnut burfi (Kaju burfi/Kaju katli),421.74,37.92,5.48,28.46,31.43,1.12,4.23,12.95,1.79,0.0,2.1,Indian Food Nutrition dataset provided by user
+IND-0316,Gram flour burfi (Besan burfi),421.79,46.59,11.19,22.41,28.44,3.41,13.02,160.71,1.47,0.0,32.38,Indian Food Nutrition dataset provided by user
+IND-0317,Semolina ladoo with khoya (Suji/Rava aur khoye ke ladoo ),428.71,52.86,6.71,21.86,33.28,4.68,14.4,106.42,1.73,0.03,7.1,Indian Food Nutrition dataset provided by user
+IND-0318,Semolina ladoo with coconut (Suji/Rava aur nariyal ke ladoo ),464.43,50.9,5.68,27.03,27.32,6.69,9.06,26.72,1.83,0.05,5.21,Indian Food Nutrition dataset provided by user
+IND-0319,Gram flour ladoo (Besan ladoo),476.91,62.61,8.93,22.76,37.76,4.43,5.48,25.35,1.51,0.0,24.79,Indian Food Nutrition dataset provided by user
+IND-0320,Sesame ladoo (Til ke ladoo),396.96,43.5,10.7,19.64,38.63,7.72,18.55,631.82,8.94,0.0,18.17,Indian Food Nutrition dataset provided by user
+IND-0321,Chenna murki,252.69,36.01,10.46,8.2,35.55,0.0,11.4,266.85,0.55,0.0,46.65,Indian Food Nutrition dataset provided by user
+IND-0322,Milk cake,127.41,9.13,3.01,8.93,8.9,0.06,24.97,104.94,0.2,8.0,18.19,Indian Food Nutrition dataset provided by user
+IND-0323,Ghujia/Lavang latika,768.98,13.0,1.86,78.93,6.08,0.52,3.28,31.01,0.44,0.01,6.86,Indian Food Nutrition dataset provided by user
+IND-0324,Gulab Jamun with khoya,586.06,26.09,2.03,53.23,24.12,0.07,15.09,67.32,0.39,0.02,16.44,Indian Food Nutrition dataset provided by user
+IND-0325,Mal pua,566.68,17.56,1.71,54.64,11.77,0.62,6.35,30.05,0.33,0.67,5.3,Indian Food Nutrition dataset provided by user
+IND-0326,Shahi tukre,189.81,41.46,2.76,2.54,34.7,0.51,71.04,76.47,0.37,0.86,7.61,Indian Food Nutrition dataset provided by user
+IND-0327,Potato pakora/pakoda (Aloo pakoda),677.19,6.04,1.9,71.84,0.22,1.03,63.38,6.59,0.38,18.53,109.12,Indian Food Nutrition dataset provided by user
+IND-0328,Onion pakora/pakoda (Pyaaz ke pakode),674.61,5.41,1.9,71.84,0.88,1.11,63.55,7.95,0.36,5.36,119.81,Indian Food Nutrition dataset provided by user
+IND-0329,Cauliflower pakora/pakoda (Phoolgobhi ke pakode),671.63,4.52,1.98,71.86,0.23,1.26,66.54,8.44,0.42,37.72,133.47,Indian Food Nutrition dataset provided by user
+IND-0330,Mixed vegetable pakora/pakoda,673.81,5.12,1.94,71.86,0.38,1.13,65.35,9.55,0.46,21.46,143.18,Indian Food Nutrition dataset provided by user
+IND-0331,Spinach pakora/pakoda (Palak pakoda),712.62,4.68,1.96,76.38,0.2,1.02,69.54,10.99,0.52,12.12,153.51,Indian Food Nutrition dataset provided by user
+IND-0332,Methi pakora/pakoda (Methi ke pakode),713.25,4.68,2.06,76.39,0.25,1.18,69.83,23.07,0.69,23.31,126.81,Indian Food Nutrition dataset provided by user
+IND-0333,Egg pakora/pakoda (Ande ke pakode),710.51,4.48,2.83,75.86,0.19,0.86,75.37,9.55,0.47,0.01,121.37,Indian Food Nutrition dataset provided by user
+IND-0334,Bread pakora/pakoda,710.99,8.87,2.57,74.2,0.46,1.11,101.49,19.83,0.46,0.01,114.11,Indian Food Nutrition dataset provided by user
+IND-0335,Paneer pakora/pakoda,718.12,5.52,3.27,76.05,1.08,0.89,131.7,43.38,0.43,0.07,143.43,Indian Food Nutrition dataset provided by user
+IND-0336,Potato bonda (Aloo bonda),632.84,4.53,1.09,67.8,0.27,0.83,132.53,6.79,0.37,8.96,16.02,Indian Food Nutrition dataset provided by user
+IND-0337,Potato samosa (Aloo ka samosa),577.39,9.21,1.71,59.19,0.29,1.19,77.1,7.63,0.5,11.27,12.8,Indian Food Nutrition dataset provided by user
+IND-0338,Minced meat samosa (Keema ka samosa),620.99,6.14,4.43,64.26,0.5,0.39,88.64,6.7,0.55,0.82,4.62,Indian Food Nutrition dataset provided by user
+IND-0339,Paneer and pea samosa (Paneer matar ka samosa),623.81,8.55,4.02,63.65,1.69,1.02,78.18,64.56,0.53,6.67,26.39,Indian Food Nutrition dataset provided by user
+IND-0340,Mathri,805.12,12.32,1.75,83.1,0.29,0.6,64.7,5.23,0.43,0.0,2.38,Indian Food Nutrition dataset provided by user
+IND-0341,Khasta kachori,712.73,12.81,2.51,72.27,0.34,0.97,90.56,7.84,0.59,0.86,6.38,Indian Food Nutrition dataset provided by user
+IND-0342,Vegetable cutlet,665.45,4.68,1.25,71.33,0.35,0.93,85.38,13.55,0.4,16.89,30.52,Indian Food Nutrition dataset provided by user
+IND-0343,Flattened rice cutlet (Chirwa cutlet/Chivda cutlet/Poha cutlet),701.71,7.39,1.76,73.89,0.27,0.86,76.65,9.17,0.59,12.63,23.98,Indian Food Nutrition dataset provided by user
+IND-0344,Peanut cutlet (Mungfali ke cutlet),698.77,5.68,2.63,74.0,0.51,1.21,84.24,14.38,0.56,12.63,38.52,Indian Food Nutrition dataset provided by user
+IND-0345,Fish cutlet (Machli ka cutlet),654.64,3.13,2.77,70.11,0.29,0.54,75.33,10.44,0.36,10.46,19.06,Indian Food Nutrition dataset provided by user
+IND-0346,Paneer potato cutlet (Paneer aloo cutlet),672.94,5.23,2.47,71.4,1.02,0.41,85.71,45.36,0.38,11.61,41.52,Indian Food Nutrition dataset provided by user
+IND-0347,Spinach chickpeas cutlet (Palak channa dal cutlet),688.03,4.93,1.44,73.6,0.16,0.93,79.13,11.3,0.57,16.18,49.07,Indian Food Nutrition dataset provided by user
+IND-0348,Cheese toast,785.37,5.49,1.98,84.11,0.53,0.31,121.05,43.87,0.31,0.0,6.85,Indian Food Nutrition dataset provided by user
+IND-0349,Vegetable burger,519.93,13.69,3.26,50.63,1.88,1.7,168.97,26.08,0.7,24.68,40.96,Indian Food Nutrition dataset provided by user
+IND-0350,Cheese pizza,249.5,30.62,5.79,12.43,3.42,1.95,397.73,96.51,1.09,6.72,15.85,Indian Food Nutrition dataset provided by user
+IND-0351,Vegetable seekh kebab,690.73,5.32,1.57,73.72,0.74,0.59,83.67,32.66,0.36,6.86,13.84,Indian Food Nutrition dataset provided by user
+IND-0352,Masala vada,826.02,4.06,1.69,89.15,0.24,1.07,74.53,7.45,0.52,2.05,32.14,Indian Food Nutrition dataset provided by user
+IND-0353,Peanut sago vada (Sabudana mungfali vada),749.89,7.14,1.01,79.82,0.19,0.62,71.29,5.03,0.38,9.74,15.66,Indian Food Nutrition dataset provided by user
+IND-0354,Vegeterian scotch egg,681.67,4.64,2.16,72.77,0.23,0.58,93.33,15.2,0.46,12.53,32.4,Indian Food Nutrition dataset provided by user
+IND-0355,Paneer shaslik/tikka,93.85,7.98,5.11,4.49,4.61,1.23,103.39,123.86,0.68,107.71,174.74,Indian Food Nutrition dataset provided by user
+IND-0356,Peanut brittle (Moongfali ki chikki),320.46,47.46,6.94,11.13,43.92,2.63,15.99,68.03,3.22,0.0,7.48,Indian Food Nutrition dataset provided by user
+IND-0357,Spring roll,623.87,8.56,1.81,64.63,0.6,0.67,132.84,9.51,0.49,4.59,9.59,Indian Food Nutrition dataset provided by user
+IND-0358,Dry mango chutney (Sookhe aam ki chutney),298.13,69.17,2.43,0.7,61.86,3.74,437.91,72.05,3.98,0.25,5.17,Indian Food Nutrition dataset provided by user
+IND-0359,Peanut chutney (Mungfali ki chutney),258.37,9.87,11.8,19.06,2.76,5.73,475.34,34.79,1.99,4.2,10.14,Indian Food Nutrition dataset provided by user
+IND-0360,Coconut chutney (Nariyal ki chutney),265.92,8.29,3.59,25.0,3.79,6.73,428.28,15.7,1.25,4.13,4.74,Indian Food Nutrition dataset provided by user
+IND-0361,Mint and coriander chutney (Pudinay aur dhaniye ki chutney),102.6,21.18,2.81,0.51,15.88,4.33,391.66,107.45,4.76,3.62,10.89,Indian Food Nutrition dataset provided by user
+IND-0362,Custard tart,225.6,28.66,3.72,10.73,9.31,0.91,59.74,57.47,0.49,1.18,5.64,Indian Food Nutrition dataset provided by user
+IND-0363,Lemon tart,303.35,30.68,6.12,17.45,10.68,0.81,76.09,24.03,0.98,2.66,9.19,Indian Food Nutrition dataset provided by user
+IND-0364,Jam tart,360.72,46.18,4.42,17.35,14.74,1.14,70.34,12.23,0.74,0.0,2.44,Indian Food Nutrition dataset provided by user
+IND-0365,Orange cream tart,197.16,27.43,2.58,8.72,10.08,0.64,36.85,13.84,0.58,19.6,13.7,Indian Food Nutrition dataset provided by user
+IND-0366,Pineapple tart,195.4,28.62,2.29,8.21,11.09,0.87,37.88,12.02,0.5,6.85,6.84,Indian Food Nutrition dataset provided by user
+IND-0367,Cheese and mushroom tart,246.1,21.43,5.51,15.28,3.16,1.18,212.42,100.97,0.59,6.53,7.96,Indian Food Nutrition dataset provided by user
+IND-0368,Cottage cheese pie,238.98,20.66,7.45,13.83,3.62,2.21,103.29,108.05,0.92,36.25,124.39,Indian Food Nutrition dataset provided by user
+IND-0369,Minced meat pie,221.55,18.11,7.38,13.04,1.42,2.33,127.85,18.14,1.07,37.52,69.49,Indian Food Nutrition dataset provided by user
+IND-0370,Apple cinnamon pie,258.73,33.68,3.35,12.21,11.95,1.77,60.14,16.14,0.65,2.24,11.58,Indian Food Nutrition dataset provided by user
+IND-0371,Lemon meringue pie,224.43,35.11,3.88,8.16,21.17,0.44,85.12,16.79,0.67,5.1,17.48,Indian Food Nutrition dataset provided by user
+IND-0372,Chocolate meringue pie,214.76,28.8,4.98,9.17,15.03,0.37,80.77,55.98,0.92,1.26,23.21,Indian Food Nutrition dataset provided by user
+IND-0373,Cream puffs,221.33,16.0,4.7,15.48,5.94,0.38,98.76,37.93,0.58,0.2,8.79,Indian Food Nutrition dataset provided by user
+IND-0374,Chocolate eclairs,239.42,26.22,4.24,13.5,17.34,0.33,85.88,34.21,0.68,0.4,18.34,Indian Food Nutrition dataset provided by user
+IND-0375,Cheese balls,681.28,4.81,2.21,72.57,0.63,0.18,120.7,30.01,0.32,0.01,2.95,Indian Food Nutrition dataset provided by user
+IND-0376,Minced meat patties,265.72,15.25,6.88,19.57,0.88,0.77,252.18,19.23,0.93,1.58,16.37,Indian Food Nutrition dataset provided by user
+IND-0377,Cheese patties,324.01,22.23,7.38,22.67,3.93,1.24,295.22,126.41,0.82,3.37,31.43,Indian Food Nutrition dataset provided by user
+IND-0378,Hot cheese souffle,177.1,5.41,9.18,13.23,2.91,0.12,286.96,169.17,0.83,2.41,66.94,Indian Food Nutrition dataset provided by user
+IND-0379,Hot potato souffle,125.64,8.56,5.51,7.64,1.78,0.66,97.2,56.84,0.79,30.19,78.05,Indian Food Nutrition dataset provided by user
+IND-0380,Hot fish souffle,142.92,3.69,11.23,9.24,1.68,0.1,110.94,58.18,0.7,2.41,70.97,Indian Food Nutrition dataset provided by user
+IND-0381,Hot spinach souffle,104.25,4.19,5.43,7.24,1.64,0.99,104.69,80.77,1.67,47.83,272.44,Indian Food Nutrition dataset provided by user
+IND-0382,Plain cream cake,353.94,47.18,6.18,16.17,27.74,0.71,174.0,41.95,1.02,0.08,8.66,Indian Food Nutrition dataset provided by user
+IND-0383,Apple cake (Seb ka cake),290.08,39.48,4.94,12.87,23.52,1.22,136.95,38.99,0.9,1.16,9.32,Indian Food Nutrition dataset provided by user
+IND-0384,Marble cake,354.11,46.88,6.3,16.27,27.56,0.71,138.48,39.6,1.12,0.08,8.85,Indian Food Nutrition dataset provided by user
+IND-0385,Chocolate cake,335.61,45.14,6.01,15.18,27.58,0.64,241.93,41.13,1.08,0.15,9.21,Indian Food Nutrition dataset provided by user
+IND-0386,Orange cake,357.61,48.28,6.1,16.21,28.38,0.83,105.41,29.72,1.06,1.88,9.25,Indian Food Nutrition dataset provided by user
+IND-0387,Fruit Loaf,324.19,46.49,5.36,13.31,24.54,0.87,160.6,45.71,0.96,2.47,7.82,Indian Food Nutrition dataset provided by user
+IND-0388,Banana cake (Kele ka cake),389.51,40.0,5.77,23.31,23.04,1.14,117.81,23.55,1.14,0.98,11.33,Indian Food Nutrition dataset provided by user
+IND-0389,Chocolate chiffon cake,311.71,37.87,5.76,15.8,24.25,0.7,188.59,42.15,1.07,0.21,12.0,Indian Food Nutrition dataset provided by user
+IND-0390,Christmas cake,372.95,48.29,5.49,16.88,27.45,1.49,64.84,40.98,1.32,8.51,17.06,Indian Food Nutrition dataset provided by user
+IND-0391,Strawberry and vanilla cake with butter icing,370.54,44.25,3.89,20.39,32.43,0.79,107.27,28.17,0.7,8.4,12.8,Indian Food Nutrition dataset provided by user
+IND-0392,Eggless cake,318.08,46.14,8.12,11.75,27.7,0.68,310.5,212.97,0.61,1.35,7.58,Indian Food Nutrition dataset provided by user
+IND-0393,Swiss roll,251.87,48.34,7.3,3.77,32.96,0.55,51.9,24.11,1.19,0.0,14.36,Indian Food Nutrition dataset provided by user
+IND-0394,Pineapple pastry,208.21,29.04,6.06,7.87,18.83,0.72,44.3,42.97,0.86,3.64,17.42,Indian Food Nutrition dataset provided by user
+IND-0395,Black forest pastry,233.55,34.48,6.09,8.46,21.35,0.54,53.43,44.15,0.92,0.91,16.28,Indian Food Nutrition dataset provided by user
+IND-0396,Coconut finger,274.86,42.56,7.09,8.86,28.55,1.87,46.86,24.04,1.31,0.0,15.88,Indian Food Nutrition dataset provided by user
+IND-0397,Pineapple cake,195.57,23.51,5.01,9.34,16.16,0.76,37.47,49.06,0.64,27.35,80.64,Indian Food Nutrition dataset provided by user
+IND-0398,Chocolate walnut cookies (Chocolate aur akhrot ke cookies),424.8,47.1,6.56,23.62,22.58,1.54,280.44,36.1,1.37,0.16,4.22,Indian Food Nutrition dataset provided by user
+IND-0399,Chocolate chip cookies,425.29,57.98,5.79,19.38,30.29,1.05,278.29,24.76,1.22,0.0,2.62,Indian Food Nutrition dataset provided by user
+IND-0400,Sweet plain biscuit,380.76,50.29,5.86,17.67,21.77,1.07,132.59,42.88,0.92,0.03,1.7,Indian Food Nutrition dataset provided by user
+IND-0401,Chocolate biscuit,379.76,51.56,5.88,17.09,24.16,1.01,127.02,41.51,1.14,0.03,1.81,Indian Food Nutrition dataset provided by user
+IND-0402,Coconut biscuit (Nariyal ke biscuit),434.98,42.9,5.78,27.16,20.76,3.64,105.76,37.81,1.32,0.03,2.51,Indian Food Nutrition dataset provided by user
+IND-0403,Sweet and salty biscuit (Meethay aur namkeen biscuit),407.96,45.09,6.15,22.39,7.22,1.68,414.7,37.24,1.05,0.03,1.02,Indian Food Nutrition dataset provided by user
+IND-0404,Peanut biscuit,401.05,46.72,8.45,20.41,21.26,2.48,202.26,50.58,1.34,0.03,4.23,Indian Food Nutrition dataset provided by user
+IND-0405,Pin wheel biscuit,404.6,54.56,5.4,18.66,23.25,1.16,131.73,42.7,1.13,0.05,1.72,Indian Food Nutrition dataset provided by user
+IND-0406,Saffron biscuit (Kesar biscuit),458.61,59.7,6.05,22.01,22.42,1.9,5.65,25.71,1.23,0.01,1.1,Indian Food Nutrition dataset provided by user
+IND-0407,Masala biscuit,393.64,45.18,6.06,20.75,6.82,2.14,714.52,53.73,1.32,0.15,2.15,Indian Food Nutrition dataset provided by user
+IND-0408,Ice box cookies,374.24,56.09,5.7,14.44,26.69,1.28,449.14,18.5,1.04,0.1,1.64,Indian Food Nutrition dataset provided by user
+IND-0409,Ginger bread man,365.0,60.26,6.61,11.01,29.12,1.6,477.99,37.92,2.12,0.09,4.65,Indian Food Nutrition dataset provided by user
+IND-0410,Danish cookies,475.33,58.0,5.33,24.92,21.73,1.37,201.06,15.97,0.98,0.0,1.02,Indian Food Nutrition dataset provided by user
+IND-0411,Short bread cookies,443.09,64.82,6.03,17.98,23.31,1.57,145.0,15.92,1.12,0.0,1.62,Indian Food Nutrition dataset provided by user
+IND-0412,Coffee biscuit,416.57,46.55,6.9,23.0,21.69,1.59,112.53,48.92,1.27,0.03,3.0,Indian Food Nutrition dataset provided by user
+IND-0413,Melting moments,437.91,55.84,5.71,21.78,25.0,1.88,119.09,30.39,1.2,0.0,3.59,Indian Food Nutrition dataset provided by user
+IND-0414,Ginger biscuit (Adarak ke biscuit),417.91,58.44,5.98,18.31,27.06,1.49,79.68,25.97,2.2,0.0,1.59,Indian Food Nutrition dataset provided by user
+IND-0415,Soyabean muthias,839.33,3.7,2.46,90.45,0.17,1.47,78.25,12.16,0.6,0.79,22.43,Indian Food Nutrition dataset provided by user
+IND-0416,Soyabean tikki,698.17,4.39,3.53,74.02,0.35,2.2,88.72,29.23,1.04,6.71,57.9,Indian Food Nutrition dataset provided by user
+IND-0417,Soyabean namak paras,838.46,4.65,2.65,89.83,0.22,1.41,72.05,12.13,0.64,0.0,45.64,Indian Food Nutrition dataset provided by user
+IND-0418,Peanut burfi (Moongfali ki burfi),550.99,48.14,9.31,36.84,43.08,4.09,6.78,25.2,1.45,0.0,7.57,Indian Food Nutrition dataset provided by user
+IND-0419,Spinach peanut namak paras (Palak moongfali namak paras),740.16,6.62,1.65,78.51,0.28,0.81,73.15,13.35,0.67,11.39,64.2,Indian Food Nutrition dataset provided by user
+IND-0420,Gram flour and semolina chilla/cheela/savory pancake (Besan suji chilla/cheela),758.89,7.63,2.08,80.04,0.25,1.39,74.88,12.13,0.67,3.8,34.83,Indian Food Nutrition dataset provided by user
+IND-0421,Rice moong dal cheela (Chawal aur moong dal ka cheela),798.26,11.13,2.74,82.44,0.15,1.18,142.82,4.99,0.51,0.0,12.8,Indian Food Nutrition dataset provided by user
+IND-0422,Split bengal gram sweet rice (Channa dal sweet rice),190.21,41.07,4.15,0.64,19.41,2.23,8.38,30.37,1.77,0.0,48.48,Indian Food Nutrition dataset provided by user
+IND-0423,Sweet poori (Meethi poori),782.75,14.26,2.12,79.63,7.15,1.54,2.57,34.24,1.13,0.0,18.38,Indian Food Nutrition dataset provided by user
+IND-0424,Wheat flour and moong dal burfi (Atta aur moong dal ki burfi),441.08,60.0,9.84,18.41,31.12,6.02,5.25,25.2,2.3,0.0,9.07,Indian Food Nutrition dataset provided by user
+IND-0425,Spinach burfi (Palak burfi),121.17,12.76,2.71,6.81,12.12,1.17,27.77,93.68,1.05,8.57,39.63,Indian Food Nutrition dataset provided by user
+IND-0426,Sweet split chickpea roti (Sweet channa dal roti/Puranpoli),366.59,62.66,9.51,7.93,24.73,8.16,12.05,53.3,4.36,0.0,27.67,Indian Food Nutrition dataset provided by user
+IND-0427,Sprouted moong daliya,111.56,14.77,2.81,4.71,1.67,3.12,196.73,22.62,1.29,7.53,35.24,Indian Food Nutrition dataset provided by user
+IND-0428,Sprouted moong poha,192.6,26.6,5.59,6.89,1.93,3.13,220.82,28.39,2.43,19.24,46.81,Indian Food Nutrition dataset provided by user
+IND-0429,Pearl millet ladoo (Bajra ladoo),319.66,50.98,9.61,8.06,27.44,6.0,12.26,118.74,4.72,0.0,19.1,Indian Food Nutrition dataset provided by user
+IND-0430,Paushtik ladoo,485.87,60.34,7.65,24.98,38.12,4.57,6.09,20.67,1.63,0.0,16.16,Indian Food Nutrition dataset provided by user
+IND-0431,Paushtik roti,149.26,26.59,7.17,1.51,2.03,5.74,170.96,52.74,2.62,6.65,42.1,Indian Food Nutrition dataset provided by user
+IND-0432,Semolina carrot vada (Suji gajar vada),699.53,6.52,1.56,74.07,1.21,1.07,73.17,26.47,0.36,0.95,9.36,Indian Food Nutrition dataset provided by user
+IND-0433,Dhokla,216.49,30.68,13.45,5.28,4.78,4.95,376.02,123.21,1.39,0.68,39.92,Indian Food Nutrition dataset provided by user
+IND-0434,Kashmiri tea (Kehwa),24.9,5.23,0.17,0.51,5.14,0.16,0.29,3.19,0.07,0.06,0.82,Indian Food Nutrition dataset provided by user
+IND-0435,Steeped hot coffee,15.91,3.01,0.39,0.33,2.96,0.0,2.82,10.4,0.06,0.3,1.27,Indian Food Nutrition dataset provided by user
+IND-0436,Hot chocolate,90.01,9.02,3.43,4.61,8.86,0.0,36.04,113.63,0.33,3.62,13.41,Indian Food Nutrition dataset provided by user
+IND-0437,Cold coffee (with cream),82.76,11.98,1.93,3.29,11.91,0.0,15.35,64.43,0.14,2.56,9.52,Indian Food Nutrition dataset provided by user
+IND-0438,Banana milkshake with ice cream (Kele ka milkshake ice cream ke saath),76.45,11.15,2.01,2.77,9.94,0.27,16.63,68.3,0.14,6.99,20.73,Indian Food Nutrition dataset provided by user
+IND-0439,Flavoured milkshake,66.78,8.65,2.06,2.83,8.61,0.0,16.34,75.05,0.11,3.62,12.65,Indian Food Nutrition dataset provided by user
+IND-0440,Jal jeera,30.24,6.7,0.44,0.26,5.71,0.95,215.62,24.72,0.84,2.23,4.47,Indian Food Nutrition dataset provided by user
+IND-0441,Gingo,48.02,12.42,0.14,0.06,12.08,0.17,21.5,6.33,0.21,8.39,8.49,Indian Food Nutrition dataset provided by user
+IND-0442,Mintade,40.32,10.59,0.03,0.02,10.47,0.03,26.69,2.1,0.05,8.5,4.69,Indian Food Nutrition dataset provided by user
+IND-0443,Canjee,6.61,0.44,0.24,0.42,0.21,0.36,43.03,5.82,0.17,0.52,3.61,Indian Food Nutrition dataset provided by user
+IND-0444,Cauliflower canjee (Phoolgobhi ki canjee),6.9,0.35,0.39,0.42,0.09,0.49,41.45,6.26,0.22,7.86,9.26,Indian Food Nutrition dataset provided by user
+IND-0445,Potato canjee (Aloo canjee),16.26,2.69,0.44,0.39,0.1,0.43,35.99,5.21,0.22,7.72,6.77,Indian Food Nutrition dataset provided by user
+IND-0446,Vermicelli porridge (Semiya/Seviyan porridge),78.4,10.56,2.5,2.98,7.04,0.48,65.33,72.96,0.2,4.82,19.51,Indian Food Nutrition dataset provided by user
+IND-0447,Semolina upma (Suji/Rava upma),147.89,16.31,3.3,7.49,1.31,3.24,101.59,21.57,1.1,4.64,15.13,Indian Food Nutrition dataset provided by user
+IND-0448,Vermicelli upma (Semiya/Seviyan upma),149.11,16.88,3.11,7.45,1.4,3.21,101.8,20.3,0.93,4.64,12.64,Indian Food Nutrition dataset provided by user
+IND-0449,Rice upma,151.27,17.96,2.63,7.46,1.13,2.12,101.75,17.57,0.67,4.64,11.94,Indian Food Nutrition dataset provided by user
+IND-0450,Bread upma,129.51,12.6,2.8,7.75,1.56,1.96,176.44,45.22,0.82,4.64,15.79,Indian Food Nutrition dataset provided by user
+IND-0451,Vegetable upma,146.47,16.46,4.73,6.63,1.39,4.19,347.02,26.68,1.35,14.42,50.48,Indian Food Nutrition dataset provided by user
+IND-0452,Poha,294.53,35.05,6.09,14.14,0.87,3.72,377.1,37.67,3.01,6.62,11.96,Indian Food Nutrition dataset provided by user
+IND-0453,Vegetable poha,180.52,21.52,4.89,8.07,1.4,3.76,418.02,28.01,1.92,7.21,21.79,Indian Food Nutrition dataset provided by user
+IND-0454,Moong dal stuffed cheela/chilla (Moong dal ka cheela/chilla),154.89,19.42,6.97,5.11,1.11,4.25,267.23,39.34,2.22,34.81,79.95,Indian Food Nutrition dataset provided by user
+IND-0455,Paneer stuffed cheela/chilla,205.19,19.16,11.44,8.89,3.81,4.03,289.1,151.3,2.41,19.76,116.52,Indian Food Nutrition dataset provided by user
+IND-0456,Indian style egg bhujia (Anda bhujia (Indian style)),102.83,3.76,6.1,7.02,1.95,1.53,218.05,31.9,1.14,13.56,40.85,Indian Food Nutrition dataset provided by user
+IND-0457,French omelette/omlet,211.04,0.41,10.03,18.86,0.1,0.38,381.85,46.35,1.58,0.48,25.79,Indian Food Nutrition dataset provided by user
+IND-0458,Puffy omelette/omlet,188.15,0.08,8.82,16.84,0.08,0.0,340.53,34.96,1.2,0.0,24.66,Indian Food Nutrition dataset provided by user
+IND-0459,Orange omelette/omlet,194.66,1.68,8.93,16.84,1.68,0.0,340.92,37.33,1.26,7.2,28.86,Indian Food Nutrition dataset provided by user
+IND-0460,Cheese and mushroom omelette/omlet,205.63,1.68,9.69,17.82,1.07,0.93,400.29,148.77,1.01,0.48,32.02,Indian Food Nutrition dataset provided by user
+IND-0461,Spanish omelette/omlet,157.45,5.1,8.25,11.44,1.03,2.54,233.87,31.72,1.28,28.63,61.18,Indian Food Nutrition dataset provided by user
+IND-0462,Mixed stock,25.19,0.33,2.06,1.71,0.2,0.15,9.51,2.06,0.07,2.58,16.58,Indian Food Nutrition dataset provided by user
+IND-0463,Meat stock,24.48,0.0,2.1,1.78,0.0,0.0,8.62,0.86,0.05,0.0,6.0,Indian Food Nutrition dataset provided by user
+IND-0464,White stock,6.99,0.4,0.07,0.56,0.24,0.17,1.56,1.58,0.03,2.58,10.58,Indian Food Nutrition dataset provided by user
+IND-0465,Meat consomme (with mutton),29.76,0.51,14.86,13.68,0.24,0.71,12665.52,115.88,4.22,2.44,15.49,Indian Food Nutrition dataset provided by user
+IND-0466,Consomme au julienne,27.76,1.49,12.49,10.66,0.83,1.38,10208.47,85.89,3.34,11.77,55.26,Indian Food Nutrition dataset provided by user
+IND-0467,Consomme au vermicelli,29.94,1.3,15.23,12.98,0.27,0.81,12524.61,97.34,3.98,2.44,20.12,Indian Food Nutrition dataset provided by user
+IND-0468,Green pea soup (Matar ka soup),39.81,3.63,11.06,12.9,0.87,2.49,10958.11,46.63,2.18,41.12,65.46,Indian Food Nutrition dataset provided by user
+IND-0469,Spinach soup (Palak ka soup),32.59,3.03,10.54,14.26,0.29,1.98,12088.21,56.23,2.68,30.99,150.94,Indian Food Nutrition dataset provided by user
+IND-0470,Mixed vegetable soup,35.71,2.95,8.22,11.66,1.64,1.64,9202.27,50.69,1.74,20.06,31.61,Indian Food Nutrition dataset provided by user
+IND-0471,Cheese soup,41.13,1.87,12.39,17.07,0.84,1.8,13695.35,83.65,2.4,5.29,20.27,Indian Food Nutrition dataset provided by user
+IND-0472,Mulligatawny soup,54.42,8.24,11.26,13.28,1.26,2.6,11602.5,43.89,2.65,8.37,27.88,Indian Food Nutrition dataset provided by user
+IND-0473,Cream of carrot soup,59.77,5.69,8.27,12.35,1.77,1.98,8694.79,57.24,1.73,10.68,37.89,Indian Food Nutrition dataset provided by user
+IND-0474,Cream of broccoli soup,56.14,3.72,8.97,12.75,1.59,1.89,8792.43,66.55,1.82,68.91,94.43,Indian Food Nutrition dataset provided by user
+IND-0475,Cream of potato soup,60.2,6.14,8.1,12.05,1.24,1.51,8503.99,51.97,1.7,28.86,33.19,Indian Food Nutrition dataset provided by user
+IND-0476,Almond soup (Badam ka soup),78.65,3.68,10.13,13.8,1.94,0.91,8376.94,114.95,2.83,7.68,38.67,Indian Food Nutrition dataset provided by user
+IND-0477,Cold cucumber cream soup,11.88,1.76,0.34,0.34,0.51,0.73,207.89,8.02,0.16,14.72,24.84,Indian Food Nutrition dataset provided by user
+IND-0478,Cold tomato soup,16.9,0.59,0.11,1.56,0.22,0.16,287.15,4.2,0.1,10.09,5.63,Indian Food Nutrition dataset provided by user
+IND-0479,Chicken stew,127.55,4.44,7.19,8.91,1.43,1.82,79.62,31.53,0.9,20.89,36.31,Indian Food Nutrition dataset provided by user
+IND-0480,Veg paneer stew,145.55,10.22,6.98,8.41,4.85,3.08,73.15,160.51,1.37,32.41,102.72,Indian Food Nutrition dataset provided by user
+IND-0481,Onion-green chilli parantha/paratha (Pyaaz aur hari mirch ka parantha/paratha),191.27,26.37,4.37,7.27,2.71,5.16,241.19,24.91,1.81,3.05,16.17,Indian Food Nutrition dataset provided by user
+IND-0482,Methi parantha/paratha,148.36,22.19,4.27,4.34,2.44,5.09,48.36,65.85,2.42,12.63,28.46,Indian Food Nutrition dataset provided by user
+IND-0483,Bathua poori,598.79,13.85,2.35,59.14,0.41,1.87,49.71,30.83,0.96,4.56,8.77,Indian Food Nutrition dataset provided by user
+IND-0484,Gram flour poori (Besan poori),697.66,10.93,2.59,71.51,0.35,1.94,58.33,7.09,0.71,0.0,11.18,Indian Food Nutrition dataset provided by user
+IND-0485,Beetroot poori (Chukandar ki poori),527.66,12.29,1.91,52.18,0.54,1.4,46.48,5.38,0.6,0.29,9.45,Indian Food Nutrition dataset provided by user
+IND-0486,Peas poori (Matar ki poori),592.83,14.92,3.04,57.69,0.48,2.25,47.77,8.96,0.84,4.61,10.21,Indian Food Nutrition dataset provided by user
+IND-0487,Peas kachori (Matar kachori),584.68,13.25,3.21,57.51,0.5,2.03,55.45,14.25,0.77,10.11,16.43,Indian Food Nutrition dataset provided by user
+IND-0488,Pizza,146.77,9.94,6.85,8.72,1.38,1.71,225.02,77.23,0.66,42.9,87.58,Indian Food Nutrition dataset provided by user
+IND-0489,Bacon and mushroom pancake,157.67,8.47,6.82,10.6,1.23,1.59,344.23,44.74,0.54,1.91,14.58,Indian Food Nutrition dataset provided by user
+IND-0490,Cheese and tomato pancake,147.39,10.66,5.15,9.28,3.48,1.06,281.62,127.51,0.64,9.72,16.52,Indian Food Nutrition dataset provided by user
+IND-0491,Minced meat pancake (with chicken),116.04,8.18,12.01,10.48,1.29,0.7,4942.18,64.72,1.99,2.14,12.77,Indian Food Nutrition dataset provided by user
+IND-0492,Eggplant/Brinjal rice (Vangi bhat),184.8,31.74,5.28,3.67,4.36,4.44,59.06,36.02,1.91,3.23,77.11,Indian Food Nutrition dataset provided by user
+IND-0493,Kashmiri 'tahar',98.21,19.11,1.95,1.37,0.17,0.98,61.29,3.93,0.32,0.02,7.94,Indian Food Nutrition dataset provided by user
+IND-0494,Cumin pulao (Jeera/Zeera pulao),135.24,23.61,2.47,3.2,0.64,1.4,219.73,7.25,0.33,1.42,13.85,Indian Food Nutrition dataset provided by user
+IND-0495,Peas pulao (Matar pulao),108.87,18.42,3.89,1.9,1.3,3.21,86.18,18.18,0.78,62.36,110.56,Indian Food Nutrition dataset provided by user
+IND-0496,Split bengal gram dal and vegetable pulao (Channa dal and vegetable pulao),116.53,19.72,3.6,2.3,1.59,3.16,98.07,19.09,0.82,27.07,104.21,Indian Food Nutrition dataset provided by user
+IND-0497,Black channa pulao/ Bengal gram pulao (Kale chane ka pulao),125.51,21.55,3.44,2.58,1.99,2.69,103.09,16.51,0.77,8.11,88.34,Indian Food Nutrition dataset provided by user
+IND-0498,Mutton pulao,130.77,11.26,6.52,10.78,1.0,1.65,3115.59,49.87,1.25,4.47,39.34,Indian Food Nutrition dataset provided by user
+IND-0499,Chicken pulao,108.24,11.17,6.07,8.48,0.99,1.64,3093.47,32.25,0.98,4.47,38.7,Indian Food Nutrition dataset provided by user
+IND-0500,Mexican rice,120.57,14.21,4.62,4.88,1.44,1.64,93.42,14.51,0.55,42.71,53.09,Indian Food Nutrition dataset provided by user
+IND-0501,Plain khitchdi (Plain khichri/khichdi),57.03,10.04,1.72,1.01,0.12,0.85,37.14,5.05,0.31,0.83,26.18,Indian Food Nutrition dataset provided by user
+IND-0502,Instant idli (with semolina),247.29,43.4,9.16,3.61,3.35,7.13,1504.66,93.2,2.31,0.14,9.08,Indian Food Nutrition dataset provided by user
+IND-0503,Plain dosa,380.91,64.08,10.34,8.43,0.7,5.23,142.98,19.35,1.5,0.0,9.16,Indian Food Nutrition dataset provided by user
+IND-0504,Masala dosa mixed vegetable fillings,144.53,23.02,4.84,3.26,1.53,4.31,122.08,31.79,1.21,52.07,89.33,Indian Food Nutrition dataset provided by user
+IND-0505,Masala dosa paneer fillings,243.12,29.76,10.31,8.84,4.81,3.11,160.4,171.23,1.27,11.5,94.26,Indian Food Nutrition dataset provided by user
+IND-0506,Uttapam,255.95,36.28,6.18,9.03,1.5,4.4,228.69,40.86,1.23,6.15,19.02,Indian Food Nutrition dataset provided by user
+IND-0507,Appam,267.7,13.28,3.12,22.63,4.16,6.19,26.59,6.36,0.83,2.57,27.59,Indian Food Nutrition dataset provided by user
+IND-0508,Beans and macaroni,136.08,14.24,4.58,7.01,1.68,2.05,182.79,86.86,0.75,16.54,82.63,Indian Food Nutrition dataset provided by user
+IND-0509,Spaghetti bolognese,97.43,10.04,9.35,9.51,1.41,1.08,5358.6,73.66,2.06,27.89,37.77,Indian Food Nutrition dataset provided by user
+IND-0510,Meat and macaroni casserole,161.55,16.12,9.15,10.17,1.0,1.19,2511.99,68.28,1.85,29.03,47.45,Indian Food Nutrition dataset provided by user
+IND-0511,Spaghetti with meat balls and tomato sauce,158.13,10.46,5.61,10.64,1.87,1.11,189.13,40.82,0.71,44.09,63.03,Indian Food Nutrition dataset provided by user
+IND-0512,Spaghetti with paneer balls and tomato sauce,158.54,12.72,3.95,10.44,3.03,1.25,199.55,80.73,0.55,44.09,98.36,Indian Food Nutrition dataset provided by user
+IND-0513,Lasagne with meat sauce,63.38,5.38,2.9,3.43,1.04,0.47,37.08,24.61,0.49,80.17,112.65,Indian Food Nutrition dataset provided by user
+IND-0514,Lasagne with vegetables,49.23,5.9,1.71,2.16,1.37,0.66,40.78,32.89,0.57,179.9,286.76,Indian Food Nutrition dataset provided by user
+IND-0515,Home made egg noodles,240.84,42.92,6.55,4.37,1.03,1.6,177.24,15.96,1.15,0.0,30.08,Indian Food Nutrition dataset provided by user
+IND-0516,Sour lentils (Khatti dal),34.79,6.04,2.22,0.12,1.25,1.22,115.6,8.29,0.85,1.88,22.49,Indian Food Nutrition dataset provided by user
+IND-0517,Urad special dehusked,69.43,8.86,3.14,2.17,1.32,2.5,109.56,16.4,0.83,17.4,54.46,Indian Food Nutrition dataset provided by user
+IND-0518,Arhar with spinach (Arhar dal aur palak),52.84,4.77,2.05,2.76,0.23,1.3,109.97,21.81,0.89,18.79,105.9,Indian Food Nutrition dataset provided by user
+IND-0519,Moong dal with vadi,24.08,1.0,0.4,2.05,0.45,0.39,112.36,2.99,0.18,10.19,11.52,Indian Food Nutrition dataset provided by user
+IND-0520,Rasam with tamarind (Puli rasam/ Chintapandu rasam/ Charu/Saaru),26.74,3.37,1.13,0.88,0.83,1.6,104.11,16.56,0.59,17.27,28.68,Indian Food Nutrition dataset provided by user
+IND-0521,Rasam with lemon (Nimmakaya rasam/Nimmakaya charu/Elumichai rasam/Nimbe hannina saaru),24.41,2.85,1.11,0.87,0.44,1.54,102.77,15.56,0.52,19.71,28.91,Indian Food Nutrition dataset provided by user
+IND-0522,Green gram whole with baghar (Sabut moong dal with tadka),63.43,6.8,3.23,2.48,0.15,3.02,181.69,25.04,1.0,0.48,45.28,Indian Food Nutrition dataset provided by user
+IND-0523,Urad sabut special,79.39,5.03,2.33,5.46,0.86,2.15,60.09,21.45,0.71,28.45,80.51,Indian Food Nutrition dataset provided by user
+IND-0524,Kabuli channa curry,68.57,7.63,2.92,3.06,1.24,1.12,122.05,32.03,0.95,16.22,93.09,Indian Food Nutrition dataset provided by user
+IND-0525,Besan gatte curry,189.38,16.26,7.75,10.72,4.5,3.25,356.27,151.08,1.89,13.39,135.02,Indian Food Nutrition dataset provided by user
+IND-0526,Dry masala chops,135.07,3.3,9.08,9.54,2.27,0.86,83.47,112.25,1.39,1.87,15.19,Indian Food Nutrition dataset provided by user
+IND-0527,Mutton korma,115.64,2.53,7.09,8.54,1.64,0.78,56.94,79.07,1.09,5.54,31.82,Indian Food Nutrition dataset provided by user
+IND-0528,Shahi keema kofta curry,418.13,1.73,4.14,43.83,0.78,0.91,104.53,14.51,0.67,20.97,34.57,Indian Food Nutrition dataset provided by user
+IND-0529,Minced meat ball curry,109.79,2.86,6.82,7.85,1.27,1.49,170.06,23.84,1.01,20.62,33.86,Indian Food Nutrition dataset provided by user
+IND-0530,Boti kebab,132.86,3.06,9.22,9.27,2.09,0.76,78.14,98.67,1.41,4.52,6.58,Indian Food Nutrition dataset provided by user
+IND-0531,Mutton seekh kebab,133.94,3.11,11.25,8.43,1.4,1.88,102.17,117.44,2.19,3.97,5.3,Indian Food Nutrition dataset provided by user
+IND-0532,Indian lamb and egg curry (Nargisi kofta),335.75,2.07,3.84,34.7,0.75,0.6,57.44,12.91,0.55,7.67,44.36,Indian Food Nutrition dataset provided by user
+IND-0533,Soya chunks sweet and sour (Nutrinugget sweet and sour),500.94,3.27,2.85,55.99,1.1,0.86,2257.67,13.89,0.7,37.78,40.59,Indian Food Nutrition dataset provided by user
+IND-0534,Soya chunks korma (Nutrinugget korma),131.43,7.67,3.86,9.5,4.66,2.57,148.98,89.7,1.18,11.59,49.69,Indian Food Nutrition dataset provided by user
+IND-0535,Mushroom matar,70.77,5.33,2.79,4.11,1.39,3.13,61.63,21.42,0.81,39.15,54.07,Indian Food Nutrition dataset provided by user
+IND-0536,Soya chunks and peas (Nutrinugget matar),82.62,5.82,3.03,5.11,1.64,2.86,70.97,20.32,0.99,39.15,52.1,Indian Food Nutrition dataset provided by user
+IND-0537,Vegetable yakhni,406.06,1.94,1.18,43.8,1.44,0.61,38.05,43.67,0.24,5.43,60.84,Indian Food Nutrition dataset provided by user
+IND-0538,Spinach mushroom (Palak mushroom),47.63,2.95,1.94,2.96,1.0,2.27,70.97,49.75,1.69,60.21,232.9,Indian Food Nutrition dataset provided by user
+IND-0539,Vegetarian nargisi kofta curry,332.15,6.58,2.29,32.94,1.65,0.86,73.56,47.09,0.38,27.25,57.94,Indian Food Nutrition dataset provided by user
+IND-0540,Roast chicken,199.9,0.1,20.49,13.06,0.05,0.03,71.71,13.61,0.79,0.3,13.16,Indian Food Nutrition dataset provided by user
+IND-0541,Shahi chicken masala,163.7,4.07,9.82,12.02,2.86,0.96,142.56,82.68,0.89,9.92,65.41,Indian Food Nutrition dataset provided by user
+IND-0542,Tomato chicken,111.68,2.13,10.57,6.71,0.93,1.42,104.83,21.24,0.87,24.53,24.19,Indian Food Nutrition dataset provided by user
+IND-0543,Creamy chicken,152.87,3.13,13.52,9.57,2.11,0.69,97.08,50.37,0.82,7.46,32.64,Indian Food Nutrition dataset provided by user
+IND-0544,Broccoli chicken ala king,119.56,5.34,7.97,7.57,2.49,1.92,104.01,73.36,0.78,79.81,105.46,Indian Food Nutrition dataset provided by user
+IND-0545,Ginger chicken,129.17,5.6,8.24,8.24,1.95,1.21,365.86,18.41,0.96,49.96,64.3,Indian Food Nutrition dataset provided by user
+IND-0546,Chicken sweet and sour,445.09,2.67,6.92,47.59,0.89,0.58,1809.94,21.98,0.93,37.78,50.11,Indian Food Nutrition dataset provided by user
+IND-0547,Chicken korma,147.96,5.43,9.83,9.67,3.32,1.82,119.21,68.66,1.06,10.02,58.86,Indian Food Nutrition dataset provided by user
+IND-0548,Bengal fish curry (Bengali machli curry),109.43,4.42,7.26,7.03,2.39,1.93,76.38,44.44,0.85,9.39,46.45,Indian Food Nutrition dataset provided by user
+IND-0549,Fish finger,542.9,4.47,5.66,55.82,0.17,0.34,103.55,11.38,0.38,14.13,34.81,Indian Food Nutrition dataset provided by user
+IND-0550,Fish in coconut milk (Nariyal ke doodh ke saath machli),86.21,2.73,8.66,4.43,1.55,1.52,73.93,21.94,0.91,10.71,38.0,Indian Food Nutrition dataset provided by user
+IND-0551,Prawn curry (with coconut) (Jhinga curry),109.55,3.1,8.54,6.93,2.03,1.56,375.86,37.25,0.96,3.72,43.62,Indian Food Nutrition dataset provided by user
+IND-0552,Baked stuffed fish,121.96,2.12,16.14,5.43,0.35,0.38,74.36,18.8,0.35,13.01,67.06,Indian Food Nutrition dataset provided by user
+IND-0553,Fish pie,120.9,7.74,9.25,5.77,1.13,0.76,101.8,36.15,0.46,27.02,37.04,Indian Food Nutrition dataset provided by user
+IND-0554,Crispy baked fish,138.4,9.59,10.95,6.41,1.53,1.21,192.42,60.04,0.55,16.97,46.78,Indian Food Nutrition dataset provided by user
+IND-0555,Fish souffle,139.71,5.14,10.51,8.55,2.09,0.19,92.45,63.87,0.59,2.41,45.24,Indian Food Nutrition dataset provided by user
+IND-0556,Potato curry (Aloo ki sabzi),89.56,10.42,1.52,4.47,1.58,2.42,78.4,23.74,0.97,42.18,35.58,Indian Food Nutrition dataset provided by user
+IND-0557,Egg curry (Anda curry),117.52,4.03,5.38,8.81,1.9,2.09,142.12,41.59,1.52,19.03,44.73,Indian Food Nutrition dataset provided by user
+IND-0558,Vegetable curry with coconut,83.07,7.19,2.77,4.66,1.41,3.35,43.4,19.63,0.95,69.6,87.67,Indian Food Nutrition dataset provided by user
+IND-0559,Curd with potatoes (Dahi aloo),59.9,7.15,1.56,2.72,1.82,1.19,51.99,36.36,0.47,42.93,44.72,Indian Food Nutrition dataset provided by user
+IND-0560,Potato kofta curry (Aloo kofta curry),455.4,2.78,0.56,49.08,0.63,0.56,30.12,7.77,0.26,46.64,48.57,Indian Food Nutrition dataset provided by user
+IND-0561,Yam kofta curry (Zimikand/Suran kofta curry),322.88,3.75,0.71,33.84,0.63,1.04,42.22,8.35,0.31,36.07,43.47,Indian Food Nutrition dataset provided by user
+IND-0562,Jackfruit kofta curry (Kathal ka kofta curry),321.08,3.17,0.8,33.83,2.4,0.96,40.04,11.36,0.24,27.49,63.24,Indian Food Nutrition dataset provided by user
+IND-0563,Spinach and potato (Palak aloo),57.17,5.91,1.63,2.82,0.93,2.04,62.46,43.67,1.59,78.73,242.0,Indian Food Nutrition dataset provided by user
+IND-0564,Mooli bhujia,91.2,4.74,1.69,7.25,1.07,2.36,89.73,131.88,2.37,80.77,75.87,Indian Food Nutrition dataset provided by user
+IND-0565,Bathua bhujia,90.9,3.63,2.26,7.29,1.08,3.8,81.99,165.84,2.36,66.6,71.68,Indian Food Nutrition dataset provided by user
+IND-0566,Cabbage rolls (dry) ((Pattagobhi rolls) (dry)),142.48,6.09,8.21,9.36,1.26,1.84,118.05,31.54,0.98,12.69,19.01,Indian Food Nutrition dataset provided by user
+IND-0567,Cabbage rolls (curry) ((Pattagobhi rolls)(curry)),124.63,7.03,5.76,8.17,3.81,2.35,123.98,29.82,0.95,26.91,34.04,Indian Food Nutrition dataset provided by user
+IND-0568,Dry arbi (Sookhi arbi),134.95,11.11,2.12,8.97,1.55,2.47,81.25,22.77,0.68,8.11,32.76,Indian Food Nutrition dataset provided by user
+IND-0569,Masala arbi,185.38,16.16,3.01,11.9,0.81,3.1,261.31,32.08,0.99,1.9,20.12,Indian Food Nutrition dataset provided by user
+IND-0570,Peas brinjal bhartha (Matar baingan bhartha),84.55,5.02,2.05,6.05,1.57,3.63,63.65,19.63,0.63,27.86,82.49,Indian Food Nutrition dataset provided by user
+IND-0571,Okra/Lady's fingers fry (Bhindi sabzi/sabji/subji),110.81,4.5,1.83,9.27,1.42,3.57,92.78,67.88,0.88,29.07,85.27,Indian Food Nutrition dataset provided by user
+IND-0572,Crispy okra/Crispy lady's fingers (Karare bhindi),657.76,4.35,1.91,70.4,0.26,1.75,40.42,27.61,0.56,18.14,90.04,Indian Food Nutrition dataset provided by user
+IND-0573,Beans foogath,105.06,3.26,2.03,9.22,1.7,4.15,81.22,44.2,0.95,6.36,86.05,Indian Food Nutrition dataset provided by user
+IND-0574,Stuffed bittergourd (wet) (Bharwa karele),162.36,4.68,1.36,15.24,1.95,2.86,360.09,17.25,0.91,46.93,63.07,Indian Food Nutrition dataset provided by user
+IND-0575,Jackfruit/Kathal (dry),488.97,4.56,0.93,51.78,3.55,1.33,33.68,12.79,0.33,21.72,55.34,Indian Food Nutrition dataset provided by user
+IND-0576,Yam fried (Zimikand/Suran fried),491.76,5.47,0.79,51.79,0.8,1.44,37.07,8.11,0.43,30.3,35.57,Indian Food Nutrition dataset provided by user
+IND-0577,"Cauliflower, pea and potato bhujia (Phoolgobhi, matar aur aloo bhujia)",95.67,8.23,2.75,5.54,1.47,3.26,86.29,21.05,0.98,53.51,60.04,Indian Food Nutrition dataset provided by user
+IND-0578,Vegetable jalfrezi,68.48,5.43,1.4,4.38,1.79,2.97,79.46,27.11,0.68,26.08,28.48,Indian Food Nutrition dataset provided by user
+IND-0579,Vegetables stir fry,30.78,3.19,1.04,1.47,0.86,1.37,55.0,13.3,0.34,38.17,61.93,Indian Food Nutrition dataset provided by user
+IND-0580,Broccoli delight,40.7,2.34,2.49,2.48,1.08,2.83,59.26,26.99,0.71,79.0,97.64,Indian Food Nutrition dataset provided by user
+IND-0581,Dhansak (vegetarian),82.8,7.28,3.32,4.18,0.91,4.17,34.18,26.4,1.26,13.25,45.12,Indian Food Nutrition dataset provided by user
+IND-0582,Cauliflower basket,90.95,3.97,5.21,5.88,1.47,2.4,194.22,100.19,0.92,71.55,88.46,Indian Food Nutrition dataset provided by user
+IND-0583,Stuffed bottle gourd (Stuffed ghiya/lauki),93.19,4.36,5.84,5.8,1.52,1.18,106.99,71.83,0.66,9.01,92.91,Indian Food Nutrition dataset provided by user
+IND-0584,Ducheese potato,140.54,10.94,3.6,9.01,0.29,1.29,103.85,18.1,0.76,7.23,8.71,Indian Food Nutrition dataset provided by user
+IND-0585,Roast potatoes,87.32,14.52,1.53,2.35,0.33,1.71,90.67,10.38,0.57,17.36,11.66,Indian Food Nutrition dataset provided by user
+IND-0586,Stuffed baked potatoes,100.2,11.03,3.82,4.39,0.4,1.31,92.09,25.72,0.81,18.77,23.25,Indian Food Nutrition dataset provided by user
+IND-0587,Potato nests,111.62,11.05,5.71,4.77,1.41,2.49,182.12,55.25,0.87,37.47,49.55,Indian Food Nutrition dataset provided by user
+IND-0588,Parsley potato,119.51,13.81,1.49,6.28,0.34,1.59,4.62,11.43,0.55,23.82,16.5,Indian Food Nutrition dataset provided by user
+IND-0589,Creamed spinach and mushroom,419.62,3.17,2.28,44.14,1.17,1.02,90.21,65.49,0.9,48.37,234.02,Indian Food Nutrition dataset provided by user
+IND-0590,Fricassee of Mushroom,106.66,8.13,3.65,6.63,2.51,1.23,118.98,84.97,0.36,39.68,37.46,Indian Food Nutrition dataset provided by user
+IND-0591,Cauliflower au gratin,145.9,9.13,4.45,10.2,3.01,1.44,164.96,119.69,0.57,50.15,69.55,Indian Food Nutrition dataset provided by user
+IND-0592,Vegetable and cheese pie,126.88,8.76,4.03,8.28,2.69,1.91,117.99,99.48,0.58,55.0,104.25,Indian Food Nutrition dataset provided by user
+IND-0593,Spinach souffle,150.18,6.27,7.36,10.52,0.89,1.44,244.07,133.69,2.15,30.28,172.47,Indian Food Nutrition dataset provided by user
+IND-0594,Beetroot and egg salad (Chukandar aur ande ka salad),84.92,3.4,3.36,6.45,1.97,0.55,110.12,18.13,0.55,6.0,41.14,Indian Food Nutrition dataset provided by user
+IND-0595,Sour cream potato salad,121.9,9.05,2.89,8.13,0.84,1.21,102.66,23.25,0.9,37.28,52.99,Indian Food Nutrition dataset provided by user
+IND-0596,Tossed green salad,49.88,3.82,1.33,3.24,1.9,1.33,65.09,33.71,1.27,58.24,75.97,Indian Food Nutrition dataset provided by user
+IND-0597,Spring basket salad,160.46,11.61,3.36,11.3,1.46,3.09,26.02,45.65,0.85,70.79,109.53,Indian Food Nutrition dataset provided by user
+IND-0598,Cucumber and yogurt salad (Kheere aur dahi ka salad),36.13,4.72,2.09,0.93,2.28,1.66,141.73,68.49,0.52,6.74,21.36,Indian Food Nutrition dataset provided by user
+IND-0599,Chicken and tomato towers,100.55,2.36,6.9,6.99,1.21,1.14,76.02,17.54,0.77,56.69,49.49,Indian Food Nutrition dataset provided by user
+IND-0600,Jellied sunshine fruit salad,48.86,4.21,5.85,0.85,2.86,1.8,74.2,37.14,0.87,28.75,37.7,Indian Food Nutrition dataset provided by user
+IND-0601,Tomato aspic,50.37,5.02,6.87,0.26,3.21,1.58,98.17,44.28,1.18,35.87,39.01,Indian Food Nutrition dataset provided by user
+IND-0602,Frozen frosty fruit salad (Phalon ka salaad),103.51,15.61,1.68,4.17,14.38,0.26,13.23,28.61,0.41,33.45,20.91,Indian Food Nutrition dataset provided by user
+IND-0603,French dressing,733.77,3.68,0.32,79.65,3.01,0.22,261.13,6.98,0.48,6.42,1.95,Indian Food Nutrition dataset provided by user
+IND-0604,Mayonnaise without eggs,329.05,3.98,2.13,33.84,3.68,0.04,193.58,75.54,0.27,12.05,18.85,Indian Food Nutrition dataset provided by user
+IND-0605,Curd dressing,78.8,8.03,5.59,2.9,7.57,0.22,204.62,194.59,0.18,5.34,39.4,Indian Food Nutrition dataset provided by user
+IND-0606,Carrot raita (Gajar ka raita),64.78,7.19,4.14,2.19,5.99,1.69,274.46,146.72,0.55,7.76,32.0,Indian Food Nutrition dataset provided by user
+IND-0607,Pumpkin raita (Kaddu ka raita),55.6,6.02,3.74,1.88,5.48,1.04,129.14,130.11,0.33,7.11,31.7,Indian Food Nutrition dataset provided by user
+IND-0608,Mint and peanut raita (Pudinay aur moongfali ka raita),112.05,7.31,7.05,6.19,6.17,1.79,223.01,191.01,1.68,6.06,44.25,Indian Food Nutrition dataset provided by user
+IND-0609,Spinach raita (Palak ka raita),52.75,5.06,3.95,1.86,3.97,1.39,126.57,142.96,1.61,32.9,160.65,Indian Food Nutrition dataset provided by user
+IND-0610,Bathua raita,54.4,5.31,4.13,1.76,4.11,2.19,110.92,206.31,1.46,43.65,61.2,Indian Food Nutrition dataset provided by user
+IND-0611,Pineapple raita (Ananas ka raita),67.74,8.62,3.9,2.02,8.12,1.39,135.48,134.53,0.27,19.89,27.72,Indian Food Nutrition dataset provided by user
+IND-0612,Banana raita (Kele ka raita),89.03,13.51,4.13,2.07,10.11,1.0,135.43,133.23,0.31,5.73,27.58,Indian Food Nutrition dataset provided by user
+IND-0613,Mango raita (Aam ka raita),67.37,8.23,3.9,2.14,7.87,0.89,135.46,136.06,0.34,18.19,59.64,Indian Food Nutrition dataset provided by user
+IND-0614,Guava raita (Amarood ka raita),64.36,7.27,4.19,2.07,6.71,3.0,135.94,136.93,0.28,108.7,33.5,Indian Food Nutrition dataset provided by user
+IND-0615,Grapes raita (Angoor ka raita),72.59,9.66,3.98,2.07,8.51,0.71,135.64,134.52,0.26,10.55,22.88,Indian Food Nutrition dataset provided by user
+IND-0616,Bottle gourd kheer (Ghiya/Lauki kheer),84.07,10.0,2.7,3.86,9.63,0.55,19.62,94.18,0.23,6.2,35.87,Indian Food Nutrition dataset provided by user
+IND-0617,Pumpkin kheer (Kaddu ki kheer),86.35,10.44,2.76,3.86,10.12,0.63,20.99,95.61,0.24,8.06,26.95,Indian Food Nutrition dataset provided by user
+IND-0618,Apple kheer (Seb ki kheer),81.3,11.34,2.14,3.18,10.71,0.51,15.86,75.67,0.18,5.82,16.4,Indian Food Nutrition dataset provided by user
+IND-0619,Caramel custard (baked),122.7,14.95,5.11,5.01,14.92,0.0,44.78,90.59,0.53,3.02,35.21,Indian Food Nutrition dataset provided by user
+IND-0620,Vanilla ice cream without egg,228.67,14.21,2.69,18.15,13.45,0.0,23.97,81.27,0.1,2.13,9.67,Indian Food Nutrition dataset provided by user
+IND-0621,Vanilla ice cream with egg,214.85,11.71,4.16,17.02,11.69,0.0,37.72,77.42,0.34,2.13,21.98,Indian Food Nutrition dataset provided by user
+IND-0622,Strawberry ice cream,215.61,12.26,4.15,16.96,11.6,0.0,37.62,77.08,0.34,2.13,22.0,Indian Food Nutrition dataset provided by user
+IND-0623,Chocochip ice cream,241.45,16.75,4.23,17.93,16.08,0.0,34.84,73.22,0.51,2.13,24.1,Indian Food Nutrition dataset provided by user
+IND-0624,Choconut ice cream,273.96,23.13,5.04,18.49,21.02,0.51,29.83,67.38,0.89,2.17,29.32,Indian Food Nutrition dataset provided by user
+IND-0625,Pear chocholate sunday,183.49,15.02,2.08,13.11,14.41,0.07,16.26,56.67,0.24,3.34,12.72,Indian Food Nutrition dataset provided by user
+IND-0626,Chocolate sauce,263.2,43.21,1.91,10.39,42.06,0.0,2.8,18.8,1.13,0.0,0.63,Indian Food Nutrition dataset provided by user
+IND-0627,Coffee ice cream,150.62,14.09,3.15,9.43,13.35,0.0,42.09,95.72,0.15,2.16,7.18,Indian Food Nutrition dataset provided by user
+IND-0628,Coffee pear alaska,203.99,19.36,2.88,13.22,16.88,0.15,51.11,60.61,0.22,3.48,13.85,Indian Food Nutrition dataset provided by user
+IND-0629,Crunchy butterscotch,277.32,19.92,3.11,20.99,17.73,0.47,22.24,72.26,0.26,2.13,18.72,Indian Food Nutrition dataset provided by user
+IND-0630,Peach melba ice cream,200.85,16.31,2.06,14.51,13.35,0.06,17.92,60.55,0.11,2.99,11.79,Indian Food Nutrition dataset provided by user
+IND-0631,Vanilla ice cream with apples in hot cherry sauce,196.32,22.75,1.73,11.45,14.19,0.26,31.54,56.34,0.16,4.23,10.77,Indian Food Nutrition dataset provided by user
+IND-0632,Grape and orange whip,57.39,6.72,1.41,2.62,5.66,0.97,14.36,17.4,0.53,34.86,16.85,Indian Food Nutrition dataset provided by user
+IND-0633,Honey banana cream,125.49,13.64,2.78,6.68,10.51,0.7,15.65,43.52,0.23,16.68,28.45,Indian Food Nutrition dataset provided by user
+IND-0634,Raspberry bavarian cream,150.1,17.82,3.34,7.88,15.3,2.19,24.59,26.4,0.31,21.41,20.79,Indian Food Nutrition dataset provided by user
+IND-0635,Fruit delight,107.09,9.11,2.09,7.09,9.03,0.09,17.27,71.69,0.15,7.74,19.39,Indian Food Nutrition dataset provided by user
+IND-0636,Creamy chocolate mousse,230.52,9.53,6.85,18.16,8.99,0.0,48.64,45.25,0.96,0.75,33.07,Indian Food Nutrition dataset provided by user
+IND-0637,Cold lemon souffle,169.87,15.62,5.89,9.78,13.88,0.0,46.35,55.03,0.53,8.65,31.24,Indian Food Nutrition dataset provided by user
+IND-0638,Cold orange souffle,173.19,16.27,5.94,9.82,14.42,0.11,46.53,55.45,0.57,10.08,33.8,Indian Food Nutrition dataset provided by user
+IND-0639,Cold pineapple souffle,181.22,16.85,6.23,10.39,14.99,0.0,49.38,57.13,0.54,1.88,30.3,Indian Food Nutrition dataset provided by user
+IND-0640,Cold vanilla souffle,179.54,16.29,6.22,10.32,14.49,0.0,49.09,62.47,0.52,1.3,30.71,Indian Food Nutrition dataset provided by user
+IND-0641,Cold chocolate souffle,187.53,17.22,6.37,10.86,15.31,0.0,47.77,62.91,0.68,1.3,32.45,Indian Food Nutrition dataset provided by user
+IND-0642,Stewed fruit (with pear),74.32,18.22,0.25,0.32,17.67,2.84,1.7,5.94,0.21,2.48,4.33,Indian Food Nutrition dataset provided by user
+IND-0643,Apricot fool,240.79,33.64,1.54,11.35,21.29,1.0,8.28,26.37,0.73,1.47,11.46,Indian Food Nutrition dataset provided by user
+IND-0644,Pavlova,200.6,21.84,1.84,12.29,20.37,0.06,26.34,23.0,0.25,23.78,19.18,Indian Food Nutrition dataset provided by user
+IND-0645,Apple crumb pudding,220.85,35.17,1.54,8.87,27.69,1.33,59.36,38.49,1.05,3.6,7.86,Indian Food Nutrition dataset provided by user
+IND-0646,Steamed cake with chocolate sauce,301.91,29.06,4.49,19.01,19.72,0.29,100.32,67.76,0.85,1.81,25.81,Indian Food Nutrition dataset provided by user
+IND-0647,Hot lemon souffle,155.25,16.31,5.29,7.93,12.07,0.14,47.75,48.77,0.55,12.93,20.7,Indian Food Nutrition dataset provided by user
+IND-0648,Gulab jamun with milk powder,471.15,28.24,0.85,40.15,27.04,0.05,67.28,26.13,0.13,0.41,4.56,Indian Food Nutrition dataset provided by user
+IND-0649,Chum chum,130.05,28.27,1.52,1.92,27.84,0.02,16.65,62.58,0.13,2.69,10.2,Indian Food Nutrition dataset provided by user
+IND-0650,Dil bahar,130.05,28.27,1.52,1.92,27.84,0.02,16.65,62.58,0.13,2.69,10.2,Indian Food Nutrition dataset provided by user
+IND-0651,Rasbhari,130.05,28.27,1.52,1.92,27.84,0.02,16.65,62.58,0.13,2.69,10.2,Indian Food Nutrition dataset provided by user
+IND-0652,Rajbogh,133.7,28.16,1.71,2.28,27.66,0.11,16.57,63.23,0.17,2.69,12.02,Indian Food Nutrition dataset provided by user
+IND-0653,Rasgulla,118.64,25.79,1.38,1.75,25.4,0.01,15.19,57.09,0.12,2.69,10.2,Indian Food Nutrition dataset provided by user
+IND-0654,Rasmalai,135.55,29.17,1.61,2.11,28.71,0.07,16.46,62.31,0.15,2.69,11.29,Indian Food Nutrition dataset provided by user
+IND-0655,Khoa coconut burfi,411.45,36.55,9.98,26.01,35.6,4.07,31.14,309.84,2.1,0.0,26.6,Indian Food Nutrition dataset provided by user
+IND-0656,Danedar burfi,102.68,12.33,3.24,4.72,11.98,0.09,23.31,107.53,0.24,3.36,9.75,Indian Food Nutrition dataset provided by user
+IND-0657,Semolina burfi (Suji/Rava burfi),348.67,47.1,3.47,16.86,28.67,2.8,8.33,14.86,1.01,0.0,3.21,Indian Food Nutrition dataset provided by user
+IND-0658,Pumpkin coconut burfi (Kaddu aur nariyal ki burfi),186.18,17.02,1.75,12.66,16.11,4.29,8.95,21.76,0.79,3.02,11.48,Indian Food Nutrition dataset provided by user
+IND-0659,Khoa ladoo,396.02,34.43,12.21,24.09,33.37,3.08,31.71,358.61,2.25,0.02,27.31,Indian Food Nutrition dataset provided by user
+IND-0660,Wheat and gram flour ladoo (Atta besan ladoo),501.7,50.5,9.38,29.86,18.46,6.01,27.06,35.27,2.39,0.0,14.55,Indian Food Nutrition dataset provided by user
+IND-0661,Semolina ladoo with nuts (Suji/Rava ladoo with nuts),441.84,48.02,5.44,25.45,19.79,4.27,3.93,18.04,1.81,0.03,4.01,Indian Food Nutrition dataset provided by user
+IND-0662,Sesame chickpeas brittle (Til aur channe ki chikki),282.74,50.49,8.5,4.66,36.48,5.54,17.93,150.73,4.8,0.0,23.64,Indian Food Nutrition dataset provided by user
+IND-0663,Murmura chikki,253.82,59.59,2.12,0.32,48.27,0.37,15.03,63.3,3.3,0.0,2.16,Indian Food Nutrition dataset provided by user
+IND-0664,Masala onion pakora/pakoda (Pyaaz ke pakode),551.64,6.48,2.05,57.61,1.58,1.44,99.22,11.06,0.42,1.18,14.65,Indian Food Nutrition dataset provided by user
+IND-0665,Masala green chilli pakora/pakoda (Hari mirch kay pakode),668.76,5.55,2.22,71.01,0.27,1.34,120.9,8.58,0.47,3.84,12.67,Indian Food Nutrition dataset provided by user
+IND-0666,Chicken pakora/pakoda,590.09,4.55,6.03,60.98,0.22,0.96,103.23,9.08,0.51,0.14,11.46,Indian Food Nutrition dataset provided by user
+IND-0667,Fish pakora/pakoda,577.03,4.55,5.97,59.52,0.22,0.96,112.24,12.65,0.63,0.14,11.02,Indian Food Nutrition dataset provided by user
+IND-0668,Paneer cutlet,672.2,7.62,4.59,69.38,2.52,0.39,91.45,107.86,0.48,1.81,38.34,Indian Food Nutrition dataset provided by user
+IND-0669,Sago cutlet/vadas (Sabudana cutlet/vadas),558.76,11.23,0.56,56.97,0.1,0.54,48.17,5.43,0.38,13.39,9.09,Indian Food Nutrition dataset provided by user
+IND-0670,Poshtik cutlet,496.45,7.39,2.0,50.94,0.32,1.35,57.11,14.94,0.69,16.42,43.66,Indian Food Nutrition dataset provided by user
+IND-0671,Egg cutlet (Anda cutlet),575.02,5.77,2.45,60.25,0.2,0.58,79.4,16.22,0.56,11.07,22.05,Indian Food Nutrition dataset provided by user
+IND-0672,Minced meat cutlet,531.86,5.61,5.1,54.47,0.31,0.4,95.81,20.82,0.63,1.81,8.86,Indian Food Nutrition dataset provided by user
+IND-0673,Vegetable samosa,443.11,13.22,2.21,42.22,0.74,1.52,107.7,10.37,0.6,10.06,12.39,Indian Food Nutrition dataset provided by user
+IND-0674,Plain urad dal vada (Uzunne vada/Minapa garelu/Ulundu vadai/Medu vada),745.5,9.7,4.39,76.32,0.16,2.27,65.87,10.6,0.96,0.0,13.31,Indian Food Nutrition dataset provided by user
+IND-0675,Masala urad dal vada,703.78,9.93,4.32,71.62,0.7,2.71,61.49,11.87,1.0,2.05,15.89,Indian Food Nutrition dataset provided by user
+IND-0676,Khaman (dhokla),54.73,5.36,1.92,2.8,1.36,1.49,124.1,5.31,0.58,2.6,19.33,Indian Food Nutrition dataset provided by user
+IND-0677,Instant dhokla,207.11,24.11,7.66,9.37,6.86,3.57,763.98,66.58,1.05,2.7,22.87,Indian Food Nutrition dataset provided by user
+IND-0678,Tomato ginger chutney (Tamatar adarak ki chutney),44.66,9.11,1.05,0.32,6.31,2.14,209.42,23.63,1.08,3.65,2.29,Indian Food Nutrition dataset provided by user
+IND-0679,Mint tomato chutney (Pudinay aur tamatar ki chutney),43.65,8.22,1.53,0.36,5.48,2.63,183.98,47.59,2.06,4.07,4.94,Indian Food Nutrition dataset provided by user
+IND-0680,Coriander chutney (Hare dhaniye ki chutney),42.86,8.16,1.38,0.37,5.5,2.47,186.64,39.8,1.63,4.24,3.57,Indian Food Nutrition dataset provided by user
+IND-0681,Gooseberry chutney (Amla chutney),43.02,8.83,1.44,0.62,0.06,4.58,215.09,46.4,1.22,4.84,2.23,Indian Food Nutrition dataset provided by user
+IND-0682,Walnut chutney (Akhrot ki chutney),370.43,8.91,9.44,33.46,4.4,3.04,160.0,119.57,1.77,1.33,4.63,Indian Food Nutrition dataset provided by user
+IND-0683,Saunth/Sonth chutney with ginger,84.22,20.62,0.28,0.11,19.04,0.31,222.53,15.17,0.7,0.0,0.51,Indian Food Nutrition dataset provided by user
+IND-0684,Gun powder chutney,312.34,47.65,21.55,2.67,1.16,13.95,195.67,68.87,5.14,0.02,14.27,Indian Food Nutrition dataset provided by user
+IND-0685,Dessicated coconut chutney (Sookhe kase nariyal ki chutney),346.36,36.72,12.88,15.88,10.41,13.16,321.07,73.55,5.44,0.15,10.69,Indian Food Nutrition dataset provided by user
+IND-0686,Curd mint dip,76.13,9.11,4.82,2.44,7.83,0.77,222.77,172.79,0.82,3.28,7.82,Indian Food Nutrition dataset provided by user
+IND-0687,Curd vegetable dip,56.21,6.04,3.88,1.94,5.42,0.63,132.48,129.58,0.37,4.53,5.78,Indian Food Nutrition dataset provided by user
+IND-0688,Mayonnaise vegetable dip,241.27,4.8,3.01,23.44,4.39,0.41,119.58,91.42,0.28,4.58,7.03,Indian Food Nutrition dataset provided by user
+IND-0689,Tomato and cucumber sandwich (Tamatar aur kheere ka sandwich),150.68,20.51,4.03,6.31,1.79,2.1,222.22,76.75,1.15,7.12,17.26,Indian Food Nutrition dataset provided by user
+IND-0690,Tomato sandwich (grilled),189.92,21.29,6.26,9.39,2.58,1.91,420.6,150.9,0.88,8.91,16.85,Indian Food Nutrition dataset provided by user
+IND-0691,French sandwich (toasted),186.75,14.82,6.82,11.51,1.82,1.37,274.68,100.73,1.24,6.66,29.24,Indian Food Nutrition dataset provided by user
+IND-0692,Peanut butter cucumber sandwich,243.33,29.76,9.04,10.56,2.91,3.35,460.09,95.35,1.32,0.92,16.53,Indian Food Nutrition dataset provided by user
+IND-0693,Mint and peanut sandwich,273.59,31.83,7.18,13.88,2.78,3.67,453.3,114.99,1.7,1.75,15.62,Indian Food Nutrition dataset provided by user
+IND-0694,Spicy chutney sandwich,249.58,34.03,8.74,9.58,3.96,3.73,315.4,154.53,1.51,0.21,23.71,Indian Food Nutrition dataset provided by user
+IND-0695,Chicken walnut sandwich (Chicken aur akhrot ke sandwich),285.78,22.62,12.58,16.77,1.77,1.53,287.39,78.45,1.12,0.0,12.99,Indian Food Nutrition dataset provided by user
+IND-0696,Rolled sandwich,293.07,34.69,6.45,15.29,2.7,2.07,321.57,117.68,1.23,0.91,5.61,Indian Food Nutrition dataset provided by user
+IND-0697,Ribbon sandwich,239.26,24.76,6.26,13.37,4.66,2.92,382.11,157.85,1.05,4.55,10.44,Indian Food Nutrition dataset provided by user
+IND-0698,Checker board sandwich,348.37,25.94,7.37,24.65,2.9,2.22,358.25,188.02,1.11,0.05,8.52,Indian Food Nutrition dataset provided by user
+IND-0699,Submarine sandwich,216.92,13.6,6.09,15.32,2.5,1.24,254.28,72.35,1.23,21.43,36.34,Indian Food Nutrition dataset provided by user
+IND-0700,Cheese open sandwich,274.07,28.42,9.84,14.24,3.24,1.74,504.41,256.25,1.22,0.6,12.93,Indian Food Nutrition dataset provided by user
+IND-0701,Sunset and sunrise open sandwich,241.31,18.89,8.58,15.14,1.95,1.39,381.29,114.07,1.28,3.86,26.36,Indian Food Nutrition dataset provided by user
+IND-0702,Danish luncheon sandwich,193.82,17.77,9.03,10.1,1.13,1.52,365.63,77.13,1.27,2.35,25.88,Indian Food Nutrition dataset provided by user
+IND-0703,Chicken and corn open sandwich,188.16,19.21,8.63,8.83,2.48,1.67,226.72,65.13,0.8,2.12,14.16,Indian Food Nutrition dataset provided by user
+IND-0704,Chocolate sponge cake,239.86,39.54,9.13,5.51,25.0,0.52,61.47,33.99,1.81,0.0,19.87,Indian Food Nutrition dataset provided by user
+IND-0705,Chocolate swiss roll,306.08,26.97,6.01,19.76,18.83,0.29,44.53,42.79,1.08,0.19,8.91,Indian Food Nutrition dataset provided by user
+IND-0706,Lemon curd filling,225.62,26.41,3.43,12.58,26.13,0.0,34.9,16.39,0.6,0.64,3.21,Indian Food Nutrition dataset provided by user
+IND-0707,Jam filling,184.62,46.15,0.0,0.0,41.54,0.0,0.0,0.0,0.0,0.0,0.0,Indian Food Nutrition dataset provided by user
+IND-0708,Chocolate pastry,243.37,32.24,7.05,10.12,22.34,0.32,46.54,50.7,1.44,0.25,17.22,Indian Food Nutrition dataset provided by user
+IND-0709,Assorted pastry,230.74,31.99,6.78,8.91,19.7,0.43,49.99,47.2,0.94,0.25,15.61,Indian Food Nutrition dataset provided by user
+IND-0710,Orange gateau,178.05,27.01,4.78,6.02,18.33,0.68,80.41,41.69,0.89,10.49,15.12,Indian Food Nutrition dataset provided by user
+IND-0711,Black forest gateau,217.82,30.57,5.94,8.58,21.97,0.28,79.37,46.79,1.09,143.5,10.98,Indian Food Nutrition dataset provided by user
+IND-0712,Lemon cake,373.85,43.1,5.29,20.63,25.84,0.62,151.29,32.77,0.91,2.44,9.0,Indian Food Nutrition dataset provided by user
+IND-0713,Dundee cake,396.62,41.4,7.78,22.7,21.3,1.81,182.74,58.11,1.57,0.07,9.22,Indian Food Nutrition dataset provided by user
+IND-0714,Victorian sandwich cake,373.09,44.74,5.18,19.83,28.18,0.59,145.28,36.25,0.86,0.08,8.66,Indian Food Nutrition dataset provided by user
+IND-0715,Chocolate eggless cake,312.01,43.45,6.66,13.19,34.2,0.32,196.61,185.38,0.95,2.67,14.7,Indian Food Nutrition dataset provided by user
+IND-0716,Orange eggless cake,355.62,52.65,7.16,13.82,37.87,0.56,226.28,205.84,0.52,3.47,13.72,Indian Food Nutrition dataset provided by user
+IND-0717,Chocolate glace icing,436.29,62.43,3.22,20.8,59.88,0.0,8.66,26.75,2.04,0.0,1.52,Indian Food Nutrition dataset provided by user
+IND-0718,Butter icing,500.72,71.64,0.19,25.37,71.64,0.0,5.98,12.48,0.14,0.0,0.0,Indian Food Nutrition dataset provided by user
+IND-0719,Chocolate butter icing,469.59,61.72,3.21,24.77,59.82,0.0,4.99,31.87,1.85,0.0,1.22,Indian Food Nutrition dataset provided by user
+IND-0720,Almond biscuit (Badam ke biscuit),407.74,52.14,6.25,19.7,22.19,1.5,151.76,44.05,1.11,0.03,2.28,Indian Food Nutrition dataset provided by user
+IND-0721,Orange biscuit,354.78,62.11,3.63,11.01,42.63,0.75,259.14,20.35,0.77,1.36,5.1,Indian Food Nutrition dataset provided by user
+IND-0722,Gingerman biscuit,357.43,55.24,6.26,12.73,21.64,2.0,918.57,41.35,1.59,3.65,4.91,Indian Food Nutrition dataset provided by user
+IND-0723,Coffee drops,443.07,43.06,7.57,27.16,18.27,1.88,88.17,57.09,1.48,0.03,2.72,Indian Food Nutrition dataset provided by user
+IND-0724,Christmas biscuit,406.07,60.97,5.67,15.88,26.01,2.17,127.36,29.07,1.2,0.0,2.42,Indian Food Nutrition dataset provided by user
+IND-0725,Christmas wreath biscuit,386.05,58.07,5.43,15.01,24.89,2.28,120.2,29.71,1.21,2.28,2.53,Indian Food Nutrition dataset provided by user
+IND-0726,Christmas bell biscuit,404.85,60.79,5.66,15.84,25.94,2.33,127.01,32.0,1.22,0.0,2.42,Indian Food Nutrition dataset provided by user
+IND-0727,Christmas star biscuit,392.03,74.54,3.54,10.04,53.05,1.47,76.09,22.75,0.96,0.01,2.69,Indian Food Nutrition dataset provided by user
+IND-0728,Christmas tree biscuit,385.63,58.41,5.43,15.0,24.77,2.65,120.45,35.04,1.18,1.61,2.58,Indian Food Nutrition dataset provided by user
+IND-0729,Chocolate cream shells,427.17,59.26,5.1,19.34,34.72,0.9,126.84,28.53,1.08,0.0,2.42,Indian Food Nutrition dataset provided by user
+IND-0730,Jelly biscuit,404.61,55.24,4.23,19.33,29.76,2.02,110.57,36.46,1.19,0.03,1.69,Indian Food Nutrition dataset provided by user
+IND-0731,Cherry and walnut cookies,422.6,59.35,5.63,18.75,30.37,1.3,114.62,46.27,1.31,0.0,2.49,Indian Food Nutrition dataset provided by user
+IND-0732,Cheese straws,382.0,30.61,9.83,24.28,1.79,1.29,587.42,160.64,1.29,0.0,2.35,Indian Food Nutrition dataset provided by user
+IND-0733,Butterfly biscuit,341.45,25.33,9.98,22.11,2.44,1.02,572.05,202.49,1.09,0.03,2.63,Indian Food Nutrition dataset provided by user
+IND-0734,Flan pastry,445.8,47.84,6.72,25.04,6.22,1.58,193.23,21.85,1.15,0.0,7.11,Indian Food Nutrition dataset provided by user
+IND-0735,Fruit flan,261.35,34.71,3.3,12.48,9.52,0.71,110.04,19.28,0.61,3.3,33.99,Indian Food Nutrition dataset provided by user
+IND-0736,Orange cream flan,280.28,36.16,4.73,13.59,25.27,0.63,82.41,27.9,0.93,43.79,76.78,Indian Food Nutrition dataset provided by user
+IND-0737,Fruit puree tart,286.5,30.42,3.35,16.83,9.79,1.31,49.65,19.64,0.63,2.6,6.05,Indian Food Nutrition dataset provided by user
+IND-0738,Apple banana pie,243.99,32.12,3.13,11.39,12.96,1.89,384.43,21.23,0.79,8.88,31.98,Indian Food Nutrition dataset provided by user
+IND-0739,Lemon chiffon pie,259.31,27.63,4.88,14.52,11.39,0.66,94.95,34.43,0.61,7.18,51.7,Indian Food Nutrition dataset provided by user
+IND-0740,Orange chiffon pie,207.57,23.14,3.89,11.16,10.46,0.7,73.23,30.34,0.62,84.88,91.24,Indian Food Nutrition dataset provided by user
+IND-0741,Cream buns,215.74,14.16,4.45,15.81,5.95,0.31,45.49,45.27,0.5,0.33,9.28,Indian Food Nutrition dataset provided by user
+IND-0742,Savoury puffs,190.79,10.8,9.51,15.24,4.51,0.33,2274.24,68.83,1.19,1.49,15.04,Indian Food Nutrition dataset provided by user
+IND-0743,Choux swans,216.34,14.92,4.35,15.6,6.13,0.35,145.08,44.67,0.51,4.27,18.67,Indian Food Nutrition dataset provided by user
+IND-0744,Potato aigrettes,530.03,8.01,2.35,54.24,0.73,0.45,112.45,9.2,0.45,1.16,3.35,Indian Food Nutrition dataset provided by user
+IND-0745,Cream horns,408.23,23.12,3.42,33.55,7.12,0.6,57.11,30.93,0.44,0.5,8.8,Indian Food Nutrition dataset provided by user
+IND-0746,Savoury cheese horns,295.15,21.38,5.66,20.71,2.74,0.73,212.28,121.83,0.63,2.31,8.51,Indian Food Nutrition dataset provided by user
+IND-0747,Paneer patties,338.58,22.79,7.6,23.96,4.04,1.18,158.44,129.9,0.79,3.3,31.26,Indian Food Nutrition dataset provided by user
+IND-0748,Vegetable patties,261.92,20.98,4.01,17.74,1.49,2.62,139.52,18.96,0.87,13.92,22.85,Indian Food Nutrition dataset provided by user
+IND-0749,Pearl millet infant food (Bajra shishu aahaar),362.44,62.1,11.98,6.62,26.06,7.84,12.67,118.52,5.67,0.0,24.14,Indian Food Nutrition dataset provided by user
+IND-0750,Sajina,345.26,66.87,10.81,3.03,25.89,7.62,11.7,54.4,5.39,0.0,20.4,Indian Food Nutrition dataset provided by user
+IND-0751,Finger millet infant food (Ragi shishu aahaar),327.91,62.24,7.87,4.71,24.89,8.68,14.65,225.55,3.61,0.0,17.47,Indian Food Nutrition dataset provided by user
+IND-0752,Paushtik daliya,280.9,50.77,8.23,4.42,20.08,5.43,8.04,36.56,2.6,0.0,19.24,Indian Food Nutrition dataset provided by user
+IND-0753,Sorghum infant food (Jowar shishu aahaar),342.34,62.66,10.22,4.64,25.48,6.86,13.25,75.1,4.45,0.0,22.42,Indian Food Nutrition dataset provided by user
+IND-0754,Paushtik sewian,342.27,67.8,9.75,2.77,25.82,6.59,10.87,26.54,3.77,0.0,19.78,Indian Food Nutrition dataset provided by user
+IND-0755,Nutritious infant food (Paushtik shishu aahaar),346.54,64.21,9.45,4.72,25.41,6.57,11.53,42.84,3.95,0.0,20.89,Indian Food Nutrition dataset provided by user
+IND-0756,Sorghum khichdi (Jowar ki khichdi),102.43,15.71,2.83,2.73,0.3,1.86,95.54,22.75,1.19,0.37,13.79,Indian Food Nutrition dataset provided by user
+IND-0757,Wheat and sprouted moong cheela/chilla (Atta aur ankuri moong dal ka cheela/chilla),758.82,7.49,2.02,80.12,0.3,1.38,74.77,10.02,0.67,3.8,34.4,Indian Food Nutrition dataset provided by user
+IND-0758,Moong dal and vegetable stuffed cheela/chilla,738.97,7.27,1.85,78.23,0.31,1.4,75.05,10.36,0.66,6.34,36.75,Indian Food Nutrition dataset provided by user
+IND-0759,Sprouted wheat halwa,165.73,28.87,1.97,4.36,17.47,1.75,4.32,15.68,0.96,0.04,3.83,Indian Food Nutrition dataset provided by user
+IND-0760,Paushtik halwa,201.27,33.02,2.77,5.92,19.34,2.2,4.8,21.57,1.17,0.0,7.16,Indian Food Nutrition dataset provided by user
+IND-0761,Carrot and semolina halwa (Gajar aur suji ka halwa),187.97,27.18,2.73,7.21,19.72,1.96,4.64,15.93,0.76,6.53,8.08,Indian Food Nutrition dataset provided by user
+IND-0762,Mixed flour halwa,200.75,32.74,2.84,5.96,19.23,2.23,4.7,21.72,1.21,0.0,6.72,Indian Food Nutrition dataset provided by user
+IND-0763,Soyabean ladoo,478.43,62.88,8.81,22.95,37.89,4.41,5.32,25.04,1.49,0.0,24.35,Indian Food Nutrition dataset provided by user
+IND-0764,Sprouted wheat ladoo,477.58,62.84,8.88,22.86,37.86,4.43,5.37,25.26,1.5,0.0,24.49,Indian Food Nutrition dataset provided by user
+IND-0765,Sorghum ladoo (Jowar ladoo),474.34,62.33,9.58,22.42,37.66,4.61,5.9,34.02,1.83,0.0,24.89,Indian Food Nutrition dataset provided by user
+IND-0766,Paushtik panjiri,444.6,58.37,9.31,21.05,28.25,5.1,5.83,38.16,2.29,0.0,17.48,Indian Food Nutrition dataset provided by user
+IND-0767,Paushtik mathri,800.71,11.83,1.9,82.49,0.3,0.85,67.75,8.23,0.56,0.0,3.31,Indian Food Nutrition dataset provided by user
+IND-0768,Soyabean sev,840.48,3.75,2.44,90.6,0.16,1.48,77.72,12.01,0.59,0.79,22.48,Indian Food Nutrition dataset provided by user
+IND-0769,Corn and potato cutlet,706.77,6.86,1.64,74.79,0.47,0.71,76.51,7.24,0.47,12.63,24.08,Indian Food Nutrition dataset provided by user
+IND-0770,Soyabean pakora/pakoda,676.88,4.78,2.78,72.23,0.22,1.52,70.99,14.65,0.61,0.0,17.41,Indian Food Nutrition dataset provided by user
+IND-0771,Peanut and sago vada (Moongfali aur sabudana vada),713.88,7.9,1.72,75.25,0.27,1.04,78.71,12.98,0.55,10.6,28.16,Indian Food Nutrition dataset provided by user
+IND-0772,Semolina and vegetable idli (Suji aur sabziyon ki idli),229.41,37.13,8.19,3.87,3.55,6.81,1301.81,91.89,2.06,7.57,28.62,Indian Food Nutrition dataset provided by user
+IND-0773,Mixed flour dhokla,203.26,27.56,12.22,4.8,4.35,4.75,341.24,116.36,1.65,0.68,34.02,Indian Food Nutrition dataset provided by user
+IND-0774,Rice (Raw milled),356.36,78.24,7.94,0.52,0.66,2.81,4.24,7.49,0.65,0.0,9.32,Indian Food Nutrition dataset provided by user
+IND-0775,Rice (Parboiled),351.58,76.56,7.66,0.64,0.58,4.07,7.26,9.91,0.85,0.0,10.68,Indian Food Nutrition dataset provided by user
+IND-0776,Wheat flour,320.27,64.08,10.59,1.47,1.74,11.23,3.06,39.36,3.97,0.0,36.56,Indian Food Nutrition dataset provided by user
+IND-0777,Refined wheat flour (Maida),352.06,73.89,10.34,0.67,1.29,2.76,3.46,15.34,1.38,0.0,17.2,Indian Food Nutrition dataset provided by user
+IND-0778,Semolina (Suji/Rawa),333.65,68.96,10.22,0.73,1.64,6.46,2.94,18.06,1.69,0.0,16.5,Indian Food Nutrition dataset provided by user
+IND-0779,Vermicelli (dry),332.7,69.57,9.75,0.73,1.72,6.23,2.44,16.29,1.52,0.0,16.34,Indian Food Nutrition dataset provided by user
+IND-0780,Flattened rice (Poha/Chivda),346.08,77.34,6.67,0.48,1.41,3.43,18.3,17.38,2.78,0.0,17.94,Indian Food Nutrition dataset provided by user
+IND-0781,Puffed rice (Murmura),325.29,73.65,6.01,0.11,0.44,2.98,16.92,10.15,1.77,0.0,15.93,Indian Food Nutrition dataset provided by user
+IND-0782,Bengal gram whole (Kala chana),287.05,38.74,17.23,4.55,4.72,25.22,27.05,56.55,4.64,0.0,186.06,Indian Food Nutrition dataset provided by user
+IND-0783,Bengal gram split (Chana dal),329.11,46.12,20.53,4.69,3.77,15.28,34.0,45.41,3.77,0.0,148.61,Indian Food Nutrition dataset provided by user
+IND-0784,Chickpeas (Kabuli chana),359.7,51.05,21.57,5.55,3.61,15.3,42.47,49.25,4.31,0.0,195.4,Indian Food Nutrition dataset provided by user
+IND-0785,Cow pea (Lobia),320.27,51.86,19.7,1.05,4.54,16.03,8.74,70.93,4.66,0.0,133.09,Indian Food Nutrition dataset provided by user
+IND-0786,Green gram whole (Sabut moong),293.74,40.78,22.53,1.46,4.01,17.06,28.21,75.14,3.79,0.0,140.45,Indian Food Nutrition dataset provided by user
+IND-0787,Green gram split (Moong dal),325.76,46.88,23.65,1.46,3.65,8.23,28.32,53.47,3.15,0.0,129.41,Indian Food Nutrition dataset provided by user
+IND-0788,Kidney beans (Rajma),299.24,42.34,19.92,1.38,4.11,18.06,12.51,105.74,5.14,0.0,132.84,Indian Food Nutrition dataset provided by user
+IND-0789,Lentil (Masoor dal),314.77,47.53,24.25,0.73,2.44,11.53,10.66,42.49,3.58,0.0,107.56,Indian Food Nutrition dataset provided by user
+IND-0790,Moth beans,315.73,47.53,22.25,1.69,3.22,10.22,14.65,83.05,4.86,0.0,158.42,Indian Food Nutrition dataset provided by user
+IND-0791,Peas dry (Matar),303.3,44.92,19.74,1.15,4.28,14.88,16.29,54.1,4.42,0.0,76.54,Indian Food Nutrition dataset provided by user
+IND-0792,Pigeon pea (Toor/Arhar dal),330.78,50.38,22.3,1.47,4.85,9.12,18.49,58.85,2.74,0.0,103.49,Indian Food Nutrition dataset provided by user
+IND-0793,Soyabean,381.45,20.93,36.49,15.65,6.1,21.56,15.08,240.56,6.91,0.0,225.13,Indian Food Nutrition dataset provided by user
+IND-0794,Black gram whole (Sabut urad),291.11,40.42,21.87,1.42,3.31,20.44,23.51,68.42,3.95,0.0,142.32,Indian Food Nutrition dataset provided by user
+IND-0795,Black gram split (Urad dal),328.15,48.06,23.54,1.45,3.37,9.52,24.16,56.78,3.26,0.0,131.25,Indian Food Nutrition dataset provided by user
+IND-0796,Bathua leaves,31.55,2.94,3.71,0.47,0.59,4.28,82.63,230.12,4.21,66.42,68.56,Indian Food Nutrition dataset provided by user
+IND-0797,Cabbage (Patta gobhi),21.51,3.42,1.38,0.11,2.02,2.83,27.05,44.62,0.58,62.74,83.67,Indian Food Nutrition dataset provided by user
+IND-0798,Coriander leaves (Dhania patta),31.07,1.96,3.33,0.61,0.58,4.72,42.84,184.22,5.26,45.24,89.5,Indian Food Nutrition dataset provided by user
+IND-0799,Fenugreek leaves (Methi patta),34.42,3.12,3.99,0.59,0.72,4.89,76.19,274.65,5.68,52.34,142.06,Indian Food Nutrition dataset provided by user
+IND-0800,Mint leaves (Pudina),37.05,3.84,3.91,0.56,0.92,5.18,48.24,200.56,6.34,27.18,114.28,Indian Food Nutrition dataset provided by user
+IND-0801,Mustard leaves (Sarson ka saag),30.11,2.63,3.01,0.62,0.68,4.12,65.41,195.42,4.01,48.26,112.54,Indian Food Nutrition dataset provided by user
+IND-0802,Radish leaves (Mooli ke patte),26.05,2.44,2.65,0.41,0.54,3.78,74.22,168.34,3.88,40.12,78.23,Indian Food Nutrition dataset provided by user
+IND-0803,Spinach (Palak),24.38,1.98,2.86,0.48,0.45,2.56,58.52,73.24,2.71,28.14,194.33,Indian Food Nutrition dataset provided by user
+IND-0804,Bitter gourd (Karela),20.79,2.84,1.65,0.21,1.15,3.48,15.65,23.14,0.68,96.42,68.23,Indian Food Nutrition dataset provided by user
+IND-0805,Bottle gourd (Lauki/Ghiya),14.58,2.52,0.62,0.12,1.38,1.42,1.86,18.06,0.47,10.24,14.65,Indian Food Nutrition dataset provided by user
+IND-0806,Brinjal (Baingan),24.86,4.03,1.41,0.18,2.34,3.42,3.11,18.25,0.38,12.04,18.42,Indian Food Nutrition dataset provided by user
+IND-0807,Capsicum (Shimla mirch),24.14,4.24,1.29,0.19,2.41,2.18,5.71,13.44,0.57,137.24,54.12,Indian Food Nutrition dataset provided by user
+IND-0808,Cauliflower (Phool gobhi),22.94,3.48,2.15,0.24,1.86,2.81,39.64,33.12,0.72,56.42,78.14,Indian Food Nutrition dataset provided by user
+IND-0809,Cucumber (Kheera),13.86,2.19,0.73,0.11,1.42,1.05,10.22,14.56,0.28,7.42,14.28,Indian Food Nutrition dataset provided by user
+IND-0810,French beans,26.05,3.96,1.82,0.21,1.48,3.22,4.86,50.14,0.86,16.24,48.56,Indian Food Nutrition dataset provided by user
+IND-0811,Green chillies (Hari mirch),45.65,6.12,2.38,0.55,2.14,4.24,14.65,18.42,1.22,111.42,42.18,Indian Food Nutrition dataset provided by user
+IND-0812,Ladies finger/Okra (Bhindi),27.49,4.24,1.88,0.19,1.48,3.64,6.86,66.14,0.76,16.42,64.28,Indian Food Nutrition dataset provided by user
+IND-0813,Pumpkin (Kaddu),23.42,4.62,1.04,0.12,2.65,1.78,2.14,24.12,0.48,15.62,18.45,Indian Food Nutrition dataset provided by user
+IND-0814,Ridge gourd (Tori/Turai),15.06,2.64,0.82,0.14,1.42,1.68,2.74,18.45,0.46,5.42,16.84,Indian Food Nutrition dataset provided by user
+IND-0815,Round gourd (Tinda),19.36,3.42,1.18,0.12,1.86,1.42,2.12,25.14,0.84,18.24,24.56,Indian Food Nutrition dataset provided by user
+IND-0816,Snake gourd (Chichinda),16.49,2.86,0.92,0.16,1.48,1.86,3.42,26.14,0.42,12.45,18.92,Indian Food Nutrition dataset provided by user
+IND-0817,Tomato (Tamatar),18.21,3.12,0.88,0.2,2.24,1.72,12.85,13.24,0.41,27.12,28.45,Indian Food Nutrition dataset provided by user
+IND-0818,Beetroot (Chukandar),35.61,7.24,1.61,0.12,5.42,2.83,54.12,18.24,0.79,8.42,78.56,Indian Food Nutrition dataset provided by user
+IND-0819,Carrot (Gajar),33.22,6.78,0.95,0.22,4.86,3.22,35.42,34.12,0.54,5.86,22.14,Indian Food Nutrition dataset provided by user
+IND-0820,Colocasia/Taro root (Arbi),89.63,19.24,2.21,0.18,1.42,2.86,8.42,40.12,1.14,5.24,28.56,Indian Food Nutrition dataset provided by user
+IND-0821,Onion (Pyaaz),48.76,9.84,1.42,0.15,4.72,2.14,4.24,31.25,0.48,7.42,19.45,Indian Food Nutrition dataset provided by user
+IND-0822,Potato (Aloo),70.27,15.24,1.62,0.14,1.12,1.72,6.42,10.25,0.52,17.42,16.85,Indian Food Nutrition dataset provided by user
+IND-0823,Radish (Mooli),17.21,3.14,0.68,0.1,1.86,1.62,21.42,35.12,0.42,15.42,18.56,Indian Food Nutrition dataset provided by user
+IND-0824,Sweet potato (Shakarkandi),86.04,19.86,1.57,0.15,4.18,3.01,27.42,28.14,0.72,17.12,14.28,Indian Food Nutrition dataset provided by user
+IND-0825,Elephant foot yam (Zimikand/Suran),79.35,17.42,1.84,0.16,1.24,2.42,9.12,50.14,0.62,12.14,16.54,Indian Food Nutrition dataset provided by user
+IND-0826,Garlic (Lehsun),123.09,24.28,6.36,0.52,2.42,2.86,15.24,181.42,1.72,14.24,12.56,Indian Food Nutrition dataset provided by user
+IND-0827,Ginger (Adrak),54.78,10.42,1.82,0.74,1.86,2.42,12.14,20.14,1.62,5.24,14.86,Indian Food Nutrition dataset provided by user
+IND-0828,Mushroom (Button),22.47,3.26,3.09,0.34,1.65,1.02,5.14,3.24,0.54,2.14,24.12,Indian Food Nutrition dataset provided by user
+IND-0829,Apple (Seb),52.11,13.81,0.26,0.17,10.39,2.4,1.0,6.0,0.12,4.6,3.0,Indian Food Nutrition dataset provided by user
+IND-0830,Banana (Kela),89.05,22.84,1.09,0.33,12.23,2.6,1.0,5.0,0.26,8.7,20.0,Indian Food Nutrition dataset provided by user
+IND-0831,Grapes (Angoor),69.21,18.1,0.72,0.16,15.48,0.9,2.0,10.0,0.36,3.2,2.0,Indian Food Nutrition dataset provided by user
+IND-0832,Guava (Amrood),68.14,14.32,2.55,0.95,8.92,5.4,2.0,18.0,0.26,228.3,49.0,Indian Food Nutrition dataset provided by user
+IND-0833,Mango (Aam),60.28,14.98,0.82,0.38,13.66,1.6,1.0,11.0,0.16,36.4,43.0,Indian Food Nutrition dataset provided by user
+IND-0834,Orange (Santra),47.12,11.75,0.94,0.12,9.35,2.4,0.0,40.0,0.1,53.2,30.0,Indian Food Nutrition dataset provided by user
+IND-0835,Papaya (Papita),43.07,10.82,0.47,0.26,7.82,1.7,8.0,20.0,0.25,60.9,37.0,Indian Food Nutrition dataset provided by user
+IND-0836,Pineapple (Ananas),50.15,13.12,0.54,0.12,9.85,1.4,1.0,13.0,0.29,47.8,18.0,Indian Food Nutrition dataset provided by user
+IND-0837,Pomegranate (Anaar),83.22,18.7,1.67,1.17,13.67,4.0,3.0,10.0,0.3,10.2,38.0,Indian Food Nutrition dataset provided by user
+IND-0838,Watermelon (Tarbooj),30.12,7.55,0.61,0.15,6.2,0.4,1.0,7.0,0.24,8.1,3.0,Indian Food Nutrition dataset provided by user
+IND-0839,Cow Milk (Whole),61.42,4.81,3.27,3.66,4.81,0.0,49.0,120.0,0.03,1.0,5.0,Indian Food Nutrition dataset provided by user
+IND-0840,Buffalo Milk,97.12,5.18,3.75,6.87,5.18,0.0,52.0,169.0,0.12,1.0,6.0,Indian Food Nutrition dataset provided by user
+IND-0841,Curd/Dahi (Whole milk),60.85,4.66,3.47,3.52,4.66,0.0,46.0,121.0,0.05,1.0,7.0,Indian Food Nutrition dataset provided by user
+IND-0842,Paneer (Cottage cheese),265.41,3.38,18.3,20.78,2.12,0.0,18.0,480.0,0.42,0.0,18.0,Indian Food Nutrition dataset provided by user
+IND-0843,Khoya/Mawa,321.45,25.32,14.62,18.54,20.12,0.0,98.0,650.0,0.85,1.0,24.0,Indian Food Nutrition dataset provided by user
+IND-0844,Butter (White/Makhan),717.3,0.58,0.85,81.11,0.58,0.0,11.0,24.0,0.16,0.0,3.0,Indian Food Nutrition dataset provided by user
+IND-0845,Ghee (Desi ghee),899.1,0.0,0.0,99.9,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Indian Food Nutrition dataset provided by user
+IND-0846,Egg Whole (Raw),143.12,0.72,12.56,9.51,0.37,0.0,142.0,56.0,1.75,0.0,44.0,Indian Food Nutrition dataset provided by user
+IND-0847,Egg White,52.09,0.73,10.9,0.17,0.71,0.0,166.0,7.0,0.08,0.0,4.0,Indian Food Nutrition dataset provided by user
+IND-0848,Egg Yolk,322.45,3.59,15.86,26.54,0.56,0.0,48.0,129.0,2.73,0.0,56.0,Indian Food Nutrition dataset provided by user
+IND-0849,Chicken (Broiler/Meat with skin),215.34,0.0,18.6,15.06,0.0,0.0,70.0,15.0,1.26,1.6,6.0,Indian Food Nutrition dataset provided by user
+IND-0850,Chicken Breast (Boneless skinless),165.12,0.0,31.02,3.57,0.0,0.0,65.0,14.0,1.04,1.2,4.0,Indian Food Nutrition dataset provided by user
+IND-0851,Mutton (Lean meat),143.25,0.0,20.64,6.65,0.0,0.0,68.0,12.0,1.88,0.0,5.0,Indian Food Nutrition dataset provided by user
+IND-0852,Fish (Rohu/Freshwater),97.23,0.0,16.64,3.12,0.0,0.0,58.0,110.0,0.92,1.2,8.0,Indian Food Nutrition dataset provided by user
+IND-0853,Fish (Katla/Catla),111.45,0.0,19.24,3.48,0.0,0.0,55.0,120.0,0.98,1.4,9.0,Indian Food Nutrition dataset provided by user
+IND-0854,Prawns/Shrimp,85.12,0.91,17.84,0.98,0.0,0.0,148.0,52.0,2.41,2.1,4.0,Indian Food Nutrition dataset provided by user
+IND-0855,Almonds (Badam),579.24,21.55,21.15,49.93,4.35,12.5,1.0,269.0,3.71,0.0,44.0,Indian Food Nutrition dataset provided by user
+IND-0856,Cashew nuts (Kaju),553.12,30.19,18.22,43.85,5.91,3.3,12.0,37.0,6.68,0.5,25.0,Indian Food Nutrition dataset provided by user
+IND-0857,Walnuts (Akhrot),654.18,13.71,15.23,65.21,2.61,6.7,2.0,98.0,2.91,1.3,98.0,Indian Food Nutrition dataset provided by user
+IND-0858,Peanuts (Moongfali),567.33,16.13,25.8,49.24,4.72,8.5,18.0,92.0,4.58,0.0,240.0,Indian Food Nutrition dataset provided by user
+IND-0859,Pistachios (Pista),562.15,27.51,20.27,45.32,7.66,10.6,1.0,105.0,3.92,5.6,51.0,Indian Food Nutrition dataset provided by user
+IND-0860,Raisins (Kishmish),299.14,79.18,3.07,0.46,59.19,3.7,11.0,50.0,1.88,2.3,5.0,Indian Food Nutrition dataset provided by user
+IND-0861,Dates (Khajoor/Dry),277.25,74.97,1.81,0.15,66.47,6.7,1.0,64.0,1.02,0.4,15.0,Indian Food Nutrition dataset provided by user
+IND-0862,Coconut (Fresh/Nariyal),354.12,15.23,3.33,33.49,6.23,9.0,20.0,14.0,2.43,3.3,26.0,Indian Food Nutrition dataset provided by user
+IND-0863,Sesame seeds (Til),573.11,23.45,17.73,49.67,0.3,11.8,11.0,975.0,14.55,0.0,97.0,Indian Food Nutrition dataset provided by user
+IND-0864,Flax seeds (Alsi),534.22,28.88,18.29,42.16,1.55,27.3,30.0,255.0,5.73,0.6,87.0,Indian Food Nutrition dataset provided by user
+IND-0865,Chia seeds,486.15,42.12,16.54,30.74,0.77,34.4,16.0,631.0,7.72,1.6,49.0,Indian Food Nutrition dataset provided by user
+IND-0866,Sunflower seeds,584.21,20.0,20.78,51.46,2.61,8.6,9.0,78.0,5.25,1.4,227.0,Indian Food Nutrition dataset provided by user
+IND-0867,Pumpkin seeds,559.34,10.71,30.23,49.05,1.4,6.0,7.0,46.0,8.82,1.9,58.0,Indian Food Nutrition dataset provided by user
+IND-0868,Sugar (White/Refined),387.0,99.98,0.0,0.0,99.98,0.0,1.0,1.0,0.05,0.0,0.0,Indian Food Nutrition dataset provided by user
+IND-0869,Jaggery (Gud),383.15,95.0,0.4,0.1,85.2,0.0,30.0,80.0,2.64,0.0,0.0,Indian Food Nutrition dataset provided by user
+IND-0870,Honey (Shahad),304.22,82.4,0.3,0.0,82.12,0.2,4.0,6.0,0.42,0.5,2.0,Indian Food Nutrition dataset provided by user
+IND-0871,Papad (Roasted/Lijjat),326.12,59.12,20.45,1.12,0.5,8.42,1420.0,68.0,3.62,0.0,48.0,Indian Food Nutrition dataset provided by user
+IND-0872,Papad (Fried),468.25,48.12,16.24,24.15,0.4,7.12,1210.0,55.0,2.94,0.0,38.0,Indian Food Nutrition dataset provided by user
+IND-0873,Masala Omelette (Double Egg),245.62,3.12,14.28,19.45,1.86,0.85,385.0,78.0,2.15,6.4,38.0,Indian Food Nutrition dataset provided by user
+IND-0874,Egg Bhurji (Anda Bhurji),195.42,4.25,12.86,14.12,2.14,1.12,342.0,68.0,1.86,8.2,32.0,Indian Food Nutrition dataset provided by user
+IND-0875,Boiled Egg White (2 pieces),34.12,0.45,7.24,0.12,0.45,0.0,110.0,4.6,0.05,0.0,2.6,Indian Food Nutrition dataset provided by user
+IND-0876,Egg Curry (2 Eggs with gravy),218.45,6.84,13.45,15.22,3.12,2.14,410.0,82.0,2.45,14.2,42.0,Indian Food Nutrition dataset provided by user
+IND-0877,Egg Biryani,186.42,24.15,7.85,6.92,1.84,2.15,310.0,45.0,1.64,8.5,28.0,Indian Food Nutrition dataset provided by user
+IND-0878,Egg Fried Rice,168.25,22.14,6.45,6.12,1.25,1.64,285.0,32.0,1.24,12.4,22.0,Indian Food Nutrition dataset provided by user
+IND-0879,Egg Roll/Kathi Roll,265.12,28.45,9.85,12.64,2.45,2.14,450.0,64.0,1.85,10.2,26.0,Indian Food Nutrition dataset provided by user
+IND-0880,Chicken Tikka (6 pieces),182.45,3.25,24.65,7.84,1.42,0.85,420.0,48.0,1.45,12.6,18.0,Indian Food Nutrition dataset provided by user
+IND-0881,Chicken Reshmi Kebab,210.15,2.84,22.15,12.24,1.12,0.64,395.0,56.0,1.22,8.4,14.0,Indian Food Nutrition dataset provided by user
+IND-0882,Chicken Seekh Kebab,195.64,4.12,20.45,10.85,1.64,1.12,440.0,42.0,1.68,6.2,16.0,Indian Food Nutrition dataset provided by user
+IND-0883,Chicken Malai Tikka,235.42,3.15,21.84,15.12,1.86,0.54,380.0,72.0,1.14,4.2,22.0,Indian Food Nutrition dataset provided by user
+IND-0884,Tandoori Chicken (Full Leg),178.25,2.45,26.14,7.12,1.12,0.65,360.0,38.0,1.52,14.5,16.0,Indian Food Nutrition dataset provided by user
+IND-0885,Chicken Biryani (Hyderabadi style),198.45,23.65,11.45,6.85,1.92,2.14,340.0,36.0,1.42,9.8,24.0,Indian Food Nutrition dataset provided by user
+IND-0886,Chicken Shawarma (Roll),248.65,24.12,14.85,11.12,2.85,1.86,490.0,52.0,1.64,8.6,21.0,Indian Food Nutrition dataset provided by user
+IND-0887,Chicken Fried Rice,162.45,21.45,8.95,5.12,1.14,1.45,295.0,24.0,1.15,14.2,19.0,Indian Food Nutrition dataset provided by user
+IND-0888,Chicken Noodles/Hakka Noodles,174.25,23.12,9.45,5.64,1.86,1.92,340.0,28.0,1.28,18.4,24.0,Indian Food Nutrition dataset provided by user
+IND-0889,Kadai Chicken (Kadhai Chicken),165.42,4.85,14.65,9.84,2.64,1.86,365.0,44.0,1.42,28.6,32.0,Indian Food Nutrition dataset provided by user
+IND-0890,Chicken Korma (Shahi),188.64,5.42,13.25,12.84,3.12,1.42,320.0,68.0,1.24,6.4,28.0,Indian Food Nutrition dataset provided by user
+IND-0891,Chicken Saagwala (Palak Chicken),142.15,4.12,15.24,7.12,1.45,2.86,295.0,84.0,2.64,32.4,96.0,Indian Food Nutrition dataset provided by user
+IND-0892,Chicken Do Pyaza,172.45,6.84,14.12,10.15,3.84,2.12,345.0,46.0,1.38,12.8,34.0,Indian Food Nutrition dataset provided by user
+IND-0893,Chicken Chettinad,185.12,5.12,15.45,11.42,2.14,2.45,390.0,42.0,1.65,14.2,28.0,Indian Food Nutrition dataset provided by user
+IND-0894,Chicken 65,248.95,7.85,18.42,16.12,1.42,1.12,510.0,34.0,1.52,16.4,22.0,Indian Food Nutrition dataset provided by user
+IND-0895,Chicken Manchurian,182.45,8.95,13.64,10.25,4.12,1.45,460.0,28.0,1.18,18.6,25.0,Indian Food Nutrition dataset provided by user
+IND-0896,Mutton Biryani (Hyderabadi style),215.64,22.84,12.15,8.94,1.85,2.14,360.0,42.0,1.85,8.4,22.0,Indian Food Nutrition dataset provided by user
+IND-0897,Mutton Rogan Josh,192.45,4.85,14.85,12.64,2.45,1.92,340.0,58.0,2.14,10.2,28.0,Indian Food Nutrition dataset provided by user
+IND-0898,Mutton Keema Matar,178.65,6.12,15.24,10.45,2.14,2.64,350.0,46.0,2.28,24.5,42.0,Indian Food Nutrition dataset provided by user
+IND-0899,Mutton Curry (Dhaba style),185.42,4.12,15.84,11.64,2.12,1.85,365.0,48.0,2.05,11.4,26.0,Indian Food Nutrition dataset provided by user
+IND-0900,Mutton Sukka (Dry),245.12,3.85,18.95,17.42,1.84,1.64,410.0,52.0,2.64,12.8,24.0,Indian Food Nutrition dataset provided by user
+IND-0901,Fish Fry (Rava crusted / South Indian),210.45,7.84,18.25,12.14,0.85,1.12,420.0,64.0,1.45,8.4,18.0,Indian Food Nutrition dataset provided by user
+IND-0902,Fish Curry (Goan style / Coconut),138.65,4.12,14.25,7.18,1.95,1.64,310.0,48.0,1.24,14.6,34.0,Indian Food Nutrition dataset provided by user
+IND-0903,Fish Curry (Kerala style / Kudampuli),124.15,3.64,15.12,5.45,1.42,1.85,290.0,54.0,1.38,18.2,36.0,Indian Food Nutrition dataset provided by user
+IND-0904,Fish Tikka (Tandoori),142.15,2.85,20.14,5.64,1.12,0.85,380.0,68.0,1.15,10.2,16.0,Indian Food Nutrition dataset provided by user
+IND-0905,Prawn Masala / Prawn Curry,148.65,4.85,16.42,7.24,2.12,1.64,420.0,62.0,2.65,12.4,24.0,Indian Food Nutrition dataset provided by user
+IND-0906,Prawn Biryani,175.42,23.12,9.85,5.24,1.64,1.95,340.0,44.0,2.14,8.6,22.0,Indian Food Nutrition dataset provided by user
+IND-0907,Paneer Butter Masala,195.42,8.64,7.85,14.92,5.42,1.85,320.0,210.0,1.12,16.4,48.0,Indian Food Nutrition dataset provided by user
+IND-0908,Kadai Paneer,168.25,7.45,8.95,11.84,3.85,2.45,340.0,240.0,1.24,42.6,64.0,Indian Food Nutrition dataset provided by user
+IND-0909,Palak Paneer (Saag Paneer),135.64,5.12,8.45,9.12,2.14,2.86,290.0,260.0,2.45,38.4,180.0,Indian Food Nutrition dataset provided by user
+IND-0910,Shahi Paneer (Mughlai),210.45,9.45,7.42,16.14,6.85,1.42,280.0,220.0,0.95,12.4,42.0,Indian Food Nutrition dataset provided by user
+IND-0911,Matar Paneer,142.15,9.84,7.65,8.12,3.42,3.12,310.0,195.0,1.42,32.6,58.0,Indian Food Nutrition dataset provided by user
+IND-0912,Paneer Bhurji,185.64,4.12,12.45,13.24,2.12,1.45,330.0,320.0,1.28,18.4,46.0,Indian Food Nutrition dataset provided by user
+IND-0913,Paneer Tikka (Tandoori / 6 pieces),178.45,5.42,14.85,10.84,2.64,1.42,360.0,340.0,1.14,24.6,54.0,Indian Food Nutrition dataset provided by user
+IND-0914,Paneer Lababdar,205.12,8.12,8.45,15.64,5.12,1.85,310.0,230.0,1.08,18.2,52.0,Indian Food Nutrition dataset provided by user
+IND-0915,Paneer Do Pyaza,182.45,8.45,8.12,12.84,4.64,2.14,325.0,225.0,1.22,16.4,48.0,Indian Food Nutrition dataset provided by user
+IND-0916,Paneer Pasanda,225.64,10.12,8.95,17.42,6.12,1.64,295.0,245.0,1.15,14.8,46.0,Indian Food Nutrition dataset provided by user
+IND-0917,Dal Makhani,142.15,14.85,5.84,6.85,1.86,4.12,310.0,68.0,1.95,8.4,46.0,Indian Food Nutrition dataset provided by user
+IND-0918,Dal Tadka (Yellow Dal / Toor Dal),98.45,12.14,4.85,3.42,1.12,3.14,280.0,32.0,1.42,12.6,38.0,Indian Food Nutrition dataset provided by user
+IND-0919,Dal Fry,112.64,13.25,5.12,4.45,1.45,3.24,295.0,36.0,1.54,14.2,42.0,Indian Food Nutrition dataset provided by user
+IND-0920,Chana Masala (Chole),148.65,18.45,6.42,5.64,2.85,5.42,360.0,54.0,2.64,16.8,84.0,Indian Food Nutrition dataset provided by user
+IND-0921,Rajma Masala (Kidney beans curry),132.45,16.84,5.95,4.85,2.45,5.12,340.0,62.0,2.45,14.2,78.0,Indian Food Nutrition dataset provided by user
+IND-0922,Pindi Chole (Dry),178.45,21.12,7.85,7.12,2.14,6.84,380.0,68.0,3.12,12.4,92.0,Indian Food Nutrition dataset provided by user
+IND-0923,Amritsari Kulcha (Potato paneer stuffed),265.42,38.45,6.85,9.42,2.14,3.45,410.0,78.0,1.85,6.2,22.0,Indian Food Nutrition dataset provided by user
+IND-0924,Bhature (1 piece),295.12,36.14,5.42,14.25,1.85,1.85,340.0,42.0,1.42,0.5,14.0,Indian Food Nutrition dataset provided by user
+IND-0925,Chole Bhature (Combo per 100g),218.45,26.45,5.92,10.15,2.42,3.85,360.0,48.0,2.12,8.6,48.0,Indian Food Nutrition dataset provided by user
+IND-0926,Poori Bhaji / Puri Masala (Aloo bhaji with puri),224.65,25.12,4.12,12.14,1.86,2.85,320.0,36.0,1.64,14.2,28.0,Indian Food Nutrition dataset provided by user
+IND-0927,Pav Bhaji (Bhaji with butter pav),168.45,18.95,4.12,8.64,3.85,3.45,385.0,48.0,1.45,34.2,46.0,Indian Food Nutrition dataset provided by user
+IND-0928,Misal Pav,152.15,19.45,5.64,6.12,2.45,4.12,420.0,52.0,2.14,18.6,54.0,Indian Food Nutrition dataset provided by user
+IND-0929,Vada Pav (1 piece / 100g),245.64,32.45,5.12,10.84,2.14,2.85,410.0,34.0,1.65,8.4,26.0,Indian Food Nutrition dataset provided by user
+IND-0930,Dabeli (Kutchi Dabeli),228.45,34.12,4.85,8.12,7.45,3.12,360.0,38.0,1.84,6.8,24.0,Indian Food Nutrition dataset provided by user
+IND-0931,Bhel Puri,185.42,32.14,4.65,4.45,6.84,3.85,380.0,42.0,2.14,12.4,32.0,Indian Food Nutrition dataset provided by user
+IND-0932,Sev Puri,215.64,30.45,4.85,8.64,5.42,3.45,395.0,48.0,1.95,14.6,28.0,Indian Food Nutrition dataset provided by user
+IND-0933,Pani Puri / Golgappa (with teekha meetha pani),118.45,22.14,2.45,2.12,5.14,1.85,460.0,24.0,1.24,8.4,18.0,Indian Food Nutrition dataset provided by user
+IND-0934,Dahi Puri / Dahi Sev Puri,168.45,24.12,4.12,6.45,9.85,2.14,310.0,94.0,1.15,8.2,26.0,Indian Food Nutrition dataset provided by user
+IND-0935,Aloo Tikki Chaat (with chole and dahi),165.42,21.84,4.85,6.85,6.12,3.45,340.0,68.0,1.75,16.4,38.0,Indian Food Nutrition dataset provided by user
+IND-0936,Papdi Chaat / Dahi Papdi Chaat,182.45,23.64,4.95,7.85,8.42,2.85,320.0,110.0,1.38,10.2,32.0,Indian Food Nutrition dataset provided by user
+IND-0937,Ragda Pattice,158.64,22.45,5.12,5.84,4.12,4.12,360.0,46.0,2.05,18.4,48.0,Indian Food Nutrition dataset provided by user
+IND-0938,"Samosa Chaat (with chole, curd and chutney)",195.42,24.15,5.42,8.95,6.84,3.12,350.0,58.0,1.85,12.6,34.0,Indian Food Nutrition dataset provided by user
+IND-0939,Kachori Chaat (Khasta kachori chaat),210.64,25.84,5.64,9.85,7.12,3.24,370.0,62.0,1.92,10.4,36.0,Indian Food Nutrition dataset provided by user
+IND-0940,Masala Puri (Bangalore style chaat),148.65,22.14,4.85,4.64,3.85,3.64,390.0,38.0,1.64,16.2,42.0,Indian Food Nutrition dataset provided by user
+IND-0941,Sev Khamani / Amiri Khaman,172.45,21.85,6.42,6.84,5.12,3.85,340.0,54.0,1.48,12.4,36.0,Indian Food Nutrition dataset provided by user
+IND-0942,Khandvi (Gujarati roll),138.65,15.24,5.85,6.24,2.14,2.45,360.0,84.0,1.24,6.4,32.0,Indian Food Nutrition dataset provided by user
+IND-0943,Handvo (Savory baked lentil cake),195.42,26.45,7.12,6.85,3.12,4.85,380.0,92.0,1.85,14.6,44.0,Indian Food Nutrition dataset provided by user
+IND-0944,Muthia (Steamed Gujarati fenugreek dumpling),148.65,22.14,5.42,4.64,2.85,4.12,320.0,86.0,2.14,18.2,56.0,Indian Food Nutrition dataset provided by user
+IND-0945,Thepla (Methi Thepla),235.42,34.85,6.45,7.85,2.14,4.64,280.0,68.0,2.45,14.8,38.0,Indian Food Nutrition dataset provided by user
+IND-0946,Poha (Batata Poha / Maharashtrian style),158.45,26.45,3.64,4.25,1.85,2.85,240.0,28.0,2.14,16.8,24.0,Indian Food Nutrition dataset provided by user
+IND-0947,Kanda Poha (Onion Poha),152.15,25.84,3.45,3.95,2.14,2.64,230.0,32.0,1.95,14.2,22.0,Indian Food Nutrition dataset provided by user
+IND-0948,Sabudana Khichdi (Tapioca pearl pilaf),225.64,36.85,3.42,7.24,1.45,1.85,210.0,18.0,1.12,8.4,16.0,Indian Food Nutrition dataset provided by user
+IND-0949,Sabudana Vada (2 pieces),285.42,32.14,4.12,15.64,1.24,1.64,260.0,22.0,1.34,6.2,18.0,Indian Food Nutrition dataset provided by user
+IND-0950,Upma (Rava / Sooji with vegetables),128.45,18.64,3.24,4.85,1.64,2.85,260.0,24.0,1.12,12.4,22.0,Indian Food Nutrition dataset provided by user
+IND-0951,Semiya Upma (Vermicelli upma),132.64,19.45,3.12,4.64,1.45,2.45,250.0,22.0,1.05,10.8,19.0,Indian Food Nutrition dataset provided by user
+IND-0952,Oats Upma (Vegetable oats),118.45,16.85,4.12,3.85,1.85,3.42,240.0,32.0,1.64,16.4,32.0,Indian Food Nutrition dataset provided by user
+IND-0953,Ven Pongal (Ghee Pongal / Khara Pongal),165.42,21.84,4.65,6.85,0.85,2.14,220.0,26.0,1.42,4.2,28.0,Indian Food Nutrition dataset provided by user
+IND-0954,Sweet Pongal (Sakkarai Pongal / Chakkara Pongal),248.65,48.12,3.85,4.85,32.45,1.85,42.0,38.0,1.85,0.5,14.0,Indian Food Nutrition dataset provided by user
+IND-0955,Rava Idli (with ghee and seasoning),168.45,26.84,4.85,4.64,2.14,3.12,340.0,42.0,1.38,4.6,18.0,Indian Food Nutrition dataset provided by user
+IND-0956,Kanchipuram Idli,152.15,24.85,5.12,3.85,1.42,2.85,290.0,34.0,1.25,2.4,22.0,Indian Food Nutrition dataset provided by user
+IND-0957,Podi Idli (Mini idli tossed in ghee and gunpowder),195.42,26.45,5.84,7.64,1.12,3.45,380.0,48.0,2.14,0.0,26.0,Indian Food Nutrition dataset provided by user
+IND-0958,Ghee Roast Dosa,245.64,32.14,5.42,10.85,1.12,2.85,210.0,24.0,1.24,0.0,14.0,Indian Food Nutrition dataset provided by user
+IND-0959,Onion Rava Dosa,198.45,28.64,4.85,7.45,2.45,3.12,280.0,38.0,1.45,6.8,18.0,Indian Food Nutrition dataset provided by user
+IND-0960,Mysore Masala Dosa,185.42,24.15,4.64,7.85,2.64,3.24,310.0,28.0,1.52,12.4,32.0,Indian Food Nutrition dataset provided by user
+IND-0961,Set Dosa (Sponge dosa / 3 pieces),162.45,28.45,4.85,3.42,1.24,2.64,195.0,18.0,1.05,0.0,12.0,Indian Food Nutrition dataset provided by user
+IND-0962,Pesarattu (Green gram whole dosa),175.42,24.85,8.64,4.85,1.42,4.64,240.0,46.0,2.45,8.4,48.0,Indian Food Nutrition dataset provided by user
+IND-0963,MLA Pesarattu (with upma filling),192.64,28.45,7.85,5.84,1.85,4.12,280.0,42.0,2.12,8.2,42.0,Indian Food Nutrition dataset provided by user
+IND-0964,Neer Dosa (Mangalore rice crepe),124.15,26.12,2.45,0.64,0.45,1.12,120.0,8.0,0.45,0.0,6.0,Indian Food Nutrition dataset provided by user
+IND-0965,Adai (Multilentil protein dosa),188.45,26.45,9.45,4.85,1.84,5.42,260.0,58.0,2.85,4.6,56.0,Indian Food Nutrition dataset provided by user
+IND-0966,Ragi Dosa (Finger millet dosa),154.25,28.64,4.85,2.64,1.12,4.85,210.0,120.0,2.14,0.0,16.0,Indian Food Nutrition dataset provided by user
+IND-0967,Kuzhi Paniyaram (Savory paniyaram / Appe),172.45,26.84,4.85,5.12,1.64,2.85,240.0,24.0,1.15,4.2,16.0,Indian Food Nutrition dataset provided by user
+IND-0968,Sweet Paniyaram (Unniyappam / Jaggery paniyaram),242.15,44.85,3.64,5.42,28.45,2.14,85.0,42.0,1.85,1.2,14.0,Indian Food Nutrition dataset provided by user
+IND-0969,Idiyappam / Sevai (String hoppers),118.45,25.84,2.14,0.42,0.32,1.24,95.0,8.0,0.38,0.0,5.0,Indian Food Nutrition dataset provided by user
+IND-0970,Lemon Sevai (Lemon string hoppers),145.64,24.12,2.85,4.25,0.85,1.85,220.0,14.0,0.65,12.4,18.0,Indian Food Nutrition dataset provided by user
+IND-0971,Coconut Sevai,178.45,24.85,3.12,7.64,2.14,2.85,190.0,18.0,0.85,2.1,16.0,Indian Food Nutrition dataset provided by user
+IND-0972,Tomato Sevai,138.45,22.84,2.64,4.12,1.95,2.14,240.0,16.0,0.72,16.8,22.0,Indian Food Nutrition dataset provided by user
+IND-0973,Curd Sevai / Dahi Sevai,132.15,18.45,3.85,4.85,2.85,1.24,195.0,78.0,0.45,3.4,18.0,Indian Food Nutrition dataset provided by user
+IND-0974,Puttu (Steamed rice flour and coconut cylinder),175.42,32.45,3.85,3.42,1.85,3.12,110.0,16.0,0.85,1.2,12.0,Indian Food Nutrition dataset provided by user
+IND-0975,Kadala Curry (Kerala black chickpea curry),138.65,14.85,5.84,6.42,2.14,6.85,290.0,48.0,2.64,8.4,68.0,Indian Food Nutrition dataset provided by user
+IND-0976,Kootu (South Indian vegetable lentil stew),88.45,10.12,3.85,3.64,2.14,3.85,210.0,42.0,1.24,14.6,44.0,Indian Food Nutrition dataset provided by user
+IND-0977,Poriyal (Beans / Carrot / Cabbage stir fry with coconut),78.45,6.84,2.14,4.85,2.45,3.85,180.0,44.0,0.95,16.4,36.0,Indian Food Nutrition dataset provided by user
+IND-0978,Kalan (Kerala spiced yogurt and yam/plantain curry),115.42,8.45,3.12,7.64,3.85,2.14,220.0,92.0,0.85,6.8,32.0,Indian Food Nutrition dataset provided by user
+IND-0979,Olan (Ash gourd and cowpea in coconut milk),94.65,7.12,2.85,6.12,2.14,3.12,160.0,38.0,1.12,8.2,28.0,Indian Food Nutrition dataset provided by user
+IND-0980,Pachadi (South Indian yogurt beetroot/pineapple relish),82.15,9.45,2.64,3.85,6.12,2.14,195.0,78.0,0.72,12.4,26.0,Indian Food Nutrition dataset provided by user
+IND-0981,Erissery (Pumpkin and red bean in roasted coconut),128.45,12.85,4.12,6.85,3.42,4.85,190.0,46.0,1.85,14.2,42.0,Indian Food Nutrition dataset provided by user
+IND-0982,Pulissery / Moru Curry (Spiced buttermilk curry),62.45,4.12,2.45,3.85,3.42,0.64,210.0,84.0,0.35,4.2,18.0,Indian Food Nutrition dataset provided by user
+IND-0983,Tomato Rasam,28.45,3.85,1.12,0.95,1.45,1.42,180.0,18.0,0.65,22.4,24.0,Indian Food Nutrition dataset provided by user
+IND-0984,Pepper Rasam (Milagu Rasam),32.15,4.12,1.24,1.12,0.85,1.64,195.0,22.0,0.85,14.6,18.0,Indian Food Nutrition dataset provided by user
+IND-0985,Garlic Rasam (Poondu Rasam),35.64,4.85,1.45,1.24,1.12,1.85,190.0,28.0,0.92,16.2,22.0,Indian Food Nutrition dataset provided by user
+IND-0986,Mysore Rasam,42.15,5.42,1.85,1.64,1.42,2.14,210.0,24.0,0.95,18.4,28.0,Indian Food Nutrition dataset provided by user
+IND-0987,Vatha Kuzhambu (Sundakkai / Manathakkali),115.42,12.84,2.45,6.12,5.42,3.85,320.0,48.0,1.64,8.4,22.0,Indian Food Nutrition dataset provided by user
+IND-0988,Ennai Kathirikai Kuzhambu (Stuffed baby brinjal curry),142.65,10.12,2.85,10.15,3.64,4.12,310.0,52.0,1.42,12.6,28.0,Indian Food Nutrition dataset provided by user
+IND-0989,Mor Kuzhambu (Tamil Nadu buttermilk stew),78.45,5.42,3.12,4.85,3.85,1.12,240.0,98.0,0.58,6.8,24.0,Indian Food Nutrition dataset provided by user
+IND-0990,Chettinad Veg Curry,132.45,9.45,3.64,8.85,3.12,3.85,290.0,48.0,1.38,24.6,42.0,Indian Food Nutrition dataset provided by user
+IND-0991,Gutti Vankaya Kura (Andhra stuffed brinjal curry),158.42,11.24,3.85,11.12,3.85,4.64,340.0,62.0,1.85,16.4,36.0,Indian Food Nutrition dataset provided by user
+IND-0992,Tomato Pappu (Andhra dal with tomatoes),105.42,13.85,5.12,3.45,2.14,3.45,260.0,38.0,1.54,22.8,48.0,Indian Food Nutrition dataset provided by user
+IND-0993,Gongura Pappu (Andhra dal with sorrel leaves),112.65,12.45,5.64,4.85,1.42,4.12,280.0,74.0,2.85,28.4,62.0,Indian Food Nutrition dataset provided by user
+IND-0994,Pesarapappu Charu (Moong dal rasam),45.64,5.84,2.45,1.42,0.95,1.64,195.0,22.0,0.85,12.4,26.0,Indian Food Nutrition dataset provided by user
+IND-0995,Kandi Podi (Andhra spiced toor dal powder for rice),345.12,48.12,20.45,8.12,2.14,14.65,680.0,84.0,4.85,0.0,112.0,Indian Food Nutrition dataset provided by user
+IND-0996,Karivepaku Podi (Curry leaf powder for rice),312.45,42.15,14.85,9.42,1.85,18.42,590.0,420.0,12.45,18.4,86.0,Indian Food Nutrition dataset provided by user
+IND-0997,Nallakaram Podi (Andhra spicy black chilli podi),325.64,44.85,16.12,9.12,2.45,16.12,720.0,110.0,6.12,8.6,74.0,Indian Food Nutrition dataset provided by user
+IND-0998,Idli Podi / Gunpowder (Tamil style with sesame),378.45,42.14,18.64,15.85,1.85,12.45,640.0,260.0,6.85,0.0,88.0,Indian Food Nutrition dataset provided by user
+IND-0999,Tomato Thokku / Pickle,185.42,14.85,2.14,13.45,8.42,3.12,1850.0,42.0,1.85,18.6,22.0,Indian Food Nutrition dataset provided by user
+IND-1000,Gongura Pachadi (Andhra roselle leaf pickle/chutney),165.42,8.95,3.12,13.12,1.85,4.64,1620.0,96.0,3.45,24.8,42.0,Indian Food Nutrition dataset provided by user
+IND-1001,Avakaya (Andhra raw mango pickle in mustard oil),245.64,12.45,2.45,21.12,3.12,4.12,2450.0,48.0,1.95,28.4,18.0,Indian Food Nutrition dataset provided by user
+IND-1002,Lime Pickle / Nimbu ka Achar,112.45,16.84,1.42,4.64,8.12,2.85,2800.0,54.0,1.24,42.6,14.0,Indian Food Nutrition dataset provided by user
+IND-1003,Mixed Veg Pickle / Pachranga Achar,195.42,11.85,2.12,15.84,4.12,3.64,2200.0,46.0,1.75,22.4,26.0,Indian Food Nutrition dataset provided by user
+IND-1004,Garlic Pickle / Lehsun ka Achar,210.45,18.45,4.85,13.24,6.42,3.12,1980.0,110.0,2.14,12.4,18.0,Indian Food Nutrition dataset provided by user
+IND-1005,Green Chilli Pickle / Hari Mirch ka Achar,178.45,8.95,2.64,14.85,2.14,4.12,2150.0,38.0,1.64,68.4,24.0,Indian Food Nutrition dataset provided by user
+IND-1006,Jalebi (Sugar syrup dipped spiral),365.42,68.14,3.12,9.45,54.12,0.85,28.0,24.0,0.85,0.0,8.0,Indian Food Nutrition dataset provided by user
+IND-1007,Imarti (Urad dal sweet flower),348.65,64.85,5.12,8.12,48.64,1.85,34.0,38.0,1.24,0.0,14.0,Indian Food Nutrition dataset provided by user
+IND-1008,Rasgulla (Bengali cottage cheese ball in syrup / 2 pieces),146.15,32.45,4.12,0.45,31.12,0.0,18.0,84.0,0.35,0.0,12.0,Indian Food Nutrition dataset provided by user
+IND-1009,Gulab Jamun (Khoya / 2 pieces in syrup),324.65,48.12,4.85,12.84,42.15,0.45,42.0,110.0,0.72,0.0,18.0,Indian Food Nutrition dataset provided by user
+IND-1010,Kaju Katli / Kaju Barfi,428.45,54.12,9.85,19.84,44.12,1.85,14.0,38.0,2.85,0.0,16.0,Indian Food Nutrition dataset provided by user
+IND-1011,Motichoor Ladoo / Boondi Ladoo,415.64,58.45,5.64,18.12,46.12,1.64,28.0,32.0,1.42,0.0,18.0,Indian Food Nutrition dataset provided by user
+IND-1012,Mysore Pak (Traditional ghee sweet),524.15,48.12,6.45,34.12,38.45,1.85,24.0,42.0,1.64,0.0,16.0,Indian Food Nutrition dataset provided by user
+IND-1013,Soan Papdi / Patisa,468.45,59.12,6.85,22.84,45.12,2.14,32.0,48.0,1.85,0.0,18.0,Indian Food Nutrition dataset provided by user
+IND-1014,Peda (Mathura Peda / Doodh Peda),385.42,56.14,11.24,12.85,51.12,0.0,64.0,340.0,0.85,0.5,24.0,Indian Food Nutrition dataset provided by user

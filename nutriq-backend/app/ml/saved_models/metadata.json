@@ -1,0 +1,55 @@
+{
+  "model_name": "NutriQ_GradientBoosting_FoodRecommender",
+  "model_version": "1.0.0",
+  "training_date": "2026-08-19T18:29:04.422136+00:00",
+  "algorithm": "GradientBoostingRegressor",
+  "features": [
+    "calorie_gap",
+    "protein_gap",
+    "carb_gap",
+    "fat_gap",
+    "fiber_gap",
+    "food_calories",
+    "food_protein",
+    "food_carbs",
+    "food_fat",
+    "food_fiber",
+    "calorie_ratio",
+    "protein_ratio",
+    "calorie_density",
+    "protein_density",
+    "fiber_density",
+    "is_breakfast",
+    "is_lunch",
+    "is_snack",
+    "is_dinner",
+    "slot_compatibility",
+    "is_weight_loss",
+    "is_muscle_gain",
+    "is_maintain",
+    "is_weight_gain",
+    "user_bmi",
+    "user_history_frequency"
+  ],
+  "feature_count": 26,
+  "hyperparameters": {
+    "n_estimators": 120,
+    "learning_rate": 0.08,
+    "max_depth": 5,
+    "min_samples_split": 6,
+    "min_samples_leaf": 4
+  },
+  "evaluation_metrics": {
+    "mae": 0.0313,
+    "rmse": 0.0461,
+    "r2_score": 0.9628,
+    "precision_at_3": 0.7288,
+    "precision_at_5": 0.9085
+  },
+  "dataset": {
+    "source": "Curated IFCT & Indian Regional Foods",
+    "sample_count": 6000,
+    "train_size": 4800,
+    "test_size": 1200
+  }
+}

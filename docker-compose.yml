@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: nutriq-postgres
+    environment:
+      POSTGRES_USER: nutriq_user
+      POSTGRES_PASSWORD: nutriq_password
+      POSTGRES_DB: nutriq_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./nutriq-backend
+      dockerfile: Dockerfile
+    container_name: nutriq-backend
+    environment:
+      - APP_ENV=production
+      - DATABASE_URL=postgresql+asyncpg://nutriq_user:nutriq_password@postgres:5432/nutriq_db
+      - JWT_SECRET=nutriq-production-secure-jwt-key
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./nutriq-frontend
+      dockerfile: Dockerfile
+    container_name: nutriq-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
