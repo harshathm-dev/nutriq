@@ -1,4 +1,22 @@
-# Python
+# ============================================================
+# NutriQ Application Root .gitignore
+# ============================================================
+
+# Environment variables & secrets
+.env
+.env.*
+.env.local
+.env.development
+.env.production
+.env.staging
+.env.test
+!.env.example
+
+# Python virtual environments & bytecode
+venv/
+.venv/
+env/
+ENV/
 __pycache__/
 *.py[cod]
 *$py.class
@@ -19,34 +37,42 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-.venv/
-env/
-venv/
-ENV/
-*.db
-*.sqlite
-*.sqlite3
+.pytest_cache/
 
-# Node / Frontend
+# Node / Frontend build outputs & dependencies
 node_modules/
+dist/
+build/
+.vite/
+dist-ssr/
+*.local
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-dist/
-dist-ssr/
-*.local
 
-# Environment & Secrets
-.env
-.env.production
-.env.staging
+# Database files, WAL journal files, and automated backups
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+*.bak
+*.backup
+*.backup_*
+nutriq.db*
+
+# Logs & temporary files
+*.log
+*.tmp
+*.temp
+
+# Certificates & keys
 *.pem
 *.key
+*.crt
 
-# IDE & OS
+# IDE, Editor & OS metadata
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
-*.log
-.pytest_cache/

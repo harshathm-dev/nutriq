@@ -156,7 +156,7 @@ export const FoodTabs = ({
             borderRadius: 'var(--radius-sm)',
             border: 'none',
             background: activeTab === 'favorites' ? 'var(--bg-active-tab, #FFFFFF)' : 'transparent',
-            color: activeTab === 'favorites' ? 'var(--calorie-orange, #E76F51)' : 'var(--text-secondary)',
+            color: activeTab === 'favorites' ? 'var(--calorie-orange, #FF6B4A)' : 'var(--text-secondary)',
             fontWeight: activeTab === 'favorites' ? '800' : '600',
             fontSize: '0.84rem',
             cursor: 'pointer',
@@ -167,7 +167,7 @@ export const FoodTabs = ({
             transition: 'all 0.16s ease'
           }}
         >
-          <Heart size={16} fill={activeTab === 'favorites' ? "var(--calorie-orange, #E76F51)" : "none"} color="var(--calorie-orange, #E76F51)" /> Favorites
+          <Heart size={16} fill={activeTab === 'favorites' ? "var(--calorie-orange, #FF6B4A)" : "none"} color="var(--calorie-orange, #FF6B4A)" /> Favorites
         </button>
       </div>
 

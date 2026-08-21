@@ -34,6 +34,7 @@ class NutritionTargetsOut(BaseModel):
     bmr: float
     tdee: float
     target_calories: float
+    calorie_target: Optional[float] = None
     protein_g: float
     carbs_g: float
     fat_g: float

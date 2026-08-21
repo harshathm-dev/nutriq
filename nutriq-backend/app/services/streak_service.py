@@ -149,30 +149,59 @@ class StreakService:
             else:
                 break
 
-        if completed_today:
-            streak.current_streak = consecutive_days
-            streak.last_completed_date = today_str
-            streak.longest_streak = max(streak.longest_streak, streak.current_streak)
-            streak.total_active_days = max(streak.total_active_days, streak.longest_streak, consecutive_days)
-            streak.updated_at = utc_now()
+        # Extract all distinct local active dates for the user
+        all_active_dates = set()
+        # 1. Meals
+        m_stmt = select(Meal.occurred_at).where(Meal.user_id == user_id)
+        m_res = await session.execute(m_stmt)
+        for (m_dt,) in m_res:
+            if m_dt:
+                d_loc = m_dt.astimezone(tz).date() if m_dt.tzinfo else m_dt.replace(tzinfo=timezone.utc).astimezone(tz).date()
+                all_active_dates.add(d_loc)
+        # 2. Exercise
+        e_stmt = select(Exercise.recorded_at).where(Exercise.user_id == user_id)
+        e_res = await session.execute(e_stmt)
+        for (e_dt,) in e_res:
+            if e_dt:
+                d_loc = e_dt.astimezone(tz).date() if e_dt.tzinfo else e_dt.replace(tzinfo=timezone.utc).astimezone(tz).date()
+                all_active_dates.add(d_loc)
+        # 3. Water
+        w_stmt = select(Water.recorded_at).where(Water.user_id == user_id)
+        w_res = await session.execute(w_stmt)
+        for (w_dt,) in w_res:
+            if w_dt:
+                d_loc = w_dt.astimezone(tz).date() if w_dt.tzinfo else w_dt.replace(tzinfo=timezone.utc).astimezone(tz).date()
+                all_active_dates.add(d_loc)
 
-            # Check milestone triggers
-            if streak.current_streak in MILESTONES and streak.current_streak not in achieved_milestones:
-                new_milestone = streak.current_streak
+        total_active_days = len(all_active_dates)
 
-            await session.commit()
-            await session.refresh(streak)
-        else:
-            if consecutive_days > 0:
-                streak.current_streak = consecutive_days
-                streak.last_completed_date = yesterday_str
-            else:
-                streak.current_streak = 0
-            
-            streak.longest_streak = max(streak.longest_streak, streak.current_streak)
-            streak.updated_at = utc_now()
-            await session.commit()
-            await session.refresh(streak)
+        # Compute longest streak across sorted active dates
+        sorted_dates = sorted(all_active_dates)
+        calc_longest = consecutive_days
+        if sorted_dates:
+            curr_run = 1
+            max_run = 1
+            for i in range(1, len(sorted_dates)):
+                if sorted_dates[i] == sorted_dates[i - 1] + timedelta(days=1):
+                    curr_run += 1
+                    if curr_run > max_run:
+                        max_run = curr_run
+                elif sorted_dates[i] != sorted_dates[i - 1]:
+                    curr_run = 1
+            calc_longest = max(calc_longest, max_run)
+
+        streak.current_streak = consecutive_days
+        streak.longest_streak = calc_longest
+        streak.total_active_days = total_active_days
+        streak.last_completed_date = today_str if completed_today else (yesterday_str if consecutive_days > 0 else None)
+        streak.updated_at = utc_now()
+
+        # Check milestone triggers
+        if streak.current_streak in MILESTONES and streak.current_streak not in achieved_milestones:
+            new_milestone = streak.current_streak
+
+        await session.commit()
+        await session.refresh(streak)
 
         # Generate weekly history (7 days of current week, Monday to Sunday)
         # Find Monday of current week

@@ -41,7 +41,9 @@ class Settings(BaseSettings):
     APP_URL: str = "http://localhost:5173"
     
     # Email Service Configuration
-    EMAIL_PROVIDER: str = "smtp"  # "smtp", "console", "mock"
+    EMAIL_PROVIDER: str = "resend"  # "resend", "smtp", "console", "mock"
+    RESEND_API_KEY: Optional[str] = None
+    WELCOME_EMAIL_FROM: str = "NutriQ <onboarding@resend.dev>"
     SMTP_HOST: Optional[str] = None
     SMTP_PORT: int = 587
     SMTP_USERNAME: Optional[str] = None

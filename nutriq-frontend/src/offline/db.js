@@ -15,19 +15,32 @@ db.version(2).stores({
   reminder_settings: 'id, updated_at'
 });
 
+export const ensureDbOpen = async () => {
+  try {
+    if (!db.isOpen()) {
+      await db.open();
+    }
+  } catch (err) {
+    console.warn("Could not ensure IndexedDB is open:", err);
+  }
+};
+
 export const clearUserLocalData = async () => {
   try {
-    await Promise.all([
-      db.meals.clear(),
-      db.water_logs.clear(),
-      db.exercise_logs.clear(),
-      db.weight_logs.clear(),
-      db.daily_summaries.clear(),
-      db.weekly_summaries.clear(),
-      db.profile.clear(),
-      db.reminder_settings.clear(),
-      db.sync_queue.clear()
-    ]);
+    await ensureDbOpen();
+    if (db.isOpen()) {
+      await Promise.all([
+        db.meals.clear().catch(() => {}),
+        db.water_logs.clear().catch(() => {}),
+        db.exercise_logs.clear().catch(() => {}),
+        db.weight_logs.clear().catch(() => {}),
+        db.daily_summaries.clear().catch(() => {}),
+        db.weekly_summaries.clear().catch(() => {}),
+        db.profile.clear().catch(() => {}),
+        db.reminder_settings.clear().catch(() => {}),
+        db.sync_queue.clear().catch(() => {})
+      ]);
+    }
   } catch (err) {
     console.warn("Could not clear user local data:", err);
   }
@@ -35,16 +48,20 @@ export const clearUserLocalData = async () => {
 
 export const enqueueOfflineAction = async (entityType, entityId, operation, payload) => {
   try {
-    await db.sync_queue.add({
-      entity_type: entityType,
-      entity_id: entityId,
-      operation: operation,
-      payload: payload,
-      client_timestamp: new Date().toISOString()
-    });
+    await ensureDbOpen();
+    if (db.isOpen()) {
+      await db.sync_queue.add({
+        entity_type: entityType,
+        entity_id: entityId,
+        operation: operation,
+        payload: payload,
+        client_timestamp: new Date().toISOString()
+      });
+    }
   } catch (err) {
     console.error("Failed to enqueue offline action:", err);
   }
 };
+
 
 

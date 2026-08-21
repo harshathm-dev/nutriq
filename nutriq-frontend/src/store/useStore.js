@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { api } from '../services/api.js';
-import { db, clearUserLocalData } from '../offline/db.js';
+import { db, ensureDbOpen, clearUserLocalData } from '../offline/db.js';
 
 export const pathToTab = (path) => {
   const cleanPath = path.split('?')[0].replace(/\/+$/, '') || '/';
@@ -129,6 +129,14 @@ export const useStore = create((set, get) => ({
     meal_count: 0
   },
   dailySummary: null,
+  streakData: {
+    current_streak: 0,
+    longest_streak: 0,
+    total_active_days: 0,
+    completed_today: false,
+    weekly_history: [],
+    last_completed_date: null
+  },
   reminderSettings: {
     reminders_enabled: true,
     breakfast_enabled: true,
@@ -240,6 +248,14 @@ export const useStore = create((set, get) => ({
       user: null,
       profile: null,
       meals: [],
+      streakData: {
+        current_streak: 0,
+        longest_streak: 0,
+        total_active_days: 0,
+        completed_today: false,
+        weekly_history: [],
+        last_completed_date: null
+      },
       dailyAnalytics: {
         consumed: {
           calories: 0,
@@ -270,6 +286,21 @@ export const useStore = create((set, get) => ({
       syncPendingCount: 0
     });
     get().navigate('/welcome', true);
+  },
+
+  setStreakData: (streakData) => set({ streakData }),
+
+  fetchStreak: async () => {
+    try {
+      const data = await api.getStreakStatus();
+      if (data) {
+        set({ streakData: data });
+        return data;
+      }
+    } catch (e) {
+      console.warn("Could not fetch streak in store:", e);
+    }
+    return get().streakData;
   },
 
   setDailySummary: (summary) => set({ dailySummary: summary }),
@@ -316,13 +347,14 @@ export const useStore = create((set, get) => ({
 
   refreshAllData: async () => {
     try {
-      const [profileData, targetData, analyticsData, mealsData, summaryData, reminderData] = await Promise.all([
+      const [profileData, targetData, analyticsData, mealsData, summaryData, reminderData, streakStatus] = await Promise.all([
         api.getProfile().catch(() => null),
         api.getNutritionTargets().catch(() => null),
         api.getDailyAnalytics().catch(() => null),
         api.getTodayMeals().catch(() => []),
         api.getDailySummary().catch(() => null),
-        api.getReminderSettings().catch(() => null)
+        api.getReminderSettings().catch(() => null),
+        api.getStreakStatus().catch(() => null)
       ]);
 
       if (profileData) set({ profile: profileData });
@@ -331,9 +363,17 @@ export const useStore = create((set, get) => ({
       if (mealsData) set({ meals: mealsData });
       if (summaryData) set({ dailySummary: summaryData });
       if (reminderData) set({ reminderSettings: reminderData });
+      if (streakStatus) set({ streakData: streakStatus });
 
-      const pendingCount = await db.sync_queue.count();
-      set({ syncPendingCount: pendingCount });
+      try {
+        await ensureDbOpen();
+        if (db.isOpen()) {
+          const pendingCount = await db.sync_queue.count();
+          set({ syncPendingCount: pendingCount });
+        }
+      } catch (e) {
+        console.warn("Could not query pending sync count:", e);
+      }
     } catch (e) {
       console.warn("Could not refresh data completely:", e);
     }

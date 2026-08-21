@@ -37,7 +37,7 @@ export const MacroRing = ({
             cx={size / 2}
             cy={size / 2}
             r={radius}
-            stroke="rgba(255, 255, 255, 0.07)"
+            stroke="var(--border-glass-light, #EBF2EE)"
             strokeWidth={strokeWidth}
             fill="transparent"
           />

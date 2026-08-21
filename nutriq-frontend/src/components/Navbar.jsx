@@ -11,11 +11,10 @@ import {
 export const Navbar = () => {
   const {
     isOnline, triggerSync, user, profile,
-    targets, dailyAnalytics,
+    targets, dailyAnalytics, streakData,
     theme, setTheme, logout, navigate, activeTab, refreshAllData
   } = useStore();
 
-  const [streakData, setStreakData] = useState(null);
   const [showStreakModal, setShowStreakModal] = useState(false);
   const [showWaterModal, setShowWaterModal] = useState(false);
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
@@ -28,13 +27,11 @@ export const Navbar = () => {
 
   const fetchQuickData = async () => {
     try {
-      const stk = await api.getStreak().catch(() => null);
-      if (stk) setStreakData(stk);
       await refreshAllData();
     } catch (e) {}
   };
 
-  const streakDays = streakData?.current_streak || 1;
+  const streakDays = Number(streakData?.current_streak || 0);
 
   // Single Source of Truth for Water intake and target
   const consumedWaterMl = dailyAnalytics?.consumed?.water_ml !== undefined
@@ -89,7 +86,7 @@ export const Navbar = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '0 4px 14px rgba(31, 122, 90, 0.25)'
+            boxShadow: '0 4px 14px rgba(8, 127, 91, 0.25)'
           }}>
             <Flame size={24} color="#FFFFFF" />
           </div>
@@ -123,8 +120,8 @@ export const Navbar = () => {
               gap: '6px',
               cursor: 'pointer',
               border: '1px solid var(--border-glass)',
-              background: 'var(--streak-badge-bg, #FFF9F5)',
-              color: 'var(--streak, #D97706)',
+              background: 'var(--streak-badge-bg, #FFF0EC)',
+              color: 'var(--streak, #FF6B4A)',
               fontWeight: '700',
               fontSize: '0.82rem',
               boxShadow: 'none',
@@ -132,7 +129,7 @@ export const Navbar = () => {
             }}
             title="Click to view streak breakdown"
           >
-            <Flame size={15} color="var(--streak, #E76F51)" fill="var(--streak, #F4A261)" />
+            <Flame size={15} color="var(--streak, #FF6B4A)" fill="var(--streak, #FF8A65)" />
             <span>{streakDays} Day Streak</span>
           </button>
 
@@ -149,8 +146,8 @@ export const Navbar = () => {
               gap: '6px',
               cursor: 'pointer',
               border: '1px solid var(--border-glass)',
-              background: isTargetAchieved ? 'var(--success-bg, #E1F4EA)' : 'var(--water-badge, #DDF5F4)',
-              color: isTargetAchieved ? 'var(--success, #16865F)' : 'var(--water-text, #159A9C)',
+              background: isTargetAchieved ? 'var(--success-bg, #DDF5EC)' : 'var(--water-badge, #E6FFFA)',
+              color: isTargetAchieved ? 'var(--success, #087F5B)' : 'var(--water-text, #0D9488)',
               fontWeight: '700',
               fontSize: '0.82rem',
               boxShadow: 'none',
@@ -160,8 +157,8 @@ export const Navbar = () => {
           >
             <Droplets
               size={15}
-              color={isTargetAchieved ? "var(--success, #16865F)" : "var(--water, #159A9C)"}
-              fill={isTargetAchieved ? "var(--success, #16865F)" : "var(--water, #159A9C)"}
+              color={isTargetAchieved ? "var(--success, #087F5B)" : "var(--water, #0D9488)"}
+              fill={isTargetAchieved ? "var(--success, #087F5B)" : "var(--water, #0D9488)"}
             />
             <span>
               {waterLiters} / {targetLiters} L{isTargetAchieved ? ' ✓' : ''}
@@ -180,8 +177,8 @@ export const Navbar = () => {
               gap: '6px',
               cursor: 'pointer',
               border: '1px solid var(--border-glass)',
-              background: isOnline ? 'var(--success-bg, #E1F4EA)' : 'var(--error-bg, #FDE8E8)',
-              color: isOnline ? 'var(--success, #16865F)' : 'var(--error, #DC4C4C)',
+              background: isOnline ? 'var(--success-bg, #DDF5EC)' : 'var(--error-bg, #FEF2F2)',
+              color: isOnline ? 'var(--success, #087F5B)' : 'var(--error, #EF4444)',
               fontWeight: '700',
               fontSize: '0.82rem',
               boxShadow: 'none',
@@ -191,12 +188,12 @@ export const Navbar = () => {
           >
             {isOnline ? (
               <>
-                <Wifi size={14} color="var(--success, #16865F)" />
+                <Wifi size={14} color="var(--success, #087F5B)" />
                 <span>Online</span>
               </>
             ) : (
               <>
-                <WifiOff size={14} color="var(--error, #DC4C4C)" />
+                <WifiOff size={14} color="var(--error, #EF4444)" />
                 <span>Offline</span>
               </>
             )}

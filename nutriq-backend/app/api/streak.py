@@ -12,6 +12,7 @@ router = APIRouter(prefix="/streak", tags=["NutriQ Daily Streak"])
 
 
 @router.get("", response_model=StreakStatusOut)
+@router.get("/status", response_model=StreakStatusOut)
 async def get_streak_status(
     current_user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_db)

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Flame, Trophy, Calendar, Sparkles, Check, ChevronRight, Award, X, CheckCircle2, Zap } from 'lucide-react';
+import { useStore } from '../store/useStore';
 import { api } from '../services/api';
 import { getToday } from '../utils/dateUtils';
 
@@ -11,32 +12,21 @@ const MILESTONES = [
 ];
 
 export const StreakCard = ({ onLogClick, onClose }) => {
-  const [streakData, setStreakData] = useState({
+  const storeStreakData = useStore(state => state.streakData);
+  const fetchStreak = useStore(state => state.fetchStreak);
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    fetchStreak();
+  }, []);
+
+  const streakData = storeStreakData || {
     current_streak: 0,
     longest_streak: 0,
     total_active_days: 0,
     completed_today: false,
     weekly_history: []
-  });
-  const [showModal, setShowModal] = useState(false);
-  const [loading, setLoading] = useState(true);
-
-  const fetchStreak = async () => {
-    try {
-      const data = await api.getStreakStatus();
-      if (data) {
-        setStreakData(data);
-      }
-    } catch (e) {
-      console.warn("Failed to load streak data:", e);
-    } finally {
-      setLoading(false);
-    }
   };
-
-  useEffect(() => {
-    fetchStreak();
-  }, []);
 
   const currentStreak = Number(streakData.current_streak || 0);
   const isCompletedToday = Boolean(streakData.completed_today);
@@ -68,12 +58,12 @@ export const StreakCard = ({ onLogClick, onClose }) => {
               width: '38px',
               height: '38px',
               borderRadius: '10px',
-              background: isCompletedToday ? 'var(--accent-gradient)' : 'var(--streak-badge-bg, #FFF3EB)',
+              background: isCompletedToday ? 'var(--accent-gradient)' : 'var(--streak-badge-bg, #FFF0EC)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center'
             }}>
-              <Flame size={22} color={isCompletedToday ? "#FFFFFF" : "var(--streak, #E76F51)"} fill={isCompletedToday ? "#FFFFFF" : "var(--streak, #F4A261)"} />
+              <Flame size={22} color={isCompletedToday ? "#FFFFFF" : "var(--streak, #FF6B4A)"} fill={isCompletedToday ? "#FFFFFF" : "var(--streak, #FF8A65)"} />
             </div>
             <div>
               <span style={{ fontSize: '0.74rem', fontWeight: '700', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
@@ -171,7 +161,7 @@ export const StreakCard = ({ onLogClick, onClose }) => {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px', marginBottom: '24px' }}>
               <div style={{ background: 'var(--bg-subtle)', padding: '14px', borderRadius: 'var(--radius-md)', textAlign: 'center' }}>
                 <span style={{ fontSize: '0.72rem', color: 'var(--text-secondary)', fontWeight: '600' }}>Current Streak</span>
-                <h4 style={{ fontSize: '1.5rem', fontWeight: '800', color: '#E76F51', margin: '4px 0 0 0' }}>
+                <h4 style={{ fontSize: '1.5rem', fontWeight: '800', color: 'var(--streak, #FF6B4A)', margin: '4px 0 0 0' }}>
                   {currentStreak} <span style={{ fontSize: '0.85rem' }}>days</span>
                 </h4>
               </div>
@@ -244,8 +234,8 @@ export const StreakCard = ({ onLogClick, onClose }) => {
                         justifyContent: 'space-between',
                         padding: '10px 14px',
                         borderRadius: 'var(--radius-md)',
-                        background: achieved ? 'var(--primary-light)' : 'var(--bg-subtle)',
-                        border: achieved ? '1px solid rgba(31, 122, 90, 0.25)' : '1px solid var(--border-glass)'
+                        background: achieved ? 'var(--primary-light, #DDF5EC)' : 'var(--bg-subtle)',
+                        border: achieved ? '1px solid rgba(8, 127, 91, 0.25)' : '1px solid var(--border-glass)'
                       }}
                     >
                       <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>

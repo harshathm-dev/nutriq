@@ -11,6 +11,7 @@ async def setup_test_db():
             "ALTER TABLE allergies ADD COLUMN family_profile_id VARCHAR(36)",
             "ALTER TABLE users ADD COLUMN auth_provider VARCHAR(50) DEFAULT 'email'",
             "ALTER TABLE users ADD COLUMN google_id VARCHAR(255)",
+            "ALTER TABLE users ADD COLUMN welcome_email_sent BOOLEAN DEFAULT 0",
             "ALTER TABLE exercise ADD COLUMN intensity VARCHAR(50) DEFAULT 'moderate'"
         ]
         for m in migrations:

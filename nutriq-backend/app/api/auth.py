@@ -29,6 +29,8 @@ from app.schemas.auth import (
     ValidateResetTokenRequest,
     ValidateResetTokenResponse,
     GenericAuthResponse,
+    TestEmailRequest,
+    TestEmailResponse,
 )
 from app.utils.security import verify_password, get_password_hash, create_access_token
 from app.middleware.auth_middleware import get_current_user
@@ -83,7 +85,8 @@ async def register(
         email=clean_email,
         password_hash=get_password_hash(req.password),
         role="user",
-        auth_provider="email"
+        auth_provider="email",
+        welcome_email_sent=False
     )
     session.add(user)
     await session.flush()
@@ -93,9 +96,10 @@ async def register(
     session.add(ConsentRecord(user_id=user.id, consent_type="ai_health_processing", version="2.0"))
     await session.commit()
 
-    # Dispatch welcome email in background (non-blocking)
+    # Dispatch welcome email in background (non-blocking, updates welcome_email_sent=True on success)
     background_tasks.add_task(
-        EmailService.send_welcome_email,
+        EmailService.send_welcome_email_and_update_status,
+        user.id,
         clean_email,
         req.name
     )
@@ -285,19 +289,31 @@ async def google_oauth_callback(
         await session.commit()
 
         user_name = user.profile.name if user.profile else (verified_name or clean_email.split("@")[0])
-        background_tasks.add_task(
-            EmailService.send_login_notification,
-            clean_email,
-            user_name,
-            login_time
-        )
+
+        # If existing account has not received welcome email yet, send it once
+        if not getattr(user, "welcome_email_sent", False):
+            background_tasks.add_task(
+                EmailService.send_welcome_email_and_update_status,
+                user.id,
+                clean_email,
+                user_name
+            )
+        else:
+            # Login notification for returning users
+            background_tasks.add_task(
+                EmailService.send_login_notification,
+                clean_email,
+                user_name,
+                login_time
+            )
     else:
         user = User(
             email=clean_email,
             password_hash=f"oauth_google_{google_sub or secrets.token_hex(8)}",
             role="user",
             auth_provider="google",
-            google_id=google_sub
+            google_id=google_sub,
+            welcome_email_sent=False
         )
         session.add(user)
         await session.flush()
@@ -307,8 +323,10 @@ async def google_oauth_callback(
         session.add(ConsentRecord(user_id=user.id, consent_type="ai_health_processing", version="2.0"))
         await session.commit()
 
+        # Send welcome email for newly created Google account
         background_tasks.add_task(
-            EmailService.send_welcome_email,
+            EmailService.send_welcome_email_and_update_status,
+            user.id,
             clean_email,
             verified_name or clean_email.split("@")[0]
         )
@@ -419,19 +437,31 @@ async def google_login(
         await session.commit()
 
         user_name = user.profile.name if user.profile else (verified_name or verified_email.split("@")[0])
-        background_tasks.add_task(
-            EmailService.send_login_notification,
-            verified_email,
-            user_name,
-            login_time
-        )
+
+        # If existing account has not received welcome email yet, send it once
+        if not getattr(user, "welcome_email_sent", False):
+            background_tasks.add_task(
+                EmailService.send_welcome_email_and_update_status,
+                user.id,
+                verified_email,
+                user_name
+            )
+        else:
+            # Login notification for returning users
+            background_tasks.add_task(
+                EmailService.send_login_notification,
+                verified_email,
+                user_name,
+                login_time
+            )
     else:
         user = User(
             email=verified_email,
             password_hash=f"oauth_google_{google_user_id or secrets.token_hex(8)}",
             role="user",
             auth_provider="google",
-            google_id=google_user_id
+            google_id=google_user_id,
+            welcome_email_sent=False
         )
         session.add(user)
         await session.flush()
@@ -441,8 +471,10 @@ async def google_login(
         session.add(ConsentRecord(user_id=user.id, consent_type="ai_health_processing", version="2.0"))
         await session.commit()
 
+        # Send welcome email for newly created Google account
         background_tasks.add_task(
-            EmailService.send_welcome_email,
+            EmailService.send_welcome_email_and_update_status,
+            user.id,
             verified_email,
             verified_name or verified_email.split("@")[0]
         )
@@ -668,3 +700,39 @@ async def get_current_user_profile(user: User = Depends(get_current_user)):
 @router.post("/logout")
 async def logout():
     return {"status": "success", "message": "Successfully logged out."}
+
+
+@router.post("/test-email", response_model=TestEmailResponse)
+async def test_email_route(req: TestEmailRequest):
+    """
+    Diagnostic endpoint to test welcome email delivery via Resend or SMTP.
+    Usage:
+    POST /api/auth/test-email or POST /api/test-email
+    {
+        "email": "test@example.com"
+    }
+    """
+    clean_email = str(req.email).lower().strip()
+    result = EmailService.send_test_email(clean_email)
+    
+    if result.get("success"):
+        return TestEmailResponse(
+            status="success",
+            message="Welcome email sent successfully! Please check your inbox and spam folder.",
+            recipient=clean_email,
+            provider=result.get("provider"),
+            resend_id=result.get("id"),
+            error=None,
+            sender=result.get("from")
+        )
+    else:
+        return TestEmailResponse(
+            status="error",
+            message="Failed to deliver welcome email via Resend.",
+            recipient=clean_email,
+            provider=result.get("provider"),
+            resend_id=None,
+            error=result.get("error"),
+            sender=result.get("from")
+        )
+

@@ -19,36 +19,36 @@ export const NutritionWarning = ({ statusData }) => {
   } = statusData;
 
   // Visual Theme Setup
-  let bgColor = 'rgba(16, 185, 129, 0.08)';
-  let borderColor = 'rgba(16, 185, 129, 0.25)';
-  let textColor = '#34d399';
-  let icon = <CheckCircle2 size={22} color="#10b981" style={{ flexShrink: 0, marginTop: '2px' }} />;
+  let bgColor = 'var(--success-bg)';
+  let borderColor = 'rgba(8, 127, 91, 0.25)';
+  let textColor = 'var(--success)';
+  let icon = <CheckCircle2 size={22} color="var(--success)" style={{ flexShrink: 0, marginTop: '2px' }} />;
 
   if (status_level === 'near_target') {
-    bgColor = 'rgba(245, 158, 11, 0.08)';
+    bgColor = 'var(--warning-bg)';
     borderColor = 'rgba(245, 158, 11, 0.25)';
-    textColor = '#fbbf24';
-    icon = <Info size={22} color="#f59e0b" style={{ flexShrink: 0, marginTop: '2px' }} />;
+    textColor = 'var(--warning)';
+    icon = <Info size={22} color="var(--warning)" style={{ flexShrink: 0, marginTop: '2px' }} />;
   } else if (status_level === 'slightly_above') {
-    bgColor = 'rgba(245, 158, 11, 0.12)';
+    bgColor = 'var(--warning-bg)';
     borderColor = 'rgba(245, 158, 11, 0.35)';
-    textColor = '#fbbf24';
-    icon = <AlertTriangle size={22} color="#f59e0b" style={{ flexShrink: 0, marginTop: '2px' }} />;
+    textColor = 'var(--warning)';
+    icon = <AlertTriangle size={22} color="var(--warning)" style={{ flexShrink: 0, marginTop: '2px' }} />;
   } else if (status_level === 'significantly_above') {
-    bgColor = 'rgba(244, 63, 94, 0.12)';
-    borderColor = 'rgba(244, 63, 94, 0.35)';
-    textColor = '#fb7185';
-    icon = <AlertCircle size={22} color="#f43f5e" style={{ flexShrink: 0, marginTop: '2px' }} />;
+    bgColor = 'var(--error-bg)';
+    borderColor = 'rgba(239, 68, 68, 0.35)';
+    textColor = 'var(--error)';
+    icon = <AlertCircle size={22} color="var(--error)" style={{ flexShrink: 0, marginTop: '2px' }} />;
   } else if (status_level === 'below_target') {
-    bgColor = 'rgba(56, 189, 248, 0.08)';
-    borderColor = 'rgba(56, 189, 248, 0.25)';
-    textColor = '#38bdf8';
-    icon = <TrendingUp size={22} color="#38bdf8" style={{ flexShrink: 0, marginTop: '2px' }} />;
+    bgColor = 'var(--macro-protein-light)';
+    borderColor = 'rgba(37, 99, 235, 0.25)';
+    textColor = 'var(--macro-protein)';
+    icon = <TrendingUp size={22} color="var(--macro-protein)" style={{ flexShrink: 0, marginTop: '2px' }} />;
   } else if (status_level === 'protein_low') {
-    bgColor = 'rgba(167, 139, 250, 0.08)';
-    borderColor = 'rgba(167, 139, 250, 0.25)';
-    textColor = '#a78bfa';
-    icon = <Award size={22} color="#a78bfa" style={{ flexShrink: 0, marginTop: '2px' }} />;
+    bgColor = 'var(--warning-bg)';
+    borderColor = 'rgba(245, 158, 11, 0.25)';
+    textColor = 'var(--warning)';
+    icon = <Award size={22} color="var(--warning)" style={{ flexShrink: 0, marginTop: '2px' }} />;
   }
 
   const primaryMessage = warning_message || positive_feedback;

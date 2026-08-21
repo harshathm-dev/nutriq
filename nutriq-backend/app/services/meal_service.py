@@ -285,6 +285,14 @@ class MealService:
             return False
         await session.delete(meal)
         await session.commit()
+
+        # Recalculate streak after meal deletion
+        try:
+            from app.services.streak_service import StreakService
+            await StreakService.calculate_streak_status(session, user_id)
+        except Exception:
+            pass
+
         return True
 
     @classmethod

@@ -41,6 +41,7 @@ async def lifespan(app: FastAPI):
             "ALTER TABLE allergies ADD COLUMN family_profile_id VARCHAR(36)",
             "ALTER TABLE users ADD COLUMN auth_provider VARCHAR(50) DEFAULT 'email'",
             "ALTER TABLE users ADD COLUMN google_id VARCHAR(255)",
+            "ALTER TABLE users ADD COLUMN welcome_email_sent BOOLEAN DEFAULT 0",
             "ALTER TABLE exercise ADD COLUMN intensity VARCHAR(50) DEFAULT 'moderate'",
             "ALTER TABLE exercise ADD COLUMN steps INTEGER DEFAULT 0",
             "ALTER TABLE exercise ADD COLUMN distance_km FLOAT DEFAULT 0.0",
@@ -121,6 +122,44 @@ app.include_router(nutrition_status_router, prefix=api_prefix)
 app.include_router(streak_router, prefix=api_prefix)
 app.include_router(recommendations_router, prefix=api_prefix)
 app.include_router(insights_router, prefix=api_prefix)
+
+
+from app.schemas.auth import TestEmailRequest, TestEmailResponse
+from app.services.email_service import EmailService
+
+@app.post("/api/test-email", response_model=TestEmailResponse, tags=["Development / Testing"])
+async def test_email_endpoint(req: TestEmailRequest):
+    """
+    Diagnostic development endpoint to test welcome email delivery.
+    Usage:
+    POST /api/test-email
+    {
+        "email": "test@example.com"
+    }
+    """
+    clean_email = str(req.email).lower().strip()
+    result = EmailService.send_test_email(clean_email)
+    
+    if result.get("success"):
+        return TestEmailResponse(
+            status="success",
+            message="Welcome email sent successfully! Please check your inbox and spam folder.",
+            recipient=clean_email,
+            provider=result.get("provider"),
+            resend_id=result.get("id"),
+            error=None,
+            sender=result.get("from")
+        )
+    else:
+        return TestEmailResponse(
+            status="error",
+            message="Failed to deliver welcome email via Resend.",
+            recipient=clean_email,
+            provider=result.get("provider"),
+            resend_id=None,
+            error=result.get("error"),
+            sender=result.get("from")
+        )
 
 
 @app.get("/health")

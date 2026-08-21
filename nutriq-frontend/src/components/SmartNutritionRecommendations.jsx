@@ -191,8 +191,8 @@ export const SmartNutritionRecommendations = ({
               <div
                 key={wIdx}
                 style={{
-                  background: w.type === 'calories_exceeded' || w.type === 'carbs_exceeded' ? 'rgba(217, 119, 6, 0.08)' : 'rgba(22, 134, 95, 0.08)',
-                  border: `1px solid ${w.type === 'calories_exceeded' || w.type === 'carbs_exceeded' ? 'rgba(217, 119, 6, 0.25)' : 'rgba(22, 134, 95, 0.25)'}`,
+                  background: w.type === 'calories_exceeded' || w.type === 'carbs_exceeded' ? 'var(--warning-bg)' : 'var(--success-bg)',
+                  border: `1px solid ${w.type === 'calories_exceeded' || w.type === 'carbs_exceeded' ? 'rgba(245, 158, 11, 0.25)' : 'rgba(8, 127, 91, 0.25)'}`,
                   borderRadius: 'var(--radius-sm)',
                   padding: '8px 12px',
                   display: 'flex',
@@ -202,7 +202,7 @@ export const SmartNutritionRecommendations = ({
                   color: 'var(--text-primary)'
                 }}
               >
-                <AlertCircle size={15} color={w.type === 'calories_exceeded' || w.type === 'carbs_exceeded' ? '#D97706' : 'var(--primary)'} style={{ flexShrink: 0 }} />
+                <AlertCircle size={15} color={w.type === 'calories_exceeded' || w.type === 'carbs_exceeded' ? 'var(--warning)' : 'var(--primary)'} style={{ flexShrink: 0 }} />
                 <span><strong>{w.title}:</strong> {w.message}</span>
               </div>
             ))}

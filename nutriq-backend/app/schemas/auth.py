@@ -24,6 +24,8 @@ class UserOut(BaseModel):
     id: str
     email: str
     role: str
+    auth_provider: Optional[str] = "email"
+    welcome_email_sent: Optional[bool] = False
     created_at: datetime
 
     class Config:
@@ -61,3 +63,18 @@ class ResetPasswordRequest(BaseModel):
 class GenericAuthResponse(BaseModel):
     status: str = "success"
     message: str
+
+
+class TestEmailRequest(BaseModel):
+    email: EmailStr
+
+
+class TestEmailResponse(BaseModel):
+    status: str
+    message: str
+    recipient: str
+    provider: Optional[str] = None
+    resend_id: Optional[str] = None
+    error: Optional[str] = None
+    sender: Optional[str] = None
+

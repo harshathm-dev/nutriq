@@ -79,7 +79,7 @@ export const FoodCard = ({
             border: 'none',
             cursor: 'pointer',
             padding: '4px',
-            color: isFavorite ? '#E76F51' : 'var(--text-muted)',
+            color: isFavorite ? 'var(--calorie-orange, #FF6B4A)' : 'var(--text-muted)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -87,7 +87,7 @@ export const FoodCard = ({
           }}
           title={isFavorite ? "Remove from Favorites" : "Add to Favorites"}
         >
-          <Heart size={18} fill={isFavorite ? "#E76F51" : "none"} />
+          <Heart size={18} fill={isFavorite ? "var(--calorie-orange, #FF6B4A)" : "none"} />
         </button>
       </div>
 

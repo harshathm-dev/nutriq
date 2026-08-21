@@ -66,19 +66,19 @@ export const GoalProgressCard = ({ onGoalUpdated }) => {
               width: '38px',
               height: '38px',
               borderRadius: '10px',
-              background: 'var(--goal-light-green, #E4F6EE)',
+              background: 'var(--goal-light-green, #DDF5EC)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              border: '1px solid rgba(22, 134, 95, 0.2)'
+              border: '1px solid rgba(8, 127, 91, 0.2)'
             }}>
-              <Target size={22} color="var(--goal-primary, #16865F)" />
+              <Target size={22} color="var(--goal-primary, #087F5B)" />
             </div>
             <div>
-              <span style={{ fontSize: '0.74rem', fontWeight: '700', color: 'var(--goal-text-muted, #71817B)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+              <span style={{ fontSize: '0.74rem', fontWeight: '700', color: 'var(--goal-text-muted, #94A3B8)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                 Active Goal
               </span>
-              <h4 style={{ fontSize: '1.2rem', fontWeight: '800', color: 'var(--goal-text-primary, #17231F)', margin: 0 }}>
+              <h4 style={{ fontSize: '1.2rem', fontWeight: '800', color: 'var(--goal-text-primary, #17212B)', margin: 0 }}>
                 {goalLabel}
               </h4>
             </div>
@@ -87,8 +87,8 @@ export const GoalProgressCard = ({ onGoalUpdated }) => {
             fontSize: '0.78rem',
             padding: '4px 10px',
             borderRadius: '8px',
-            background: 'var(--goal-light-green, #E4F6EE)',
-            color: 'var(--goal-primary, #16865F)',
+            background: 'var(--goal-light-green, #DDF5EC)',
+            color: 'var(--goal-primary, #087F5B)',
             fontWeight: '700'
           }}>
             {progressPct}% Done
@@ -98,20 +98,20 @@ export const GoalProgressCard = ({ onGoalUpdated }) => {
         {/* Progress Bar & Weight Trajectory */}
         <div>
           <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.84rem', marginBottom: '8px' }}>
-            <span style={{ color: 'var(--goal-text-secondary, #52635D)' }}>
-              Current: <strong style={{ color: 'var(--goal-primary, #16865F)', fontWeight: '800' }}>{currentWt} kg</strong>
+            <span style={{ color: 'var(--goal-text-secondary, #64748B)' }}>
+              Current: <strong style={{ color: 'var(--goal-primary, #087F5B)', fontWeight: '800' }}>{currentWt} kg</strong>
             </span>
-            <span style={{ color: 'var(--goal-text-secondary, #52635D)' }}>
-              Target: <strong style={{ color: 'var(--goal-blue, #2589D8)', fontWeight: '800' }}>{targetWt} kg</strong>
+            <span style={{ color: 'var(--goal-text-secondary, #64748B)' }}>
+              Target: <strong style={{ color: 'var(--goal-blue, #2563EB)', fontWeight: '800' }}>{targetWt} kg</strong>
             </span>
           </div>
 
-          <div style={{ height: '10px', background: '#E3EBE7', borderRadius: '9999px', overflow: 'hidden' }}>
+          <div style={{ height: '10px', background: 'var(--goal-border-subtle, #EBF2EE)', borderRadius: '9999px', overflow: 'hidden' }}>
             <div
               style={{
                 height: '100%',
                 width: `${Math.min(100, Math.max(4, progressPct))}%`,
-                background: 'var(--goal-bright-green, #19B77A)',
+                background: 'var(--goal-bright-green, #099268)',
                 borderRadius: '9999px',
                 transition: 'width 0.4s ease'
               }}
@@ -124,28 +124,28 @@ export const GoalProgressCard = ({ onGoalUpdated }) => {
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
           gap: '8px',
-          background: 'var(--goal-bg, #F7FAF8)',
-          border: '1px solid var(--goal-border, #D5E2DC)',
+          background: 'var(--goal-bg, #F8FAF9)',
+          border: '1px solid var(--goal-border, #D7E5DF)',
           padding: '12px 14px',
           borderRadius: 'var(--radius-md)'
         }}>
           <div>
-            <div style={{ fontSize: '0.7rem', color: 'var(--goal-text-secondary, #52635D)', fontWeight: '600' }}>Weekly Target</div>
-            <div style={{ fontSize: '0.94rem', fontWeight: '800', color: isAggressive ? 'var(--goal-danger, #DC5A5A)' : '#19A974', marginTop: '2px' }}>
+            <div style={{ fontSize: '0.7rem', color: 'var(--goal-text-secondary, #64748B)', fontWeight: '600' }}>Weekly Target</div>
+            <div style={{ fontSize: '0.94rem', fontWeight: '800', color: isAggressive ? 'var(--goal-danger, #EF4444)' : 'var(--goal-primary, #087F5B)', marginTop: '2px' }}>
               {weeklyPace} kg/wk
             </div>
           </div>
 
           <div>
-            <div style={{ fontSize: '0.7rem', color: 'var(--goal-text-secondary, #52635D)', fontWeight: '600' }}>Expected Date</div>
-            <div style={{ fontSize: '0.94rem', fontWeight: '800', color: 'var(--goal-blue, #2589D8)', marginTop: '2px' }}>
+            <div style={{ fontSize: '0.7rem', color: 'var(--goal-text-secondary, #64748B)', fontWeight: '600' }}>Expected Date</div>
+            <div style={{ fontSize: '0.94rem', fontWeight: '800', color: 'var(--goal-blue, #2563EB)', marginTop: '2px' }}>
               {estDate}
             </div>
           </div>
 
           <div>
-            <div style={{ fontSize: '0.7rem', color: 'var(--goal-text-secondary, #52635D)', fontWeight: '600' }}>Remaining</div>
-            <div style={{ fontSize: '0.94rem', fontWeight: '800', color: 'var(--goal-orange, #F28C28)', marginTop: '2px' }}>
+            <div style={{ fontSize: '0.7rem', color: 'var(--goal-text-secondary, #64748B)', fontWeight: '600' }}>Remaining</div>
+            <div style={{ fontSize: '0.94rem', fontWeight: '800', color: 'var(--goal-orange, #FF6B4A)', marginTop: '2px' }}>
               {remainingWt} kg
             </div>
           </div>
@@ -153,10 +153,10 @@ export const GoalProgressCard = ({ onGoalUpdated }) => {
 
         {/* Footer & Action */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.82rem' }}>
-          <span style={{ color: 'var(--goal-text-secondary, #52635D)' }}>
-            Start: <strong style={{ color: 'var(--goal-text-primary, #17231F)' }}>{startWt} kg</strong> → Target: <strong style={{ color: 'var(--goal-blue, #2589D8)' }}>{targetWt} kg</strong>
+          <span style={{ color: 'var(--goal-text-secondary, #64748B)' }}>
+            Start: <strong style={{ color: 'var(--goal-text-primary, #17212B)' }}>{startWt} kg</strong> → Target: <strong style={{ color: 'var(--goal-blue, #2563EB)' }}>{targetWt} kg</strong>
           </span>
-          <span style={{ color: 'var(--goal-primary, #16865F)', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '2px' }}>
+          <span style={{ color: 'var(--goal-primary, #087F5B)', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '2px' }}>
             Update <ChevronRight size={14} />
           </span>
         </div>

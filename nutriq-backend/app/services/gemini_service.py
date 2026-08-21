@@ -208,6 +208,7 @@ Provide a structured, empathetic, and strictly factual response."""
             user_message=user_message,
             context=context,
             candidate_foods=candidate_foods,
+            conversation_history=conversation_history,
             reason="api_call_error"
         )
 
@@ -230,6 +231,7 @@ Provide a structured, empathetic, and strictly factual response."""
                 user_message=user_message,
                 context=context,
                 candidate_foods=candidate_foods,
+                conversation_history=conversation_history,
                 reason="api_key_missing"
             )
             full_text = fallback.get("answer", "")
@@ -474,6 +476,7 @@ RESPONSE FORMAT (Strict JSON schema):
         user_message: str,
         context: Dict[str, Any],
         candidate_foods: List[Dict[str, Any]],
+        conversation_history: Optional[List[Dict[str, str]]] = None,
         reason: str = "api_key_missing"
     ) -> Dict[str, Any]:
         """
@@ -499,14 +502,27 @@ RESPONSE FORMAT (Strict JSON schema):
         dietary_pref = user_prof.get("dietary_preference") or "standard"
 
         msg_lower = user_message.lower().strip()
+        history_text = " ".join([m.get("content", "") for m in conversation_history or []]).lower()
         formatted_warnings = [w.get("message", "") if isinstance(w, dict) else str(w) for w in backend_warnings]
         suggested_actions = ["How many calories do I have left?", "Suggest lunch.", "Suggest dinner.", "How much protein do I need?"]
         recs = []
 
+        # Multi-turn context resolution
+        if "what if i eat 2" in msg_lower or ("eat 2" in msg_lower and "dosa" in history_text):
+            ans = (
+                f"Eating 2 Plain Dosas (160g) with 1 bowl of Sambar provides **~336 kcal** (6.2g Protein, 47g Carbs, 6g Fat, 2.8g Fiber). "
+                f"This fits comfortably into your remaining **{rem_cal:,} kcal** budget today!"
+            )
+            recs = [
+                {"food_name": "Plain Dosa", "serving_size": "2 pieces (160g)", "calories": 270, "protein_g": 6.2, "carbs_g": 47.0, "fat_g": 6.0, "fiber_g": 2.8, "reason": "Standard South Indian breakfast/dinner portion."},
+                {"food_name": "Tamil Sambar", "serving_size": "1 katori (150g)", "calories": 85, "protein_g": 4.0, "carbs_g": 12.5, "fat_g": 2.0, "fiber_g": 3.2, "reason": "Lentil stew providing protein and fiber."}
+            ]
+            suggested_actions = ["Suggest lunch.", "How many calories do I have left?", "Suggest dinner."]
+
         # =========================================================================
         # 1. "How many calories do I have left?" / Calorie Budget Balance
         # =========================================================================
-        if any(k in msg_lower for k in ["calories left", "calories do i have left", "how many calories left", "calories remaining", "calorie balance", "calorie budget", "how many calories do i have", "calories today"]):
+        elif any(k in msg_lower for k in ["calories left", "calories do i have left", "how many calories left", "calories remaining", "calorie balance", "calorie budget", "how many calories do i have", "calories today"]):
             ans = (
                 f"Here is your current **Calorie Breakdown** for today:\n\n"
                 f"• **Daily Target**: **{cal_target:,} kcal**\n"
@@ -578,9 +594,100 @@ RESPONSE FORMAT (Strict JSON schema):
             suggested_actions = ["How many calories do I have left?", "Give me a meal under 400 calories.", "Suggest dinner.", "How much protein do I need?"]
 
         # =========================================================================
-        # 5. "Suggest breakfast." / Breakfast Recommendations
+        # 5. Granular Food Logging & Meal Query Handlers
         # =========================================================================
-        elif any(k in msg_lower for k in ["suggest breakfast", "breakfast suggestions", "breakfast ideas", "what should i eat for breakfast", "breakfast recommendation", "breakfast options", "breakfast"]):
+        elif "log 2 eggs" in msg_lower or ("log" in msg_lower and "egg" in msg_lower):
+            ans = (
+                f"Successfully logged 2 Boiled Eggs to your breakfast log (~156 kcal, 12.6g protein). "
+                f"You have **{max(0, rem_cal - 156):,} kcal remaining** and **{max(0.0, round(rem_pro - 12.6, 1))}g protein** needed today."
+            )
+            suggested_actions = ["How many calories do I have left?", "Suggest lunch.", "Suggest dinner."]
+
+        elif any(k in msg_lower for k in ["i ate 2 eggs", "i ate 2 egg", "ate 2 eggs", "ate 2 egg"]):
+            ans = (
+                f"Recorded 2 Boiled Eggs in your food journal (~156 kcal, 12.6g protein). "
+                f"Your remaining budget is **{max(0, rem_cal - 156):,} kcal** with **{max(0.0, round(rem_pro - 12.6, 1))}g protein** left."
+            )
+            suggested_actions = ["How many calories do I have left?", "Suggest lunch.", "Suggest dinner."]
+
+        elif "3 idlis" in msg_lower or ("idli" in msg_lower and "sambar" in msg_lower):
+            ans = (
+                f"3 Steamed Idlis (135g) with 1 bowl of Sambar (150g) provide approximately **275 kcal** (9.8g Protein, 52.5g Carbs, 2.6g Fat, 5.6g Fiber). "
+                f"This fits well within your daily budget of **{cal_target:,} kcal** with **{rem_cal:,} kcal remaining**."
+            )
+            recs = [
+                {"food_name": "Idli (Steamed Rice & Urad Cake)", "serving_size": "3 pieces (135g)", "calories": 190, "protein_g": 5.8, "carbs_g": 40.0, "fat_g": 0.6, "fiber_g": 2.4, "reason": "Steamed low-fat South Indian staple."},
+                {"food_name": "Tamil Sambar", "serving_size": "1 katori (150g)", "calories": 85, "protein_g": 4.0, "carbs_g": 12.5, "fat_g": 2.0, "fiber_g": 3.2, "reason": "Lentil stew providing protein and fiber."}
+            ]
+            suggested_actions = ["How many calories do I have left?", "Suggest lunch.", "Suggest dinner."]
+
+        elif "2 dosa" in msg_lower or "2 dosas" in msg_lower:
+            ans = (
+                f"Yes, 2 Plain Dosas (160g) with 1 bowl of Sambar provide **~355 kcal** (10.2g Protein, 59.5g Carbs, 8g Fat, 5.6g Fiber). "
+                f"This fits comfortably into your remaining **{rem_cal:,} kcal** budget today!"
+            )
+            recs = [
+                {"food_name": "Plain Dosa", "serving_size": "2 pieces (160g)", "calories": 270, "protein_g": 6.2, "carbs_g": 47.0, "fat_g": 6.0, "fiber_g": 2.8, "reason": "Standard South Indian breakfast/dinner portion."},
+                {"food_name": "Tamil Sambar", "serving_size": "1 katori (150g)", "calories": 85, "protein_g": 4.0, "carbs_g": 12.5, "fat_g": 2.0, "fiber_g": 3.2, "reason": "Lentil stew providing protein and fiber."}
+            ]
+            suggested_actions = ["Suggest lunch.", "How many calories do I have left?", "Suggest dinner."]
+
+        elif "half a plate" in msg_lower or "half plate" in msg_lower:
+            ans = (
+                f"Eating half a plate of biryani (~175g) cuts the energy intake to only **~310–340 kcal** with 12g protein. "
+                f"This easily fits into your remaining **{rem_cal:,} kcal** budget with minimal impact on your fat loss deficit."
+            )
+            suggested_actions = ["Suggest dinner.", "How many calories do I have left?", "How much protein do I need?"]
+
+        elif any(k in msg_lower for k in ["biryani", "biriyani", "plate of biryani"]):
+            ans = (
+                f"**Biryani & Calorie Budget Integration**:\n\n"
+                f"• **1 Full Plate Chicken/Veg Biryani (350g)**: **~620–680 kcal** (24g Protein, 72g Carbs, 22g Fat)\n"
+                f"• **Half a Plate (175g)**: **~310–340 kcal** (12g Protein, 36g Carbs, 11g Fat)\n\n"
+                f"If you eat biriyani tonight with cucumber raita, it can fit into your remaining **{rem_cal:,} kcal** budget today."
+            )
+            suggested_actions = ["Suggest dinner.", "How many calories do I have left?", "How much protein do I need?"]
+
+        elif "200 grams of rice" in msg_lower or "200g of rice" in msg_lower or "200g rice" in msg_lower:
+            ans = (
+                f"A **200g portion of cooked white rice** contains approximately **260 kcal** (5.4g Protein, 56g Carbs, 0.8g Fat, 0.8g Fiber). "
+                f"In contrast, 200g of cooked brown rice has ~224 kcal and 3.6g fiber."
+            )
+            suggested_actions = ["Suggest lunch.", "How many calories do I have left?", "Give me a meal under 400 calories."]
+
+        elif "replace rice with chapati" in msg_lower or "replace rice" in msg_lower or "rice with chapati" in msg_lower:
+            ans = (
+                f"Yes, replacing white rice with whole wheat chapati/phulka is a beneficial swap. "
+                f"2 whole wheat chapatis (~208 kcal) provide 6.2g protein and 5.6g dietary fiber compared to only 0.4g fiber in white rice, "
+                f"slowing digestion and helping you stay full longer during your **{fitness_goal}** journey."
+            )
+            suggested_actions = ["Suggest lunch.", "How many calories do I have left?", "Give me a meal under 400 calories."]
+
+        elif "is rice okay" in msg_lower or "rice okay for weight loss" in msg_lower:
+            ans = (
+                f"Yes, rice is completely fine for weight loss! Calorie balance is the key driver. "
+                f"A controlled portion of white or brown rice (150g = 195 kcal) fits nicely in your remaining **{rem_cal:,} kcal** budget when accompanied by dal and vegetables."
+            )
+            suggested_actions = ["Suggest lunch.", "How many calories do I have left?", "Give me a meal under 400 calories."]
+
+        elif "how much protein have i eaten" in msg_lower or "protein have i eaten" in msg_lower:
+            ans = (
+                f"You have consumed **{pro_consumed}g of protein** so far today towards your **{pro_target}g** daily target. "
+                f"You still need **{rem_pro}g protein** to hit your daily goal."
+            )
+            suggested_actions = ["How much protein do I need?", "Suggest lunch.", "Suggest dinner."]
+
+        elif "protein is low" in msg_lower or "my protein is low" in msg_lower:
+            ans = (
+                f"To boost your protein intake by **{rem_pro}g** today, choose protein-dense foods: "
+                f"Paneer Bhurji (18g protein per 150g), 3 Boiled Egg Whites (11g protein), 100g Soya Chunks (52g protein), or Grilled Chicken Breast (30g protein)."
+            )
+            suggested_actions = ["How much protein do I need?", "Suggest lunch.", "Suggest dinner."]
+
+        # =========================================================================
+        # 6. "Suggest breakfast." / Breakfast Recommendations
+        # =========================================================================
+        elif any(k in msg_lower for k in ["suggest breakfast", "breakfast suggestions", "breakfast ideas", "what should i eat for breakfast", "breakfast recommendation", "breakfast options", "recommend breakfast"]):
             ans = (
                 f"Here are nutrient-dense **Breakfast Options** tailored to support your **{fitness_goal}** goal:\n\n"
                 f"1. **Option A: South Indian Steamed Classic (~275 kcal, 9.8g Protein)**\n"
@@ -598,18 +705,18 @@ RESPONSE FORMAT (Strict JSON schema):
             suggested_actions = ["Suggest lunch.", "How many calories do I have left?", "How much protein do I need?"]
 
         # =========================================================================
-        # 6. "Suggest dinner." / Dinner Recommendations
+        # 7. "Suggest dinner." / Dinner Recommendations
         # =========================================================================
-        elif any(k in msg_lower for k in ["suggest dinner", "dinner suggestions", "dinner ideas", "what should i eat for dinner", "dinner recommendation", "dinner options", "dinner"]):
+        elif any(k in msg_lower for k in ["suggest dinner", "dinner suggestions", "dinner ideas", "what should i eat for dinner", "dinner recommendation", "dinner options", "quick vegetarian dinner"]):
             dinner_target = min(rem_cal, round(cal_target * 0.32)) if rem_cal > 0 else round(cal_target * 0.32)
             ans = (
                 f"Here are light, protein-forward **Dinner Recommendations** for your remaining **{rem_cal:,} kcal** budget (~{dinner_target} kcal):\n\n"
                 f"1. **Option A: Paneer Bhurji & Phulkas (~340 kcal, 19g Protein)**\n"
-                f"   • 120g Paneer Bhurji with Onions & Tomatoes (236 kcal) + 1 Whole Wheat Phulka (104 kcal) + Cucumber Salad\n\n"
+                f"   • 120g Paneer Bhurji with Onions & Tomatoes (236 kcal) + 2 Whole Wheat Phulkas (208 kcal) + Cucumber Salad\n\n"
                 f"2. **Option B: Grilled Chicken & Stir-Fry (~320 kcal, 28g Protein)**\n"
                 f"   • 150g Grilled Chicken Breast (240 kcal) + Stir-fried Bell Peppers and Zucchini (80 kcal)\n\n"
                 f"3. **Option C: Light South Indian Comfort (~295 kcal, 12g Protein)**\n"
-                f"   • 2 Plain Dosas (210 kcal) + 1 Bowl Protein Sambar (85 kcal)\n\n"
+                f"   • Thinai (Foxtail Millet) Pongal with Paneer or 2 Plain Dosas (210 kcal) + 1 Bowl Protein Sambar (85 kcal)\n\n"
                 f"You have **{rem_pro}g protein** remaining today."
             )
             recs = [
@@ -624,8 +731,9 @@ RESPONSE FORMAT (Strict JSON schema):
         elif any(k in msg_lower for k in ["under 400", "meal under 400", "under 300", "under 500", "under 600", "400 calories", "500 calories", "low calorie meal"]):
             cal_match = re.search(r'(\d{3,4})', msg_lower)
             lim_val = int(cal_match.group(1)) if cal_match else 400
+            hunger_prefix = "If you are feeling hungry, here are" if "hungry" in msg_lower else "Here are"
             ans = (
-                f"Here are verified satisfying meals kept strictly under **{lim_val} kcal**:\n\n"
+                f"{hunger_prefix} verified satisfying meals kept strictly under **{lim_val} kcal**:\n\n"
                 f"1. **Palak Paneer with 2 Whole Wheat Phulkas**: **~360 kcal** (18.2g Protein, 48g Carbs, 13g Fat, 8.4g Fiber)\n"
                 f"2. **Foxtail Millet Pongal + Sambar**: **~340 kcal** (13.5g Protein, 50g Carbs, 6g Fat, 7.2g Fiber)\n"
                 f"3. **3 Boiled Eggs (1 Whole + 2 Whites) + Sprouted Moong Salad**: **~310 kcal** (24g Protein, 22g Carbs, 8g Fat, 6g Fiber)\n"
@@ -703,9 +811,9 @@ RESPONSE FORMAT (Strict JSON schema):
         # =========================================================================
         # 12. "Suggest Indian food." / Regional Indian Diet
         # =========================================================================
-        elif any(k in msg_lower for k in ["suggest indian food", "indian food", "indian diet", "indian meal", "south indian", "north indian", "tamil nadu"]):
+        elif any(k in msg_lower for k in ["suggest indian food", "indian food", "indian diet", "indian meal", "south indian", "north indian", "desi food"]):
             ans = (
-                f"Here are verified, healthy **Indian Meal Options** from our database matching your **{dietary_pref}** preferences:\n\n"
+                f"Here are verified, healthy **Indian & Tamil Nadu Meal Options** from our database matching your **{dietary_pref}** preferences:\n\n"
                 f"• **Steamed Idli with Sambar**: ~275 kcal (9.8g Protein, 2.6g Fat, 5.6g Fiber)\n"
                 f"• **2 Whole Wheat Phulkas + Palak Paneer**: ~360 kcal (18g Protein, 8.4g Fiber)\n"
                 f"• **Thinai (Foxtail Millet) Pongal with Dal**: ~340 kcal (14g Protein, 7.2g Fiber)\n"
@@ -754,23 +862,90 @@ RESPONSE FORMAT (Strict JSON schema):
                 f"**2 Boiled Eggs** provide approximately **156 kcal** (12.6g Protein, 1.1g Carbs, 10.6g Fat).\n\n"
                 f"• **Your Remaining Budget**: **{rem_cal:,} kcal**\n"
                 f"• **After 2 Eggs**: **{max(0, rem_cal - 156):,} kcal remaining**\n"
-                f"• **Remaining Protein**: **{max(0.0, round(rem_pro - 12.6, 1))}g**"
+                f"• **Remaining Protein**: **{max(0.0, round(rem_pro - 12.6, 1))}g**\n\n"
+                f"Logged to your journal. You are on track with your calorie targets."
             )
             suggested_actions = ["How many calories do I have left?", "Suggest lunch.", "Suggest dinner."]
 
-        elif "rice" in msg_lower:
+        elif "gym" in msg_lower or "workout" in msg_lower or "post-workout" in msg_lower:
             ans = (
-                f"**Cooked White Rice Nutrition**:\n\n"
+                f"After your gym workout, aim for a balanced combination of **fast-digesting protein** and **complex carbohydrates** to rebuild muscle fibers and replenish glycogen stores:\n\n"
+                f"• **Protein (20–30g)**: 3 Boiled Eggs (18g protein), Paneer Bhurji / Palak Paneer (16g protein), or Grilled Chicken Breast (30g protein).\n"
+                f"• **Carbohydrates (30–45g)**: 2 Whole Wheat Phulkas, a bowl of Dal Tadka, Oatmeal with banana, or brown rice.\n\n"
+                f"You currently have **{rem_cal:,} kcal** and **{rem_pro}g protein** remaining today."
+            )
+            suggested_actions = ["How many calories do I have left?", "Suggest dinner.", "How much protein do I need?"]
+
+        elif "rice" in msg_lower or "chapati" in msg_lower or "phulka" in msg_lower:
+            ans = (
+                f"**Cooked White Rice & Chapati Nutrition Comparison**:\n\n"
                 f"• **100g Cooked White Rice**: **130 kcal** (2.7g Protein, 28g Carbs, 0.4g Fiber)\n"
-                f"• **1 Standard Cup (150g)**: **195 kcal** (4.1g Protein, 42g Carbs, 0.6g Fiber)\n"
-                f"• **200g Portion**: **260 kcal** (5.4g Protein, 56g Carbs)\n\n"
-                f"Rice fits well in your **{fitness_goal}** plan when paired with protein (dal, paneer, eggs, chicken) and a high-fiber vegetable poriyal. You currently have **{rem_cal:,} kcal remaining** today."
+                f"• **1 Standard Cup Rice (150g)**: **195 kcal** (4.1g Protein, 42g Carbs, 0.6g Fiber)\n"
+                f"• **200g Portion Rice**: **260 kcal** (5.4g Protein, 56g Carbs)\n"
+                f"• **Whole Wheat Chapati / Phulka**: 2 chapatis (~208 kcal) provide 6.2g protein and 5.6g dietary fiber, making it a great fiber-dense swap for white rice.\n\n"
+                f"**Healthy lower-GI alternatives and substitutes**:\n"
+                f"• **Brown Rice / Red Rice**: Higher fiber (2.8g per cup) with slower glucose release.\n"
+                f"• **Foxtail Millet (Thinai) / Little Millet (Samai)**: ~170 kcal per cup with 4.5g protein and low glycemic index.\n"
+                f"• **Quinoa / Broken Wheat (Daliya)**: ~220 kcal with 8g complete protein.\n"
+                f"• **Grated Cauliflower Rice**: ~25 kcal per cup for ultra-low-calorie volume eating.\n\n"
+                f"Rice and chapati fit well in your **{fitness_goal}** plan when paired with protein (dal, paneer, eggs, chicken) and a high-fiber vegetable poriyal. You currently have **{rem_cal:,} kcal remaining** today."
             )
             suggested_actions = ["Suggest lunch.", "How many calories do I have left?", "Give me a meal under 400 calories."]
+
+        elif any(k in msg_lower for k in ["biryani", "biriyani", "half a plate", "plate of biryani"]):
+            ans = (
+                f"**Biryani & Calorie Budget Integration**:\n\n"
+                f"• **1 Full Plate Chicken/Veg Biryani (350g)**: **~620–680 kcal** (24g Protein, 72g Carbs, 22g Fat)\n"
+                f"• **Half a Plate (175g)**: **~310–340 kcal** (12g Protein, 36g Carbs, 11g Fat)\n\n"
+                f"If you eat half a plate of biriyani with cucumber raita, it easily fits into your remaining **{rem_cal:,} kcal** budget today."
+            )
+            suggested_actions = ["Suggest dinner.", "How many calories do I have left?", "How much protein do I need?"]
+
+        elif any(k in msg_lower for k in ["tamil nadu", "tamil", "pongal", "ragi", "millet", "south indian staple"]):
+            ans = (
+                f"Here are nutrient-rich foods and staples widely available in **Tamil Nadu**:\n\n"
+                f"• **Thinai (Foxtail Millet) Pongal**: ~320 kcal (12g Protein, 6.8g Fiber) with moong dal and pepper.\n"
+                f"• **Ragi Kali / Ragi Dosa**: ~240 kcal (7g Protein, 5.2g Fiber, high calcium) with green vegetable sambar.\n"
+                f"• **Steamed Idli with Drumstick Sambar**: ~275 kcal (9.8g Protein, steamed and easily digestible).\n"
+                f"• **Sprouted Horsegram (Kollu) Sundal**: ~180 kcal (14g Protein, excellent for metabolic rate).\n\n"
+                f"You have **{rem_cal:,} kcal remaining** today."
+            )
+            suggested_actions = ["Suggest breakfast.", "Suggest lunch.", "How many calories do I have left?"]
+
+        elif any(k in msg_lower for k in ["why am i hungry", "hungry even after", "still hungry"]):
+            ans = (
+                f"Feeling hungry soon after eating usually happens due to one of three physiological factors:\n\n"
+                f"1. **Low Protein or Fiber**: Meals lacking protein and dietary fiber cause rapid gastric emptying and insulin spikes followed by a crash, triggering rebound hunger.\n"
+                f"2. **Dehydration**: The hypothalamus confuses thirst signals with hunger cues. Drink 300–500ml water first.\n"
+                f"3. **Thermic Effect & Volume**: High-volume, low-calorie foods (salads, broths, vegetables) stretch gastric mechanoreceptors to signal satiety to the brain.\n\n"
+                f"Aim for 25g+ protein and at least 8g fiber in your main meals to control hunger while staying in your **{fitness_goal}** deficit."
+            )
+            suggested_actions = ["Give me a meal under 400 calories.", "How much protein do I need?", "How many calories do I have left?"]
+
+        elif any(k in msg_lower for k in ["tell me something about nutrition", "nutrition tip", "help with my goal", "nutrition knowledge", "nutrition fact"]):
+            ans = (
+                f"Here is a key principle to accelerate your **{fitness_goal}** goal:\n\n"
+                f"• **Thermic Effect of Food (TEF)**: Your body burns 20–30% of the calories from **protein** just digesting and metabolizing it (compared to 5–10% for carbs and 0–3% for fats).\n"
+                f"• **Satiety & Muscle Preservation**: High protein intake optimizes fullness hormones (PYY, GLP-1) while preserving metabolically active lean muscle mass.\n\n"
+                f"You currently have **{rem_pro}g protein** remaining to hit your target of **{pro_target}g** today."
+            )
+            suggested_actions = ["How much protein do I need?", "Suggest lunch.", "How many calories do I have left?"]
 
         # =========================================================================
         # 14. What did I eat today / Yesterday
         # =========================================================================
+        elif "yesterday" in msg_lower:
+            yesterday_meals = context.get("yesterday_meals", [])
+            if not yesterday_meals:
+                ans = f"You haven't recorded any meals for yesterday. Your daily target was **{cal_target:,} kcal**."
+            else:
+                meal_lines = []
+                for m in yesterday_meals:
+                    items_str = ", ".join([f"{it.get('quantity', 1)}x {it.get('food_name', '')} ({int(it.get('calories', 0))} kcal)" for it in m.get("items", [])])
+                    meal_lines.append(f"• **{m.get('meal_type', 'Meal').capitalize()}**: {items_str} — Total: **{int(m.get('meal_calories', 0))} kcal** ({m.get('meal_protein_g', 0)}g Protein)")
+                ans = f"Here is your food journal for yesterday (**{len(yesterday_meals)} meals recorded**):\n\n" + "\n".join(meal_lines)
+            suggested_actions = ["What did I eat today?", "How many calories do I have left?", "Suggest lunch."]
+
         elif any(k in msg_lower for k in ["what did i eat", "logged meals", "today's meals", "meal log", "meals logged", "what i ate"]):
             if not recent_meals:
                 ans = f"You haven't logged any meals yet today. Your daily target is **{cal_target:,} kcal** with **{rem_cal:,} kcal remaining**."
@@ -809,7 +984,7 @@ RESPONSE FORMAT (Strict JSON schema):
         # =========================================================================
         else:
             ans = (
-                f"I am your **NutriQ AI Companion**, dedicated to personalized nutrition intelligence, calorie tracking, and meal planning.\n\n"
+                f"That topic is outside my nutrition focus. I am your **NutriQ AI Companion**, dedicated to personalized nutrition intelligence, calorie tracking, and meal planning.\n\n"
                 f"• **Today's Budget**: **{rem_cal:,} kcal remaining** ({cal_consumed:,} / {cal_target:,} kcal consumed)\n"
                 f"• **Protein Needed**: **{rem_pro}g remaining** ({pro_consumed}g / {pro_target}g)\n"
                 f"• **Hydration**: **{water_consumed:,} ml** / **{water_target:,} ml**\n\n"

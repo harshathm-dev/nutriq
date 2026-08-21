@@ -63,7 +63,7 @@ export const BottomNav = () => {
                 border: 'none',
                 color: '#FFFFFF',
                 cursor: 'pointer',
-                boxShadow: '0 4px 12px rgba(31, 122, 90, 0.35)',
+                boxShadow: '0 4px 12px rgba(8, 127, 91, 0.35)',
                 transform: 'translateY(-8px)',
                 transition: 'all 0.2s ease'
               }}

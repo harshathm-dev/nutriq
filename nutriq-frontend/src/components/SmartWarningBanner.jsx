@@ -9,11 +9,9 @@ export const SmartWarningBanner = ({ warnings = [] }) => {
       {warnings.map((w, index) => {
         const isHigh = w.severity === 'high';
         const Icon = isHigh ? AlertOctagon : (w.severity === 'medium' ? AlertTriangle : Info);
-        const bg = isHigh
-          ? 'linear-gradient(135deg, rgba(244, 63, 94, 0.15), rgba(159, 18, 57, 0.25))'
-          : 'linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(180, 83, 9, 0.25))';
-        const borderColor = isHigh ? 'rgba(244, 63, 94, 0.4)' : 'rgba(245, 158, 11, 0.4)';
-        const textColor = isHigh ? '#fb7185' : '#fbbf24';
+        const bg = isHigh ? 'var(--error-bg)' : 'var(--warning-bg)';
+        const borderColor = isHigh ? 'rgba(239, 68, 68, 0.35)' : 'rgba(245, 158, 11, 0.35)';
+        const textColor = isHigh ? 'var(--error)' : 'var(--warning)';
 
         return (
           <div

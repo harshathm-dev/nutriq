@@ -119,6 +119,7 @@ class NutritionEngine:
             "bmr": bmr,
             "tdee": tdee,
             "target_calories": target_calories,
+            "calorie_target": target_calories,
             "protein_g": protein_g,
             "carbs_g": carbs_g,
             "fat_g": fat_g,

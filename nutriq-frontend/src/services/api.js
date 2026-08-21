@@ -1,8 +1,9 @@
-import { db, enqueueOfflineAction } from '../offline/db.js';
+import { db, ensureDbOpen, enqueueOfflineAction } from '../offline/db.js';
 import { calculateLocalDailySummary, calculateLocalWeeklySummary } from '../offline/nutritionCalculator.js';
 import { evaluateOfflineNutritionStatus, calculateLocalSmartRecommendations } from '../offline/recommendationEngine.js';
 import { reportGenerator } from './reportGenerator.js';
 import { getToday, getLocalDate, getLocalDateFromTimestamp, formatDate, parseDateParts, addDays } from '../utils/dateUtils.js';
+import { calculateCurrentStreak } from '../utils/streakUtils.js';
 
 const API_BASE = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_API_BASE_URL) || 'http://localhost:8000/api';
 
@@ -249,7 +250,14 @@ export const api = {
       });
       if (res.ok) {
         const saved = await res.json();
-        await db.profile.put(saved);
+        try {
+          await ensureDbOpen();
+          if (db.isOpen()) {
+            await db.profile.put(saved);
+          }
+        } catch (storageErr) {
+          console.warn("Could not cache profile to offline DB:", storageErr);
+        }
         return saved;
       }
       const msg = await parseError(res, "Failed to create profile");
@@ -260,8 +268,15 @@ export const api = {
       }
       console.warn("Offline profile creation fallback:", e);
     }
-    await db.profile.put(data);
-    await enqueueOfflineAction('profile', data.id || 'prof_local', 'CREATE', data);
+    try {
+      await ensureDbOpen();
+      if (db.isOpen()) {
+        await db.profile.put(data);
+      }
+      await enqueueOfflineAction('profile', data.id || 'prof_local', 'CREATE', data);
+    } catch (e) {
+      console.warn("Could not save profile offline:", e);
+    }
     return data;
   },
 
@@ -271,14 +286,29 @@ export const api = {
       if (res.ok) {
         const data = await res.json();
         if (data) {
-          await db.profile.put(data);
+          try {
+            await ensureDbOpen();
+            if (db.isOpen()) {
+              await db.profile.put(data);
+            }
+          } catch (storageErr) {
+            console.warn("Could not cache profile to offline DB:", storageErr);
+          }
         }
         return data;
       }
     } catch (e) {
       console.warn("Offline fallback for user profile");
     }
-    return db.profile.toCollection().first();
+    try {
+      await ensureDbOpen();
+      if (db.isOpen()) {
+        return await db.profile.toCollection().first();
+      }
+    } catch (e) {
+      console.warn("Could not read profile from offline DB:", e);
+    }
+    return null;
   },
 
   updateProfile: async (data) => {
@@ -290,7 +320,14 @@ export const api = {
       });
       if (res.ok) {
         const saved = await res.json();
-        await db.profile.put(saved);
+        try {
+          await ensureDbOpen();
+          if (db.isOpen()) {
+            await db.profile.put(saved);
+          }
+        } catch (storageErr) {
+          console.warn("Could not cache updated profile to offline DB:", storageErr);
+        }
         return saved;
       }
       const msg = await parseError(res, "Failed to update profile");
@@ -301,8 +338,15 @@ export const api = {
       }
       console.warn("Offline profile save");
     }
-    await db.profile.put(data);
-    await enqueueOfflineAction('profile', data.id || 'prof_local', 'UPDATE', data);
+    try {
+      await ensureDbOpen();
+      if (db.isOpen()) {
+        await db.profile.put(data);
+      }
+      await enqueueOfflineAction('profile', data.id || 'prof_local', 'UPDATE', data);
+    } catch (e) {
+      console.warn("Could not save profile offline:", e);
+    }
     return data;
   },
 
@@ -1819,6 +1863,10 @@ export const api = {
   // ==========================================
   // NUTRIQ DAILY STREAK API
   // ==========================================
+  getStreak: async () => {
+    return api.getStreakStatus();
+  },
+
   getStreakStatus: async () => {
     try {
       const res = await fetch(`${API_BASE}/streak`, { headers: getAuthHeaders() });
@@ -1826,72 +1874,23 @@ export const api = {
     } catch (e) {
       console.warn("Failed to fetch streak status:", e);
     }
-    // Calculate local fallback streak
+    // Calculate local fallback streak using centralized calculateCurrentStreak
     try {
       const [meals, waterLogs, exLogs] = await Promise.all([
         db.meals.toArray(),
         db.water_logs.toArray(),
         db.exercise_logs ? db.exercise_logs.toArray() : []
       ]);
-      const todayStr = getToday();
-      const activeDates = new Set();
-      meals.forEach(m => {
-        const d = getLocalDate(m.occurred_at || m.date);
-        if (d) activeDates.add(d);
+      const currentUserId = typeof localStorage !== 'undefined' ? localStorage.getItem('nutriq_user_id') : null;
+      const currentUserEmail = typeof localStorage !== 'undefined' ? localStorage.getItem('nutriq_email') : null;
+      return calculateCurrentStreak(meals, {
+        userId: currentUserId,
+        email: currentUserEmail,
+        additionalDates: [
+          ...waterLogs.filter(w => (w.amount_ml || 0) > 0).map(w => w.recorded_at || w.date),
+          ...exLogs.map(e => e.recorded_at || e.date)
+        ]
       });
-      waterLogs.forEach(w => {
-        const d = getLocalDate(w.recorded_at || w.date);
-        if (d && (w.amount_ml || 0) > 0) activeDates.add(d);
-      });
-      exLogs.forEach(e => {
-        const d = getLocalDate(e.recorded_at || e.date);
-        if (d) activeDates.add(d);
-      });
-
-      const completedToday = activeDates.has(todayStr);
-      let consecutive = 0;
-      let checkDateStr = completedToday ? todayStr : addDays(todayStr, -1);
-      while (activeDates.has(checkDateStr)) {
-        consecutive += 1;
-        checkDateStr = addDays(checkDateStr, -1);
-        if (consecutive > 365) break;
-      }
-
-      // Generate current week Monday to Sunday
-      const todayParts = parseDateParts(todayStr);
-      const todayObj = new Date(todayParts.year, todayParts.month - 1, todayParts.day, 12, 0, 0);
-      const dayOfWeek = (todayObj.getDay() + 6) % 7; // 0=Mon, 6=Sun
-      const mondayStr = addDays(todayStr, -dayOfWeek);
-
-      const dayNames = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-      const dayInitials = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
-      const weeklyHistory = [];
-      for (let i = 0; i < 7; i++) {
-        const dStr = addDays(mondayStr, i);
-        const isDToday = dStr === todayStr;
-        const isDFuture = dStr > todayStr;
-        const isDone = isDFuture ? false : activeDates.has(dStr);
-        weeklyHistory.push({
-          date: dStr,
-          day_name: dayNames[i],
-          day_initial: dayInitials[i],
-          completed: isDone,
-          logged: isDone,
-          is_today: isDToday,
-          is_future: isDFuture
-        });
-      }
-
-      return {
-        current_streak: consecutive,
-        longest_streak: Math.max(consecutive, 1),
-        total_active_days: activeDates.size,
-        last_completed_date: completedToday ? todayStr : (consecutive > 0 ? addDays(todayStr, -1) : null),
-        completed_today: completedToday,
-        weekly_history: weeklyHistory,
-        new_milestone: null,
-        milestones_achieved: []
-      };
     } catch (err) {
       console.warn("Could not calculate local fallback streak:", err);
     }

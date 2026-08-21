@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String
+from sqlalchemy import Column, String, Boolean
 from sqlalchemy.orm import relationship
 from app.database.session import Base
 from app.models.base import generate_uuid, TimestampMixin
@@ -12,6 +12,7 @@ class User(Base, TimestampMixin):
     role = Column(String(50), default="user", nullable=False)  # "user", "admin"
     auth_provider = Column(String(50), default="email", nullable=False)  # "email", "google"
     google_id = Column(String(255), unique=True, index=True, nullable=True)
+    welcome_email_sent = Column(Boolean, default=False, nullable=False)
 
     # Relationships
     profile = relationship("UserProfile", back_populates="user", uselist=False, cascade="all, delete-orphan")

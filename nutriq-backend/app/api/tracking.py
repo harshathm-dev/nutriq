@@ -450,13 +450,31 @@ async def create_weight(
     if prof:
         prof.weight_kg = req.weight_kg
 
-    # 2. Insert into weight history
-    wh = WeightHistory(
-        user_id=current_user.id,
-        weight_kg=req.weight_kg,
-        recorded_at=recorded_dt
-    )
-    session.add(wh)
+    # 2. Update existing same-day weight record or insert new record
+    target_d = (recorded_dt if recorded_dt.tzinfo else recorded_dt.replace(tzinfo=timezone.utc)).date()
+    start_utc, end_utc = get_date_bounds_utc(target_d)
+    existing_wh_stmt = select(WeightHistory).where(
+        and_(
+            WeightHistory.user_id == current_user.id,
+            WeightHistory.recorded_at >= start_utc,
+            WeightHistory.recorded_at < end_utc
+        )
+    ).order_by(WeightHistory.recorded_at.desc())
+    existing_wh_res = await session.execute(existing_wh_stmt)
+    existing_wh = existing_wh_res.scalars().first()
+
+    if existing_wh:
+        existing_wh.weight_kg = req.weight_kg
+        existing_wh.recorded_at = recorded_dt
+        wh = existing_wh
+    else:
+        wh = WeightHistory(
+            user_id=current_user.id,
+            weight_kg=req.weight_kg,
+            recorded_at=recorded_dt
+        )
+        session.add(wh)
+
     await session.commit()
     await session.refresh(wh)
 
